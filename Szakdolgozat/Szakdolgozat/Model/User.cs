@@ -19,7 +19,6 @@ namespace Szakdolgozat
 
         public User()
         {
-            //This changed. 2023-08-08
         }
     }
 }

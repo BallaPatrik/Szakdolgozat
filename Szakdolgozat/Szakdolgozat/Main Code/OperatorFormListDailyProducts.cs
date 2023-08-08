@@ -17,7 +17,7 @@ namespace Szakdolgozat
         {
             InitializeComponent();
         }
-
+      
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoginForm form = new LoginForm();
