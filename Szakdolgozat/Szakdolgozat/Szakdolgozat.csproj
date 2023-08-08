@@ -81,63 +81,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Form\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Form\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuyerForm.cs">
+    <Compile Include="Form\BuyerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuyerForm.Designer.cs">
+    <Compile Include="Form\BuyerForm.Designer.cs">
       <DependentUpon>BuyerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Model\Database.cs" />
+    <Compile Include="Form\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OfficeClerkForm.cs">
+    <Compile Include="Form\OfficeClerkForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OfficeClerkForm.Designer.cs">
+    <Compile Include="Form\OfficeClerkForm.Designer.cs">
       <DependentUpon>OfficeClerkForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OperatorForm.cs">
+    <Compile Include="Form\OperatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OperatorForm.Designer.cs">
+    <Compile Include="Form\OperatorForm.Designer.cs">
       <DependentUpon>OperatorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OperatorFormListDailyProducts.cs">
+    <Compile Include="Form\OperatorFormListDailyProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OperatorFormListDailyProducts.Designer.cs">
+    <Compile Include="Form\OperatorFormListDailyProducts.Designer.cs">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Main Code\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transporter.cs" />
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="AdminForm.resx">
+    <Compile Include="Model\Transporter.cs" />
+    <Compile Include="Model\User.cs" />
+    <EmbeddedResource Include="Form\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuyerForm.resx">
+    <EmbeddedResource Include="Form\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OfficeClerkForm.resx">
+    <EmbeddedResource Include="Form\OfficeClerkForm.resx">
       <DependentUpon>OfficeClerkForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OperatorForm.resx">
+    <EmbeddedResource Include="Form\OperatorForm.resx">
       <DependentUpon>OperatorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OperatorFormListDailyProducts.resx">
+    <EmbeddedResource Include="Form\OperatorFormListDailyProducts.resx">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
