@@ -81,17 +81,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main Code\AdminForm.cs">
+    <Compile Include="Main Code\AddUserAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="Main Code\AddUserAdminForm.Designer.cs">
+      <DependentUpon>AddUserAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\AdminHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\AdminHomeForm.Designer.cs">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\BuyerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Code\BuyerForm.Designer.cs">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\DeleteUserAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\DeleteUserAdminForm.Designer.cs">
+      <DependentUpon>DeleteUserAdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\HomeForm.cs">
       <SubType>Form</SubType>
@@ -128,11 +140,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Transporter.cs" />
     <Compile Include="Model\User.cs" />
-    <EmbeddedResource Include="Main Code\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\AddUserAdminForm.resx">
+      <DependentUpon>AddUserAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\AdminHomeForm.resx">
+      <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\BuyerForm.resx">
       <DependentUpon>BuyerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\DeleteUserAdminForm.resx">
+      <DependentUpon>DeleteUserAdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Szakdolgozat.Main_Code;
 
 namespace Szakdolgozat
 {
@@ -80,7 +81,7 @@ namespace Szakdolgozat
                     Transporter.getInstance().CurrentUser = user;
 
                     this.Hide();
-                    AdminForm form = new AdminForm();
+                    AdminHomeForm form = new AdminHomeForm();
                     form.Show();
                 }
                 if (szerepkorid == 3)
@@ -172,9 +173,43 @@ namespace Szakdolgozat
 
                     Transporter.getInstance().CurrentUser = user;
 
-                    this.Hide();
-                    OperatorForm form = new OperatorForm();
-                    form.Show();
+
+                    switch (szerepkor)
+                    {
+                        case "Operátor":
+                            {
+                                this.Hide();
+                                HomeForm form = new HomeForm();
+                                form.Show();
+                            }
+                            break;
+                        case "Irodista":
+                            {
+                                this.Hide();
+                                OfficeClerkForm form = new OfficeClerkForm();
+                                form.Show();
+                            }
+                            break;
+                        case "Megrendelő":
+                            {
+                                this.Hide();
+                                BuyerForm form = new BuyerForm();
+                                form.Show();
+                            }
+                            break;
+                        case "Adminisztrátor":
+                            {
+                                this.Hide();
+                                AdminHomeForm form = new AdminHomeForm();
+                                form.Show();
+                            }
+                            break;
+                        default:
+                            {
+                                MessageBox.Show("Nincs jogosultsága!");
+                            }
+                            break;
+                    }
                 }
 
 

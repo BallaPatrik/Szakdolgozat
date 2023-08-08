@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Szakdolgozat
+namespace Szakdolgozat.Main_Code
 {
     public partial class AdminForm : Form
     {

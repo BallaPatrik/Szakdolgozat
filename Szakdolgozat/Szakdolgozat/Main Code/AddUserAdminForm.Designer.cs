@@ -1,5 +1,5 @@
 ﻿
-namespace Szakdolgozat
+namespace Szakdolgozat.Main_Code
 {
     partial class AdminForm
     {
@@ -37,9 +37,6 @@ namespace Szakdolgozat
             this.label4 = new System.Windows.Forms.Label();
             this.TB_jelszo = new System.Windows.Forms.TextBox();
             this.BT_felhasznalofelvitel = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LB_szerepkorok
@@ -103,30 +100,13 @@ namespace Szakdolgozat
             // 
             // BT_felhasznalofelvitel
             // 
-            this.BT_felhasznalofelvitel.Location = new System.Drawing.Point(291, 392);
+            this.BT_felhasznalofelvitel.Location = new System.Drawing.Point(414, 98);
             this.BT_felhasznalofelvitel.Name = "BT_felhasznalofelvitel";
             this.BT_felhasznalofelvitel.Size = new System.Drawing.Size(119, 23);
             this.BT_felhasznalofelvitel.TabIndex = 14;
             this.BT_felhasznalofelvitel.Text = "Felhasználó felvitele";
             this.BT_felhasznalofelvitel.UseVisualStyleBackColor = true;
             this.BT_felhasznalofelvitel.Click += new System.EventHandler(this.BT_felhasznalofelvitel_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kilépésToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // kilépésToolStripMenuItem
-            // 
-            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilépésToolStripMenuItem.Text = "Kilépés";
-            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
             // AdminForm
             // 
@@ -141,14 +121,10 @@ namespace Szakdolgozat
             this.Controls.Add(this.TB_nev);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LB_szerepkorok);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "AdminForm";
             this.Text = "Adminisztratori felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +140,5 @@ namespace Szakdolgozat
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TB_jelszo;
         private System.Windows.Forms.Button BT_felhasznalofelvitel;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
     }
 }

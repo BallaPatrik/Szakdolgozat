@@ -39,7 +39,9 @@ namespace Szakdolgozat.Main_Code
       
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new LoginForm());
+            new LoginForm().Show();
+            this.Hide();
+            
         }
 
         private void legyártottTermékekFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
