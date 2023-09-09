@@ -111,5 +111,10 @@ namespace Szakdolgozat
 
             //MySqlCommand cmd = new MySqlCommand(sql, conn);
         }
+
+        private void DGV_termekek_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -169,7 +169,7 @@ namespace Szakdolgozat
                 StringBuilder sb = new StringBuilder(datum);
                 sb[10] = ' ';
                 datum = sb.ToString();
-                int darabszam=-1;
+                int darabszam = -1;
 
 
                 foreach (DataGridViewRow row in DGV_products.Rows)
@@ -195,7 +195,7 @@ namespace Szakdolgozat
                     {
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Termek modositasa sikeres!");
-                        
+
                         selectDailyProductsFromDatabase();
                         //TB_darabszam.Text = darabszam.ToString();
                     }

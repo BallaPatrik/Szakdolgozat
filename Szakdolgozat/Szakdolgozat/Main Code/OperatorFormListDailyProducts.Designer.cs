@@ -32,6 +32,13 @@ namespace Szakdolgozat
             this.DGV_products = new System.Windows.Forms.DataGridView();
             this.Torles = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TB_darabszam = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TB_datum = new System.Windows.Forms.TextBox();
+            this.TB_termeknev = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_products)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +49,7 @@ namespace Szakdolgozat
             this.DGV_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Torles});
-            this.DGV_products.Location = new System.Drawing.Point(124, 104);
+            this.DGV_products.Location = new System.Drawing.Point(113, 50);
             this.DGV_products.Name = "DGV_products";
             this.DGV_products.Size = new System.Drawing.Size(469, 261);
             this.DGV_products.TabIndex = 18;
@@ -58,17 +65,81 @@ namespace Szakdolgozat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(121, 73);
+            this.label1.Location = new System.Drawing.Point(110, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "A mai nap folyamán felvitt termékek:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(484, 361);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Darabszám:";
+            // 
+            // TB_darabszam
+            // 
+            this.TB_darabszam.Location = new System.Drawing.Point(553, 358);
+            this.TB_darabszam.Name = "TB_darabszam";
+            this.TB_darabszam.Size = new System.Drawing.Size(100, 20);
+            this.TB_darabszam.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(318, 361);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Dátum:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(110, 361);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Terméknév:";
+            // 
+            // TB_datum
+            // 
+            this.TB_datum.Location = new System.Drawing.Point(365, 358);
+            this.TB_datum.Name = "TB_datum";
+            this.TB_datum.Size = new System.Drawing.Size(100, 20);
+            this.TB_datum.TabIndex = 29;
+            // 
+            // TB_termeknev
+            // 
+            this.TB_termeknev.Location = new System.Drawing.Point(187, 358);
+            this.TB_termeknev.Name = "TB_termeknev";
+            this.TB_termeknev.Size = new System.Drawing.Size(100, 20);
+            this.TB_termeknev.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(110, 327);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Módosítás (csak darabszámra működik):";
+            // 
             // OperatorFormListDailyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TB_darabszam);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TB_datum);
+            this.Controls.Add(this.TB_termeknev);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_products);
             this.Name = "OperatorFormListDailyProducts";
@@ -85,5 +156,12 @@ namespace Szakdolgozat
         private System.Windows.Forms.DataGridView DGV_products;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewButtonColumn Torles;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TB_darabszam;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TB_datum;
+        private System.Windows.Forms.TextBox TB_termeknev;
+        private System.Windows.Forms.Label label2;
     }
 }
