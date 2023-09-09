@@ -16,6 +16,9 @@ namespace Szakdolgozat
         public OperatorFormListDailyProducts()
         {
             InitializeComponent();
+			DGV_products.Columns.Add("Col2", "Termek");
+            DGV_products.Columns.Add("Col3", "Datum");
+            DGV_products.Columns.Add("Col4", "Darabszam");
         }
       
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,6 +42,11 @@ namespace Szakdolgozat
 
         private void selectDailyProductsFromDatabase()
         {
+			
+			DGV_products.Rows.Clear();
+
+            DGV_products.Refresh();
+			
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
@@ -141,8 +149,63 @@ namespace Szakdolgozat
 
                 conn.Close();
             }
+        }
+		
+		private void TB_darabszam_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Database db = new Database();
 
-            
+                MySqlConnection conn = db.getConnection();
+
+                conn.Open();
+
+                int eredetidb = Convert.ToInt32(TB_darabszam.Text);
+                string termek = TB_termeknev.Text;
+                string datumseged = TB_datum.Text;
+                string datum;
+                datum = datumseged.Replace(". ", "-");
+                StringBuilder sb = new StringBuilder(datum);
+                sb[10] = ' ';
+                datum = sb.ToString();
+                int darabszam=-1;
+
+
+                foreach (DataGridViewRow row in DGV_products.Rows)
+                {
+                    if (row.Cells[2].Value.ToString().Equals(datumseged))
+                    {
+                        darabszam = Convert.ToInt32(row.Cells[3].Value.ToString());
+                        break;
+                    }
+                }
+
+                if (darabszam == -1)
+                {
+                    MessageBox.Show("Ki kell választani terméket!");
+                }
+                else
+                {
+                    string sql = "update gyartas set db=" + eredetidb + " where datum='" + datum + "' and db=" + darabszam + " and termekid = (SELECT termekid FROM termekek WHERE nev = '" + termek + "')";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Termek modositasa sikeres!");
+                        
+                        selectDailyProductsFromDatabase();
+                        //TB_darabszam.Text = darabszam.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Modositas nem sikerult! Indoka: " + ex.Message);
+                    }
+                }
+                conn.Close();
+            }
 
         }
     }
