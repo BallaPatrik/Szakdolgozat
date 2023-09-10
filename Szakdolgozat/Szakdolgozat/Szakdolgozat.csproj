@@ -111,6 +111,12 @@
     <Compile Include="Main Code\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\OrderHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OrderHomeForm.Designer.cs">
+      <DependentUpon>OrderHomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Database.cs" />
     <Compile Include="Main Code\LoginForm.cs">
       <SubType>Form</SubType>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OperatorFormListDailyProducts.resx">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OrderHomeForm.resx">
+      <DependentUpon>OrderHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

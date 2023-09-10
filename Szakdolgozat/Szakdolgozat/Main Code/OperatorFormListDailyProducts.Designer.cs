@@ -53,7 +53,7 @@ namespace Szakdolgozat
             this.DGV_products.Name = "DGV_products";
             this.DGV_products.Size = new System.Drawing.Size(469, 261);
             this.DGV_products.TabIndex = 18;
-            this.DGV_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_products_CellContentClick);
+            this.DGV_products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_products_CellClick);
             // 
             // Torles
             // 
@@ -86,6 +86,7 @@ namespace Szakdolgozat
             this.TB_darabszam.Name = "TB_darabszam";
             this.TB_darabszam.Size = new System.Drawing.Size(100, 20);
             this.TB_darabszam.TabIndex = 32;
+            this.TB_darabszam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_darabszam_KeyDown);
             // 
             // label4
             // 

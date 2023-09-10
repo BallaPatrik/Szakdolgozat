@@ -69,9 +69,7 @@ namespace Szakdolgozat
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
-            DGV_products.Columns.Add("Col2", "Termek");
-            DGV_products.Columns.Add("Col3", "Datum");
-            DGV_products.Columns.Add("Col4", "Darabszam");
+           
 
             while (dr.Read())
             {
@@ -98,6 +96,7 @@ namespace Szakdolgozat
             }
 
             conn.Close();
+
         }
 
         private void OperatorFormListDailyProducts_Load(object sender, EventArgs e)
@@ -110,46 +109,7 @@ namespace Szakdolgozat
 
         }
 
-        private void DGV_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0 && DGV_products.Rows[e.RowIndex].Cells[1].Value != null)
-            {
-                string termek = DGV_products.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string datum = DGV_products.Rows[e.RowIndex].Cells[2].Value.ToString();
-                datum = datum.Replace(". ", "-");
-                int darabszam = Convert.ToInt32(DGV_products.Rows[e.RowIndex].Cells[3].Value.ToString());
-
-                //MessageBox.Show("Termék: " + termek + " dátum: " + datum + " darabszám: " + darabszam);
-
-
-                Database db = new Database();
-
-                MySqlConnection conn = db.getConnection();
-
-                conn.Open();
-
-                string sql = "delete from gyartas where datum='" + datum + "' and db=" + darabszam + " and termekid = (SELECT termekid FROM termekek WHERE nev = '" + termek + "')";
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                try
-                {
-
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Termek torlese sikeres!");
-                    DGV_products.Rows.RemoveAt(e.RowIndex);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Torles nem sikerult! Indoka: " + ex.Message);
-                }
-
-                conn.Close();
-            }
-        }
+       
 		
 		private void TB_darabszam_KeyDown(object sender, KeyEventArgs e)
         {
@@ -207,6 +167,62 @@ namespace Szakdolgozat
                 conn.Close();
             }
 
+        }
+
+        private void DGV_products_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            var senderGrid = (DataGridView)sender;
+
+            //senderGrid.ReadOnly = false;
+            senderGrid.Columns[1].ReadOnly = true;
+            senderGrid.Columns[2].ReadOnly = true;
+            senderGrid.Columns[3].ReadOnly = false;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0 && DGV_products.Rows[e.RowIndex].Cells[1].Value != null)
+            {
+                string termek = DGV_products.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string datum = DGV_products.Rows[e.RowIndex].Cells[2].Value.ToString();
+                datum = datum.Replace(". ", "-");
+                int darabszam = Convert.ToInt32(DGV_products.Rows[e.RowIndex].Cells[3].Value.ToString());
+
+
+
+                //MessageBox.Show("Termék: " + termek + " dátum: " + datum + " darabszám: " + darabszam);
+
+
+                Database db = new Database();
+
+                MySqlConnection conn = db.getConnection();
+
+                conn.Open();
+
+                string sql = "delete from gyartas where datum='" + datum + "' and db=" + darabszam + " and termekid = (SELECT termekid FROM termekek WHERE nev = '" + termek + "')";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                try
+                {
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Termek torlese sikeres!");
+                    DGV_products.Rows.RemoveAt(e.RowIndex);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Torles nem sikerult! Indoka: " + ex.Message);
+                }
+
+                conn.Close();
+            }
+
+            else if (e.RowIndex >= 0 && DGV_products.Rows[e.RowIndex].Cells[1].Value != null)
+            {
+                TB_termeknev.Text = DGV_products.Rows[e.RowIndex].Cells[1].Value.ToString();
+                TB_datum.Text = DGV_products.Rows[e.RowIndex].Cells[2].Value.ToString();
+                TB_darabszam.Text = DGV_products.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
         }
     }
 }

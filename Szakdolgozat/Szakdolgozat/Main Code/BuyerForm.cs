@@ -16,7 +16,10 @@ namespace Szakdolgozat
     {
         public BuyerForm()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            DGV_termekek.Columns.Add("Col2", "Termek");
+            DGV_termekek.Columns.Add("Col3", "Darab");
+            DGV_termekek.Columns.Add("Col3", "Arajanlat (Ft/db)");
         }
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,6 +37,11 @@ namespace Szakdolgozat
         private void getProductsFromDatabase()
         {
 
+            
+            DGV_termekek.Columns[0].ReadOnly = true;
+            DGV_termekek.Columns[1].ReadOnly = false;
+            DGV_termekek.Columns[2].ReadOnly = false;
+
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
@@ -45,9 +53,7 @@ namespace Szakdolgozat
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
-            DGV_termekek.Columns.Add("Col2", "Termek");
-            DGV_termekek.Columns.Add("Col3", "Darab");
-            DGV_termekek.Columns.Add("Col3", "Arajanlat (Ft-ban)");
+            
 
             while (dr.Read())
             {
@@ -66,6 +72,8 @@ namespace Szakdolgozat
                 DGV_termekek.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter; //fejlécek középre igazítása
                 DGV_termekek.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; //a többi cella középre igazítása
             }
+
+            DGV_termekek.Refresh();
 
             conn.Close();
         }
@@ -105,8 +113,8 @@ namespace Szakdolgozat
 
             if (dr.GetString(1).Contains(time.ToString(format)) == true)
 
+           
             */
-
                 
 
             //MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -115,6 +123,21 @@ namespace Szakdolgozat
         private void DGV_termekek_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void DGV_termekek_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 2 || e.ColumnIndex == 1)
+            {
+                int vegosszeg = 0;
+
+                foreach(DataGridViewRow row in DGV_termekek.Rows)
+                {
+                    vegosszeg += Convert.ToInt32(row.Cells[1].Value) * Convert.ToInt32(row.Cells[2].Value);
+                }
+
+                L_vegosszeg.Text = "Végösszeg: " + vegosszeg;
+            }
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Szakdolgozat
             // 
             this.TB_jelszo.Location = new System.Drawing.Point(333, 152);
             this.TB_jelszo.Name = "TB_jelszo";
+            this.TB_jelszo.PasswordChar = '*';
             this.TB_jelszo.Size = new System.Drawing.Size(100, 20);
             this.TB_jelszo.TabIndex = 10;
             // 

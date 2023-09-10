@@ -53,5 +53,10 @@ namespace Szakdolgozat.Main_Code
         {
             openChildForm(new OperatorFormListDailyProducts());
         }
+
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }

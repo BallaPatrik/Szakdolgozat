@@ -40,7 +40,7 @@ namespace Szakdolgozat
         {
             string nev = TB_felhnev.Text;
             string jelszo = TB_jelszo.Text;
-
+            string szerepkor = "";
             user.Name = nev;
             user.Jelszo = jelszo;
             
@@ -64,7 +64,7 @@ namespace Szakdolgozat
 
                     MySqlDataReader dr = cmd.ExecuteReader();
 
-                    string szerepkor = "";
+                    
 
                     while (dr.Read())
                     {
@@ -80,9 +80,7 @@ namespace Szakdolgozat
 
                     Transporter.getInstance().CurrentUser = user;
 
-                    this.Hide();
-                    AdminHomeForm form = new AdminHomeForm();
-                    form.Show();
+                    
                 }
                 if (szerepkorid == 3)
                 {
@@ -95,7 +93,7 @@ namespace Szakdolgozat
 
                     MySqlDataReader dr = cmd.ExecuteReader();
 
-                    string szerepkor = "";
+                    
 
                     while (dr.Read())
                     {
@@ -111,9 +109,7 @@ namespace Szakdolgozat
 
                     Transporter.getInstance().CurrentUser = user;
 
-                    this.Hide();
-                    BuyerForm form = new BuyerForm();
-                    form.Show();
+                    
                 }
                 if (szerepkorid == 2)
                 {
@@ -126,7 +122,7 @@ namespace Szakdolgozat
 
                     MySqlDataReader dr = cmd.ExecuteReader();
 
-                    string szerepkor = "";
+                    
 
                     while (dr.Read())
                     {
@@ -139,12 +135,10 @@ namespace Szakdolgozat
                     MessageBox.Show("Sikeres belepes " + szerepkor + "-kent!");
 
                     user.Felhasznaloid = Convert.ToInt32(dt.Rows[0][1].ToString());
-
                     Transporter.getInstance().CurrentUser = user;
 
-                    this.Hide();
-                    OfficeClerkForm form = new OfficeClerkForm();
-                    form.Show();
+
+                    
                 }
                 if (szerepkorid == 1)
                 {
@@ -157,7 +151,7 @@ namespace Szakdolgozat
 
                     MySqlDataReader dr = cmd.ExecuteReader();
 
-                    string szerepkor = "";
+                   
 
                     while (dr.Read())
                     {
@@ -170,49 +164,45 @@ namespace Szakdolgozat
                     MessageBox.Show("Sikeres belepes " + szerepkor + "-kent!");
 
                     user.Felhasznaloid = Convert.ToInt32(dt.Rows[0][1].ToString());
-
                     Transporter.getInstance().CurrentUser = user;
-
-
-                    switch (szerepkor)
-                    {
-                        case "Operátor":
-                            {
-                                this.Hide();
-                                HomeForm form = new HomeForm();
-                                form.Show();
-                            }
-                            break;
-                        case "Irodista":
-                            {
-                                this.Hide();
-                                OfficeClerkForm form = new OfficeClerkForm();
-                                form.Show();
-                            }
-                            break;
-                        case "Megrendelő":
-                            {
-                                this.Hide();
-                                BuyerForm form = new BuyerForm();
-                                form.Show();
-                            }
-                            break;
-                        case "Adminisztrátor":
-                            {
-                                this.Hide();
-                                AdminHomeForm form = new AdminHomeForm();
-                                form.Show();
-                            }
-                            break;
-                        default:
-                            {
-                                MessageBox.Show("Nincs jogosultsága!");
-                            }
-                            break;
-                    }
                 }
 
-
+                switch (szerepkor)
+                {
+                    case "Operátor":
+                        {
+                            this.Hide();
+                            HomeForm form = new HomeForm();
+                            form.Show();
+                        }
+                        break;
+                    case "Irodista":
+                        {
+                            this.Hide();
+                            OfficeClerkForm form = new OfficeClerkForm();
+                            form.Show();
+                        }
+                        break;
+                    case "Megrendelő":
+                        {
+                            this.Hide();
+                            BuyerForm form = new BuyerForm();
+                            form.Show();
+                        }
+                        break;
+                    case "Adminisztrátor":
+                        {
+                            this.Hide();
+                            AdminHomeForm form = new AdminHomeForm();
+                            form.Show();
+                        }
+                        break;
+                    default:
+                        {
+                            MessageBox.Show("Nincs jogosultsága!");
+                        }
+                        break;
+                }
 
             }
             catch (Exception ex)

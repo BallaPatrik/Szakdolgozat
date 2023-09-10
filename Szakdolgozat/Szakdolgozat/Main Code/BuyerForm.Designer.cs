@@ -32,6 +32,7 @@ namespace Szakdolgozat
             this.Megrendelés = new System.Windows.Forms.Button();
             this.DGV_termekek = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.L_vegosszeg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_termekek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@ namespace Szakdolgozat
             this.Megrendelés.TabIndex = 28;
             this.Megrendelés.Text = "Megrendelés";
             this.Megrendelés.UseVisualStyleBackColor = true;
+            this.Megrendelés.Click += new System.EventHandler(this.Megrendelés_Click);
             // 
             // DGV_termekek
             // 
@@ -54,6 +56,7 @@ namespace Szakdolgozat
             this.DGV_termekek.Size = new System.Drawing.Size(408, 232);
             this.DGV_termekek.TabIndex = 27;
             this.DGV_termekek.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_termekek_CellContentClick);
+            this.DGV_termekek.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_termekek_CellValueChanged);
             // 
             // label2
             // 
@@ -65,17 +68,28 @@ namespace Szakdolgozat
             this.label2.TabIndex = 26;
             this.label2.Text = "Megrendelői felület";
             // 
+            // L_vegosszeg
+            // 
+            this.L_vegosszeg.AutoSize = true;
+            this.L_vegosszeg.Location = new System.Drawing.Point(615, 106);
+            this.L_vegosszeg.Name = "L_vegosszeg";
+            this.L_vegosszeg.Size = new System.Drawing.Size(71, 13);
+            this.L_vegosszeg.TabIndex = 29;
+            this.L_vegosszeg.Text = "Végösszeg: 0";
+            // 
             // BuyerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.L_vegosszeg);
             this.Controls.Add(this.Megrendelés);
             this.Controls.Add(this.DGV_termekek);
             this.Controls.Add(this.label2);
             this.Name = "BuyerForm";
             this.Text = "Megrendeloi felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BuyerForm_FormClosed);
+            this.Load += new System.EventHandler(this.BuyerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_termekek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +101,6 @@ namespace Szakdolgozat
         private System.Windows.Forms.Button Megrendelés;
         private System.Windows.Forms.DataGridView DGV_termekek;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label L_vegosszeg;
     }
 }
