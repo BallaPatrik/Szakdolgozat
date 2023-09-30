@@ -15,6 +15,26 @@ namespace Szakdolgozat
         public OfficeClerkForm()
         {
             InitializeComponent();
+            openChildForm(new OfficeClerkFormAddParts());
+        }
+
+        private static Form activeForm = null;
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Hide();
+            }
+
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(childForm);
+            panelContent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)

@@ -207,6 +207,7 @@ namespace Szakdolgozat
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Sikertelen belépés!");
                 dt.Clear();
             }
