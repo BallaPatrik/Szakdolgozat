@@ -143,6 +143,12 @@
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\Program.cs" />
+    <Compile Include="Main Code\OfficeClerkFormAddPartsQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OfficeClerkFormAddPartsQuantity.Designer.cs">
+      <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="OfficeClerkFormAddParts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OrderHomeForm.resx">
       <DependentUpon>OrderHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OfficeClerkFormAddPartsQuantity.resx">
+      <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfficeClerkFormAddParts.resx">
       <DependentUpon>OfficeClerkFormAddParts.cs</DependentUpon>

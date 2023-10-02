@@ -15,7 +15,6 @@ namespace Szakdolgozat
         public OfficeClerkForm()
         {
             InitializeComponent();
-            openChildForm(new OfficeClerkFormAddParts());
         }
 
         private static Form activeForm = null;
@@ -39,7 +38,7 @@ namespace Szakdolgozat
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //LoginForm form = new LoginForm();
+            LoginForm form = new LoginForm();
             form.Show();
             this.Hide();
         }
@@ -47,6 +46,16 @@ namespace Szakdolgozat
         private void OfficeClerkForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
+        }
+
+        private void alkatrészTermékhezRendeléseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OfficeClerkFormAddParts());
+        }
+
+        private void alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OfficeClerkFormAddPartsQuantity());
         }
     }
 }

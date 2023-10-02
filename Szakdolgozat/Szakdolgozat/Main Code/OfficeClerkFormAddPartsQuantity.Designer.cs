@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat
 {
-    partial class OfficeClerkFormAddParts
+    partial class OfficeClerkFormAddPartsQuantity
     {
         /// <summary>
         /// Required designer variable.
@@ -87,13 +87,13 @@ namespace Szakdolgozat
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(222, 67);
+            this.label3.Location = new System.Drawing.Point(167, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(333, 24);
+            this.label3.Size = new System.Drawing.Size(470, 24);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Alkatrész hozzárendelése a termékhez";
+            this.label3.Text = "Alkatrész darabszámának hozzárendelése a termékhez";
             // 
-            // OfficeClerkFormAddParts
+            // OfficeClerkFormAddPartsQuantity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +104,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DGV_parts);
-            this.Name = "OfficeClerkFormAddParts";
+            this.Name = "OfficeClerkFormAddPartsQuantity";
             this.Text = "OfficeClerkFormAddParts";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_parts)).EndInit();
             this.ResumeLayout(false);

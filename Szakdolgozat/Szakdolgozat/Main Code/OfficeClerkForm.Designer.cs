@@ -31,8 +31,9 @@ namespace Szakdolgozat
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.alkatrészTermékhezRendeléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@ namespace Szakdolgozat
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kilépésToolStripMenuItem,
-            this.alkatrészTermékhezRendeléseToolStripMenuItem});
+            this.alkatrészTermékhezRendeléseToolStripMenuItem,
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -54,6 +56,13 @@ namespace Szakdolgozat
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
+            // alkatrészTermékhezRendeléseToolStripMenuItem
+            // 
+            this.alkatrészTermékhezRendeléseToolStripMenuItem.Name = "alkatrészTermékhezRendeléseToolStripMenuItem";
+            this.alkatrészTermékhezRendeléseToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
+            this.alkatrészTermékhezRendeléseToolStripMenuItem.Text = "Alkatrész termékhez rendelése";
+            this.alkatrészTermékhezRendeléseToolStripMenuItem.Click += new System.EventHandler(this.alkatrészTermékhezRendeléseToolStripMenuItem_Click);
+            // 
             // panelContent
             // 
             this.panelContent.Location = new System.Drawing.Point(13, 41);
@@ -61,11 +70,12 @@ namespace Szakdolgozat
             this.panelContent.Size = new System.Drawing.Size(775, 397);
             this.panelContent.TabIndex = 19;
             // 
-            // alkatrészTermékhezRendeléseToolStripMenuItem
+            // alkatrészekDarabszámánakBeállításaToolStripMenuItem
             // 
-            this.alkatrészTermékhezRendeléseToolStripMenuItem.Name = "alkatrészTermékhezRendeléseToolStripMenuItem";
-            this.alkatrészTermékhezRendeléseToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
-            this.alkatrészTermékhezRendeléseToolStripMenuItem.Text = "Alkatrész termékhez rendelése";
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Name = "alkatrészekDarabszámánakBeállításaToolStripMenuItem";
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Size = new System.Drawing.Size(215, 20);
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Text = "Alkatrészek darabszámának beállítása";
+            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Click += new System.EventHandler(this.alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click);
             // 
             // OfficeClerkForm
             // 
@@ -89,5 +99,6 @@ namespace Szakdolgozat
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.ToolStripMenuItem alkatrészTermékhezRendeléseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alkatrészekDarabszámánakBeállításaToolStripMenuItem;
     }
 }

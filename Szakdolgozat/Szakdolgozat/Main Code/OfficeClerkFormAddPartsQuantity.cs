@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Szakdolgozat
 {
-    public partial class OfficeClerkFormAddParts : Form
+    public partial class OfficeClerkFormAddPartsQuantity : Form
     {
-        public OfficeClerkFormAddParts()
+        public OfficeClerkFormAddPartsQuantity()
         {
             InitializeComponent();
             DGV_parts.Columns.Add("Col2", "Nev");
@@ -98,14 +98,11 @@ namespace Szakdolgozat
                 DGV_parts.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; //a többi cella középre igazítása
             }
 
-
-
             conn.Close();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             updateParts(Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
         }
 
@@ -117,7 +114,6 @@ namespace Szakdolgozat
 
             MySqlConnection conn = db.getConnection();
             bool worked = false;
-
 
             conn.Open();
 
@@ -137,8 +133,6 @@ namespace Szakdolgozat
                         worked = true;
                     }
                 }
-                
-                 
             }
 
             if (worked) { MessageBox.Show("Sikeres módosítás!"); }
