@@ -18,10 +18,6 @@ namespace Szakdolgozat.Main_Code
             InitializeComponent();
         }
 
-        
-
-        
-
         private void loadRoles()
         {
             Database db = new Database();

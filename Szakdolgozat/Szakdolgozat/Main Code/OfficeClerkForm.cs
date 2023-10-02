@@ -39,7 +39,7 @@ namespace Szakdolgozat
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginForm form = new LoginForm();
+            //LoginForm form = new LoginForm();
             form.Show();
             this.Hide();
         }

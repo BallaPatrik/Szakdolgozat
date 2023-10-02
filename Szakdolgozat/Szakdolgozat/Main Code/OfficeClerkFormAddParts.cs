@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Szakdolgozat
 {
@@ -109,6 +109,8 @@ namespace Szakdolgozat
             updateParts(Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
         }
 
+        //Confirm gomb funkció
+
         private void BT_confirm_Click(object sender, EventArgs e)
         {
             Database db = new Database();
@@ -172,8 +174,6 @@ namespace Szakdolgozat
 
             return sum;
         }
-
-        //Confirm gomb funkció
 
     }
 }
