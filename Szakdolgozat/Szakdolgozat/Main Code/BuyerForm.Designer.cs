@@ -33,7 +33,9 @@ namespace Szakdolgozat
             this.DGV_termekek = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.L_vegosszeg = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_termekek)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Megrendelés
@@ -77,11 +79,20 @@ namespace Szakdolgozat
             this.L_vegosszeg.TabIndex = 29;
             this.L_vegosszeg.Text = "Végösszeg: 0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(64, 68);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(268, 270);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
             // BuyerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.L_vegosszeg);
             this.Controls.Add(this.Megrendelés);
             this.Controls.Add(this.DGV_termekek);
@@ -91,6 +102,7 @@ namespace Szakdolgozat
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BuyerForm_FormClosed);
             this.Load += new System.EventHandler(this.BuyerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_termekek)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +114,6 @@ namespace Szakdolgozat
         private System.Windows.Forms.DataGridView DGV_termekek;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label L_vegosszeg;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -17,11 +17,9 @@ namespace Szakdolgozat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-
-
-
-            Application.Run(new OfficeClerkFormAddParts());
+            Application.Run(new LoginForm());
+            
+            //Application.Run(new BuyerForm());
         }
     }
 }
