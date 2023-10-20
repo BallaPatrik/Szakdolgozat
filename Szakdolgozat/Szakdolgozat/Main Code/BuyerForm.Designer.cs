@@ -81,9 +81,9 @@ namespace Szakdolgozat
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(64, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(618, 175);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(268, 270);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 109);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 

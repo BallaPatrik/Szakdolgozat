@@ -101,35 +101,121 @@ namespace Szakdolgozat
 
             MySqlConnection conn = db.getConnection();
 
-            MySqlCommand cmd;
+            MySqlCommand cmd, cmd2;
 
             conn.Open();
 
-            int rendelesid;
             int userid = Transporter.getInstance().CurrentUser.Felhasznaloid;
-            string datum;
+
+            DateTime datum = DateTime.Now;
+
+            string format = "yyyy-MM-dd HH:mm:ss";
+
             string allapot = "Elbírálás alatt";
-            int bevetel = 0;
 
-            DateTime time = DateTime.Now;
+            int bevetel = Convert.ToInt32(L_vegosszeg.Text.Split(':')[1]);
 
-            //MessageBox.Show(time.ToString());
+            string sql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
+
+            string rendelesidsql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
+
+            cmd = new MySqlCommand(sql, conn);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Megrendelés sikeres!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Megrendelés sikertelen! Indoka: " + ex.Message);
+            }
+
+            int rendelesid = 0;
+
+            List<string> termekek = new List<string>();
+
+            string sql2 = "select rendelesid FROM rendelesek GROUP BY rendelesid DESC LIMIT 1";
+            cmd2 = new MySqlCommand(sql2, conn);
+
+            MySqlDataReader dr = cmd2.ExecuteReader();
+
+
+            while (dr.Read())
+            {
+                rendelesid = dr.GetInt32(0);
+            }
+
+            List<int> darabszamok = new List<int>();
+
+            foreach (DataGridViewRow elem in DGV_termekek.Rows)
+            {
+                if (!elem.Cells[3].Value.ToString().Equals("0"))
+                {
+                    termekek.Add(elem.Cells[0].Value.ToString());
+                    darabszamok.Add(Convert.ToInt32(elem.Cells[3].Value));
+                }
+            }
+
+            conn.Close();
+
+            List<int> termekidk = new List<int>();
+
+            foreach (var elem in termekek)
+            {
+                conn.Open();
+                string sql3 = "SELECT termekid FROM termekek WHERE nev='" + elem + "'";
+                MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
+                MySqlDataReader dr3 = cmd3.ExecuteReader();
+
+                while (dr3.Read())
+                {
+                    termekidk.Add(dr3.GetInt32(0));
+                }
+
+                conn.Close();
+            }
+
+            Dictionary<int, int> termekidkdarabszammal = new Dictionary<int, int>();
+
+            for (int i = 0; i < termekidk.Count; i++)
+            {
+                termekidkdarabszammal.Add(termekidk[i], darabszamok[i]);
+            }
+
+            foreach (var elem in termekidkdarabszammal) 
+            {
+                conn.Open();
+                string sql4 = "INSERT INTO rendeles_termekek(rendelesid, termekid, db) VALUES(" + rendelesid + ", " + elem.Key + ", " + elem.Value + ")";
+                MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
+                try
+                {
+                    cmd4.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("A megrendelés nem sikerült! Indoka: " + ex.Message);
+                }
+                conn.Close();
+            }
+
 
             //QRKÓD működése
 
 
-            
-             
-             
+
+
+
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode("The text which should be encoded.", QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(5);
+            Bitmap qrCodeImage = qrCode.GetGraphic(2);
 
-            pictureBox1.Image = qrCodeImage; 
+            pictureBox1.Image = qrCodeImage;
 
-             
-             
+
+
 
 
 
