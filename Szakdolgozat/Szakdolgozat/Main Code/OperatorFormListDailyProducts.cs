@@ -35,7 +35,7 @@ namespace Szakdolgozat
 
         private void legyártottTermékekFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OperatorForm form = new OperatorForm();
+            OperatorFormUploadDailyDoneProducts form = new OperatorFormUploadDailyDoneProducts();
             form.Show();
             this.Hide();
         }

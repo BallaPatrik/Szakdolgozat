@@ -12,9 +12,9 @@ using System.Globalization;
 
 namespace Szakdolgozat
 {
-    public partial class OperatorForm : Form
+    public partial class OperatorFormUploadDailyDoneProducts : Form
     {
-        public OperatorForm()
+        public OperatorFormUploadDailyDoneProducts()
         {
             InitializeComponent();
         }

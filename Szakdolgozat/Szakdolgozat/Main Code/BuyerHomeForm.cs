@@ -56,5 +56,10 @@ namespace Szakdolgozat.Main_Code
         {
             System.Environment.Exit(0);
         }
+
+        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ChangePasswordForm());
+        }
     }
 }

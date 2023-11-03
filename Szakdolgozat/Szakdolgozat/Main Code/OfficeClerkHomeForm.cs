@@ -54,5 +54,10 @@ namespace Szakdolgozat
         {
             openChildForm(new OfficeClerkFormAddPartsQuantity());
         }
+
+        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.ChangePasswordForm());
+        }
     }
 }

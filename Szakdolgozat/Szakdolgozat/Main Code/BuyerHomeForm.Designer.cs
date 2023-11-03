@@ -34,6 +34,7 @@ namespace Szakdolgozat.Main_Code
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.megrendelésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eddigiRendelésekMegtekintéseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@ namespace Szakdolgozat.Main_Code
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kilépésToolStripMenuItem,
             this.megrendelésToolStripMenuItem,
-            this.eddigiRendelésekMegtekintéseToolStripMenuItem});
+            this.eddigiRendelésekMegtekintéseToolStripMenuItem,
+            this.jelszóváltoztatásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -77,6 +79,13 @@ namespace Szakdolgozat.Main_Code
             this.eddigiRendelésekMegtekintéseToolStripMenuItem.Text = "Eddigi rendelések megtekintése";
             this.eddigiRendelésekMegtekintéseToolStripMenuItem.Click += new System.EventHandler(this.eddigiRendelésekMegtekintéseToolStripMenuItem_Click);
             // 
+            // jelszóváltoztatásToolStripMenuItem
+            // 
+            this.jelszóváltoztatásToolStripMenuItem.Name = "jelszóváltoztatásToolStripMenuItem";
+            this.jelszóváltoztatásToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
+            this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
+            // 
             // BuyerHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,5 +110,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem megrendelésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eddigiRendelésekMegtekintéseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
     }
 }

@@ -66,5 +66,10 @@ namespace Szakdolgozat.Main_Code
         {
             openChildForm(new AdminFormAddParts());
         }
+
+        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ChangePasswordForm());
+        }
     }
 }

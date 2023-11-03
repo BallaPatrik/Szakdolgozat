@@ -31,9 +31,10 @@ namespace Szakdolgozat.Main_Code
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.legyártottTermékekFelviteleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maFelvittTermékekListázásaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +48,22 @@ namespace Szakdolgozat.Main_Code
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kilépésToolStripMenuItem,
             this.legyártottTermékekFelviteleToolStripMenuItem,
             this.maFelvittTermékekListázásaToolStripMenuItem,
-            this.kilépésToolStripMenuItem});
+            this.jelszóváltoztatásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kilépésToolStripMenuItem
+            // 
+            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.kilépésToolStripMenuItem.Text = "Kilépés";
+            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
             // legyártottTermékekFelviteleToolStripMenuItem
             // 
@@ -70,12 +79,12 @@ namespace Szakdolgozat.Main_Code
             this.maFelvittTermékekListázásaToolStripMenuItem.Text = "Ma felvitt termékek listázása";
             this.maFelvittTermékekListázásaToolStripMenuItem.Click += new System.EventHandler(this.maFelvittTermékekListázásaToolStripMenuItem_Click);
             // 
-            // kilépésToolStripMenuItem
+            // jelszóváltoztatásToolStripMenuItem
             // 
-            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilépésToolStripMenuItem.Text = "Kilépés";
-            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
+            this.jelszóváltoztatásToolStripMenuItem.Name = "jelszóváltoztatásToolStripMenuItem";
+            this.jelszóváltoztatásToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
+            this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
             // 
             // OperatorHomeForm
             // 
@@ -102,5 +111,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.ToolStripMenuItem legyártottTermékekFelviteleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maFelvittTermékekListázásaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
     }
 }

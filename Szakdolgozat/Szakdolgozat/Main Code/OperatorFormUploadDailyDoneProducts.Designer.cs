@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat
 {
-    partial class OperatorForm
+    partial class OperatorFormUploadDailyDoneProducts
     {
         /// <summary>
         /// Required designer variable.
@@ -80,7 +80,7 @@ namespace Szakdolgozat
             this.BT_termekfelvitele.UseVisualStyleBackColor = true;
             this.BT_termekfelvitele.Click += new System.EventHandler(this.BT_termekfelvitele_Click);
             // 
-            // OperatorForm
+            // OperatorFormUploadDailyDoneProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +90,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TB_darabszam);
             this.Controls.Add(this.LB_termekek);
-            this.Name = "OperatorForm";
+            this.Name = "OperatorFormUploadDailyDoneProducts";
             this.Text = "Operatori felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OperatorForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

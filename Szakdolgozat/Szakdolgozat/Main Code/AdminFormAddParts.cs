@@ -31,10 +31,6 @@ namespace Szakdolgozat
 
             MySqlCommand cmd;
 
-            MySqlDataAdapter sda;
-
-            DataTable dt;
-
             conn.Open();
 
             cmd = new MySqlCommand("select * from termekek", conn);

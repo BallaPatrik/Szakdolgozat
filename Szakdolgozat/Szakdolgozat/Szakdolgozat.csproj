@@ -123,11 +123,23 @@
     <Compile Include="Main Code\AdminFormDeleteUser.Designer.cs">
       <DependentUpon>AdminFormDeleteUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\OperatorHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Code\OperatorHomeForm.Designer.cs">
       <DependentUpon>OperatorHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\SupplierFormSellParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\SupplierFormSellParts.Designer.cs">
+      <DependentUpon>SupplierFormSellParts.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\SupplierHomeForm.cs">
       <SubType>Form</SubType>
@@ -148,11 +160,11 @@
     <Compile Include="Main Code\OfficeClerkHomeForm.Designer.cs">
       <DependentUpon>OfficeClerkHomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\OperatorForm.cs">
+    <Compile Include="Main Code\OperatorFormUploadDailyDoneProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\OperatorForm.Designer.cs">
-      <DependentUpon>OperatorForm.cs</DependentUpon>
+    <Compile Include="Main Code\OperatorFormUploadDailyDoneProducts.Designer.cs">
+      <DependentUpon>OperatorFormUploadDailyDoneProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\OperatorFormListDailyProducts.cs">
       <SubType>Form</SubType>
@@ -194,6 +206,9 @@
     <EmbeddedResource Include="Main Code\AdminFormDeleteUser.resx">
       <DependentUpon>AdminFormDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OperatorHomeForm.resx">
       <DependentUpon>OperatorHomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,8 +218,8 @@
     <EmbeddedResource Include="Main Code\OfficeClerkHomeForm.resx">
       <DependentUpon>OfficeClerkHomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\OperatorForm.resx">
-      <DependentUpon>OperatorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\OperatorFormUploadDailyDoneProducts.resx">
+      <DependentUpon>OperatorFormUploadDailyDoneProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OperatorFormListDailyProducts.resx">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
@@ -214,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\AdminFormAddParts.resx">
       <DependentUpon>AdminFormAddParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\SupplierFormSellParts.resx">
+      <DependentUpon>SupplierFormSellParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\SupplierHomeForm.resx">
       <DependentUpon>SupplierHomeForm.cs</DependentUpon>
