@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat
 {
-    partial class OfficeClerkFormAddParts
+    partial class AdminFormAddParts
     {
         /// <summary>
         /// Required designer variable.
@@ -147,7 +147,7 @@ namespace Szakdolgozat
             this.label6.TabIndex = 17;
             this.label6.Text = "1 termék megcsinálásához hány darab kell?";
             // 
-            // OfficeClerkFormAddParts
+            // AdminFormAddParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,8 +164,8 @@ namespace Szakdolgozat
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_parts);
-            this.Name = "OfficeClerkFormAddParts";
-            this.Text = "OfficeClerkFormAddParts";
+            this.Name = "AdminFormAddParts";
+            this.Text = "AdminFormAddParts";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_parts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

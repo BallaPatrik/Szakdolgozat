@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat
 {
-    partial class BuyerForm
+    partial class BuyerFormOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@ namespace Szakdolgozat
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // BuyerForm
+            // BuyerFormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +97,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.Megrendelés);
             this.Controls.Add(this.DGV_termekek);
             this.Controls.Add(this.label2);
-            this.Name = "BuyerForm";
+            this.Name = "BuyerFormOrder";
             this.Text = "Megrendeloi felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BuyerForm_FormClosed);
             this.Load += new System.EventHandler(this.BuyerForm_Load);

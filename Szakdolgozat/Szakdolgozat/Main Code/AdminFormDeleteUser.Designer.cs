@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat.Main_Code
 {
-    partial class DeleteUserAdminForm
+    partial class AdminFormDeleteUser
     {
         /// <summary>
         /// Required designer variable.
@@ -76,7 +76,7 @@ namespace Szakdolgozat.Main_Code
             this.dataGridView1.Size = new System.Drawing.Size(463, 242);
             this.dataGridView1.TabIndex = 23;
             // 
-            // DeleteUserAdminForm
+            // AdminFormDeleteUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,8 +84,9 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BT_felhasznalotorles);
             this.Controls.Add(this.label4);
-            this.Name = "DeleteUserAdminForm";
+            this.Name = "AdminFormDeleteUser";
             this.Text = "DeleteUserAdminForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminFormDeleteUser_FormClosed);
             this.Load += new System.EventHandler(this.DeleteUserAdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

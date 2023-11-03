@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Szakdolgozat.Main_Code
 {
-    public partial class HomeForm : Form
+    public partial class OperatorHomeForm : Form
     {
-        public HomeForm()
+        public OperatorHomeForm()
         {
             InitializeComponent();
             openChildForm(new OperatorForm());

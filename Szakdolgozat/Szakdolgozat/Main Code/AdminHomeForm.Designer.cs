@@ -31,9 +31,10 @@ namespace Szakdolgozat.Main_Code
         {
             this.panelContent = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasználóFelviteleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasználóTörléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +48,22 @@ namespace Szakdolgozat.Main_Code
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kilépésToolStripMenuItem,
             this.felhasználóFelviteleToolStripMenuItem,
             this.felhasználóTörléseToolStripMenuItem,
-            this.kilépésToolStripMenuItem});
+            this.alkToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kilépésToolStripMenuItem
+            // 
+            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
+            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.kilépésToolStripMenuItem.Text = "Kilépés";
+            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
             // felhasználóFelviteleToolStripMenuItem
             // 
@@ -70,14 +79,14 @@ namespace Szakdolgozat.Main_Code
             this.felhasználóTörléseToolStripMenuItem.Text = "Felhasználó törlése";
             this.felhasználóTörléseToolStripMenuItem.Click += new System.EventHandler(this.felhasználóTörléseToolStripMenuItem_Click);
             // 
-            // kilépésToolStripMenuItem
+            // alkToolStripMenuItem
             // 
-            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilépésToolStripMenuItem.Text = "Kilépés";
-            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
+            this.alkToolStripMenuItem.Name = "alkToolStripMenuItem";
+            this.alkToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
+            this.alkToolStripMenuItem.Text = "Alkatrész termékhez rendelése";
+            this.alkToolStripMenuItem.Click += new System.EventHandler(this.alkToolStripMenuItem_Click);
             // 
-            // AdminForm
+            // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,8 +94,10 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.Name = "AdminHomeForm";
+            this.Text = "Adminisztratori felulet";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHomeForm_FormClosed);
+            this.Load += new System.EventHandler(this.AdminHomeForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -101,5 +112,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.ToolStripMenuItem felhasználóFelviteleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem felhasználóTörléseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alkToolStripMenuItem;
     }
 }

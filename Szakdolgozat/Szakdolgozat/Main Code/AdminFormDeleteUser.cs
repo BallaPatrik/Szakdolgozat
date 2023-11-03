@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Szakdolgozat.Main_Code
 {
-    public partial class DeleteUserAdminForm : Form
+    public partial class AdminFormDeleteUser : Form
     {
-        public DeleteUserAdminForm()
+        public AdminFormDeleteUser()
         {
             InitializeComponent();
             updateUsers();
@@ -98,6 +98,11 @@ namespace Szakdolgozat.Main_Code
             {
                 MessageBox.Show("Kérlek válassz ki egy törlendő elemet!");
             }
+        }
+
+        private void AdminFormDeleteUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
         }
     }
 }

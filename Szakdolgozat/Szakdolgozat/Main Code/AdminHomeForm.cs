@@ -38,18 +38,33 @@ namespace Szakdolgozat.Main_Code
 
         private void felhasználóFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new Szakdolgozat.Main_Code.AdminForm());
+            openChildForm(new Szakdolgozat.Main_Code.AdminFormAddUser());
         }
 
         private void felhasználóTörléseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new DeleteUserAdminForm());
+            openChildForm(new AdminFormDeleteUser());
         }
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new LoginForm().Show();
             this.Hide();
+        }
+
+        private void AdminHomeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
+
+        private void AdminHomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AdminFormAddParts());
         }
     }
 }

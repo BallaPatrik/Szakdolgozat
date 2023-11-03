@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Szakdolgozat.Main_Code
 {
-    public partial class AdminForm : Form
+    public partial class AdminFormAddUser : Form
     {
-        public AdminForm()
+        public AdminFormAddUser()
         {
             InitializeComponent();
         }

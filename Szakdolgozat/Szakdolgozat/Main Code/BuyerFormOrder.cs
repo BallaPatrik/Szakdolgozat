@@ -13,9 +13,9 @@ using QRCoder;
 
 namespace Szakdolgozat
 {
-    public partial class BuyerForm : Form
+    public partial class BuyerFormOrder : Form
     {
-        public BuyerForm()
+        public BuyerFormOrder()
         {
             InitializeComponent(); 
             DGV_termekek.Columns.Add("Col1", "Termek");
@@ -23,6 +23,8 @@ namespace Szakdolgozat
             DGV_termekek.Columns.Add("Col3", "Arajanlat (Ft/db)");
             DGV_termekek.Columns.Add("Col4", "Darab");
         }
+
+        
 
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -214,25 +216,6 @@ namespace Szakdolgozat
 
             pictureBox1.Image = qrCodeImage;
 
-
-
-
-
-
-
-            /*
-
-            string format = "yyyy. MM. dd";
-
-            string sql = "delete from gyartas where datum='" + datum + "' and db=" + darabszam + " and termekid = (SELECT termekid FROM termekek WHERE nev = '" + termek + "')";
-
-            if (dr.GetString(1).Contains(time.ToString(format)) == true)
-
-           
-            */
-
-
-            //MySqlCommand cmd = new MySqlCommand(sql, conn);
         }
 
         private void DGV_termekek_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -253,6 +236,21 @@ namespace Szakdolgozat
 
                 L_vegosszeg.Text = "Végösszeg: " + vegosszeg;
             }
+        }
+
+        private void megrendelésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void kilépésToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eddigiRendelésekMegtekintéseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

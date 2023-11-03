@@ -53,6 +53,37 @@ namespace Szakdolgozat
             try
             {
                 int szerepkorid = Convert.ToInt32(dt.Rows[0][0].ToString());
+
+                if (szerepkorid == 5)
+                {
+                    MySqlConnection conn = db.getConnection();
+
+                    conn.Open();
+
+                    string sql = "select szerepkor from szerepkorok where szerepkorid=" + szerepkorid;
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    MySqlDataReader dr = cmd.ExecuteReader();
+
+
+
+                    while (dr.Read())
+                    {
+                        szerepkor = dr.GetString(0);
+                    }
+
+                    conn.Close();
+
+
+                    MessageBox.Show("Sikeres belepes " + szerepkor + "-kent!");
+
+                    user.Felhasznaloid = Convert.ToInt32(dt.Rows[0][1].ToString());
+
+                    Transporter.getInstance().CurrentUser = user;
+
+
+                }
+
                 if (szerepkorid == 4)
                 {
                     MySqlConnection conn = db.getConnection();
@@ -169,24 +200,31 @@ namespace Szakdolgozat
 
                 switch (szerepkor)
                 {
+                    case "Beszállító":
+                        {
+                            this.Hide();
+                            SupplierHomeForm form = new SupplierHomeForm();
+                            form.Show();
+                        }
+                        break;
                     case "Operátor":
                         {
                             this.Hide();
-                            HomeForm form = new HomeForm();
+                            OperatorHomeForm form = new OperatorHomeForm();
                             form.Show();
                         }
                         break;
                     case "Irodista":
                         {
                             this.Hide();
-                            OfficeClerkForm form = new OfficeClerkForm();
+                            OfficeClerkHomeForm form = new OfficeClerkHomeForm();
                             form.Show();
                         }
                         break;
                     case "Megrendelő":
                         {
                             this.Hide();
-                            BuyerForm form = new BuyerForm();
+                            BuyerHomeForm form = new BuyerHomeForm();
                             form.Show();
                         }
                         break;
@@ -207,7 +245,6 @@ namespace Szakdolgozat
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show("Sikertelen belépés!");
                 dt.Clear();
             }

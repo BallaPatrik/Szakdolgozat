@@ -87,11 +87,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main Code\AddUserAdminForm.cs">
+    <Compile Include="Main Code\AdminFormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\AddUserAdminForm.Designer.cs">
-      <DependentUpon>AddUserAdminForm.cs</DependentUpon>
+    <Compile Include="Main Code\AdminFormAddUser.Designer.cs">
+      <DependentUpon>AdminFormAddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\AdminHomeForm.cs">
       <SubType>Form</SubType>
@@ -99,29 +99,41 @@
     <Compile Include="Main Code\AdminHomeForm.Designer.cs">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\BuyerForm.cs">
+    <Compile Include="Main Code\BuyerFormListOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\BuyerForm.Designer.cs">
-      <DependentUpon>BuyerForm.cs</DependentUpon>
+    <Compile Include="Main Code\BuyerFormListOrders.Designer.cs">
+      <DependentUpon>BuyerFormListOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\DeleteUserAdminForm.cs">
+    <Compile Include="Main Code\BuyerFormOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\DeleteUserAdminForm.Designer.cs">
-      <DependentUpon>DeleteUserAdminForm.cs</DependentUpon>
+    <Compile Include="Main Code\BuyerFormOrder.Designer.cs">
+      <DependentUpon>BuyerFormOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\HomeForm.cs">
+    <Compile Include="Main Code\BuyerHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <Compile Include="Main Code\BuyerHomeForm.Designer.cs">
+      <DependentUpon>BuyerHomeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\OrderHomeForm.cs">
+    <Compile Include="Main Code\AdminFormDeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\OrderHomeForm.Designer.cs">
-      <DependentUpon>OrderHomeForm.cs</DependentUpon>
+    <Compile Include="Main Code\AdminFormDeleteUser.Designer.cs">
+      <DependentUpon>AdminFormDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\OperatorHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OperatorHomeForm.Designer.cs">
+      <DependentUpon>OperatorHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\SupplierHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\SupplierHomeForm.Designer.cs">
+      <DependentUpon>SupplierHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Database.cs" />
     <Compile Include="Main Code\LoginForm.cs">
@@ -130,11 +142,11 @@
     <Compile Include="Main Code\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\OfficeClerkForm.cs">
+    <Compile Include="Main Code\OfficeClerkHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\OfficeClerkForm.Designer.cs">
-      <DependentUpon>OfficeClerkForm.cs</DependentUpon>
+    <Compile Include="Main Code\OfficeClerkHomeForm.Designer.cs">
+      <DependentUpon>OfficeClerkHomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\OperatorForm.cs">
       <SubType>Form</SubType>
@@ -155,35 +167,41 @@
     <Compile Include="Main Code\OfficeClerkFormAddPartsQuantity.Designer.cs">
       <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main Code\OfficeClerkFormAddParts.cs">
+    <Compile Include="Main Code\AdminFormAddParts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\OfficeClerkFormAddParts.Designer.cs">
-      <DependentUpon>OfficeClerkFormAddParts.cs</DependentUpon>
+    <Compile Include="Main Code\AdminFormAddParts.Designer.cs">
+      <DependentUpon>AdminFormAddParts.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Transporter.cs" />
     <Compile Include="Model\User.cs" />
-    <EmbeddedResource Include="Main Code\AddUserAdminForm.resx">
-      <DependentUpon>AddUserAdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\AdminFormAddUser.resx">
+      <DependentUpon>AdminFormAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\BuyerForm.resx">
-      <DependentUpon>BuyerForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\BuyerFormListOrders.resx">
+      <DependentUpon>BuyerFormListOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\DeleteUserAdminForm.resx">
-      <DependentUpon>DeleteUserAdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\BuyerFormOrder.resx">
+      <DependentUpon>BuyerFormOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\BuyerHomeForm.resx">
+      <DependentUpon>BuyerHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\AdminFormDeleteUser.resx">
+      <DependentUpon>AdminFormDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OperatorHomeForm.resx">
+      <DependentUpon>OperatorHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\OfficeClerkForm.resx">
-      <DependentUpon>OfficeClerkForm.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\OfficeClerkHomeForm.resx">
+      <DependentUpon>OfficeClerkHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OperatorForm.resx">
       <DependentUpon>OperatorForm.cs</DependentUpon>
@@ -191,14 +209,14 @@
     <EmbeddedResource Include="Main Code\OperatorFormListDailyProducts.resx">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\OrderHomeForm.resx">
-      <DependentUpon>OrderHomeForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OfficeClerkFormAddPartsQuantity.resx">
       <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\OfficeClerkFormAddParts.resx">
-      <DependentUpon>OfficeClerkFormAddParts.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\AdminFormAddParts.resx">
+      <DependentUpon>AdminFormAddParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\SupplierHomeForm.resx">
+      <DependentUpon>SupplierHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat.Main_Code
 {
-    partial class AdminForm
+    partial class AdminFormAddUser
     {
         /// <summary>
         /// Required designer variable.
@@ -108,7 +108,7 @@ namespace Szakdolgozat.Main_Code
             this.BT_felhasznalofelvitel.UseVisualStyleBackColor = true;
             this.BT_felhasznalofelvitel.Click += new System.EventHandler(this.BT_felhasznalofelvitel_Click);
             // 
-            // AdminForm
+            // AdminFormAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,7 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.TB_nev);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LB_szerepkorok);
-            this.Name = "AdminForm";
+            this.Name = "AdminFormAddUser";
             this.Text = "Adminisztratori felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);

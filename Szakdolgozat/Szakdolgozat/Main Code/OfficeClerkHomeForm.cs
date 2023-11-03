@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Szakdolgozat.Main_Code
+namespace Szakdolgozat
 {
-    public partial class OrderHomeForm : Form
+    public partial class OfficeClerkHomeForm : Form
     {
-        public OrderHomeForm()
+        public OfficeClerkHomeForm()
         {
             InitializeComponent();
-            openChildForm(new BuyerForm());
         }
 
         private static Form activeForm = null;
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -30,25 +30,29 @@ namespace Szakdolgozat.Main_Code
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panel1.Controls.Add(childForm);
-            panel1.Tag = childForm;
+            panelContent.Controls.Add(childForm);
+            panelContent.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
 
-        private void megrendelésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new BuyerForm());
-        }
-
-        private void OrderHomeForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            System.Environment.Exit(0);
-        }
-
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LoginForm form = new LoginForm();
+            form.Show();
+            this.Hide();
+        }
+
+        private void OfficeClerkForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
             System.Environment.Exit(0);
+        }
+
+        
+
+        private void alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OfficeClerkFormAddPartsQuantity());
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DGV_parts);
             this.Name = "OfficeClerkFormAddPartsQuantity";
-            this.Text = "OfficeClerkFormAddParts";
+            this.Text = "AdminFormAddParts";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_parts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

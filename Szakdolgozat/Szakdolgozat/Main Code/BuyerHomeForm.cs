@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Szakdolgozat
+namespace Szakdolgozat.Main_Code
 {
-    public partial class OfficeClerkForm : Form
+    public partial class BuyerHomeForm : Form
     {
-        public OfficeClerkForm()
+        public BuyerHomeForm()
         {
             InitializeComponent();
         }
@@ -36,26 +36,25 @@ namespace Szakdolgozat
             childForm.Show();
         }
 
+        private void eddigiRendelésekMegtekintéseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyerFormListOrders());
+        }
+
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginForm form = new LoginForm();
-            form.Show();
+            new LoginForm().Show();
             this.Hide();
         }
 
-        private void OfficeClerkForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void megrendelésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyerFormOrder());
+        }
+
+        private void BuyerHomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
-        }
-
-        private void alkatrészTermékhezRendeléseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new OfficeClerkFormAddParts());
-        }
-
-        private void alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new OfficeClerkFormAddPartsQuantity());
         }
     }
 }

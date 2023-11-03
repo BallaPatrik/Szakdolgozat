@@ -75,11 +75,11 @@ namespace Szakdolgozat
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(310, 40);
+            this.label1.Location = new System.Drawing.Point(277, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 25);
+            this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 11;
-            this.label1.Text = "LOGIN felület";
+            this.label1.Text = "Bejelentkezési felület";
             // 
             // BT_bejelentkezes
             // 

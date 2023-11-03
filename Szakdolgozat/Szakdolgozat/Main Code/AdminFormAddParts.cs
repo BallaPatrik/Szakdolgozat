@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Szakdolgozat
 {
-    public partial class OfficeClerkFormAddParts : Form
+    public partial class AdminFormAddParts : Form
     {
-        public OfficeClerkFormAddParts()
+        public AdminFormAddParts()
         {
             InitializeComponent();
             DGV_parts.Columns.Add("Col2", "Nev");
