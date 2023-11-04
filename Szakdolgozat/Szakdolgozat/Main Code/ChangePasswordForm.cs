@@ -50,13 +50,16 @@ namespace Szakdolgozat.Main_Code
             if (regijelszo == "" || ujjelszo1 == "" || ujjelszo2 == "")
             {
                 MessageBox.Show("Az összes mezőt ki kell tölteni!");
+                return;
             }
+            
 
             //a 2 új jelszó megegyezik-e
 
             if (ujjelszo1 != ujjelszo2)
             {
                 MessageBox.Show("Az új jelszavak nem egyenek meg!");
+                return;
             }
             //eredeti jelszó meghatározása
 
@@ -95,6 +98,7 @@ namespace Szakdolgozat.Main_Code
             if (regijelszo != regijelszoadatbazisbol)
             {
                 MessageBox.Show("Jelszóváltozatás sikertelen!");
+                return;
             }
 
             //ha megegyezik átírás adatbázisban
