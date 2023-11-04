@@ -16,17 +16,20 @@ namespace Szakdolgozat.Main_Code
         public BuyerFormListOrders()
         {
             InitializeComponent();
-            DGV_rendelesek.Columns.Add("Col1", "Szám");
+            DGV_rendelesek.Columns.Add("Col1", "Azonosító");
             DGV_rendelesek.Columns.Add("Col2", "Dátum");
             DGV_rendelesek.Columns.Add("Col3", "Állapot");
             DGV_rendelesek.Columns.Add("Col4", "Végösszeg");
             
 
-            DGV_rendelesek.Columns[0].ReadOnly = true;
             DGV_rendelesek.Columns[1].ReadOnly = true;
             DGV_rendelesek.Columns[2].ReadOnly = true;
             DGV_rendelesek.Columns[3].ReadOnly = true;
+            DGV_rendelesek.Columns[4].ReadOnly = true;
+
             
+
+
         }
 
         private void BuyerFormListOrders_FormClosed(object sender, FormClosedEventArgs e)
@@ -54,12 +57,12 @@ namespace Szakdolgozat.Main_Code
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
-                int rendelesdarabszam = 1;
+               
 
                 while (dr.Read())
                 {
-                    DGV_rendelesek.Rows.Add(0,rendelesdarabszam+". számú rendelés",dr.GetString(0), dr.GetString(1), dr.GetInt32(2));
-                    rendelesdarabszam++;
+                    DGV_rendelesek.Rows.Add(0,dr.GetInt32(3),dr.GetString(0), dr.GetString(1), dr.GetInt32(2));
+                    
                 }
 
                 DGV_rendelesek.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
@@ -133,6 +136,21 @@ namespace Szakdolgozat.Main_Code
                 conn.Close();
 
                 
+            }
+        }
+
+        private void DGV_rendelesek_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[1].Value);
+                Transporter.getInstance().setOrderId(rendelesid);
+                BuyerFormOrderDetails form = new BuyerFormOrderDetails();
+                form.ShowDialog();
+
             }
         }
     }

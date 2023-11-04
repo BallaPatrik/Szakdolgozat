@@ -201,26 +201,11 @@ namespace Szakdolgozat
                 }
                 conn.Close();
             }
-
-
-            //QRKÓD működése
-
-
-
-
-
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode("The text which should be encoded.", QRCodeGenerator.ECCLevel.Q);
-            QRCode qrCode = new QRCode(qrCodeData);
-            Bitmap qrCodeImage = qrCode.GetGraphic(2);
-
-            pictureBox1.Image = qrCodeImage;
-
         }
 
         private void DGV_termekek_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+          
         }
 
         private void DGV_termekek_CellValueChanged(object sender, DataGridViewCellEventArgs e)

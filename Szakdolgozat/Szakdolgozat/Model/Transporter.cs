@@ -11,11 +11,17 @@ namespace Szakdolgozat
         static private Transporter instance = null;
 
         private User currentUser;
+        
 
         private Transporter()
         {
 
         }
+
+        private int orderid;
+
+        public void setOrderId(int value) { orderid = value; }
+        public int getOrderID() { return orderid; }
 
         internal User CurrentUser { get => currentUser; set => currentUser = value; }
 

@@ -31,7 +31,7 @@ namespace Szakdolgozat.Main_Code
         {
             this.label2 = new System.Windows.Forms.Label();
             this.DGV_rendelesek = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Col_Btn_Reszletek = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_rendelesek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,19 +51,20 @@ namespace Szakdolgozat.Main_Code
             this.DGV_rendelesek.AllowUserToDeleteRows = false;
             this.DGV_rendelesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_rendelesek.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column4});
+            this.Col_Btn_Reszletek});
             this.DGV_rendelesek.Location = new System.Drawing.Point(67, 109);
             this.DGV_rendelesek.Name = "DGV_rendelesek";
             this.DGV_rendelesek.Size = new System.Drawing.Size(677, 276);
             this.DGV_rendelesek.TabIndex = 28;
             this.DGV_rendelesek.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellClick);
+            this.DGV_rendelesek.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellContentClick);
             // 
-            // Column4
+            // Col_Btn_Reszletek
             // 
-            this.Column4.HeaderText = "Rendelés részletek";
-            this.Column4.Name = "Column4";
-            this.Column4.Text = "Részletek";
-            this.Column4.UseColumnTextForButtonValue = true;
+            this.Col_Btn_Reszletek.HeaderText = "Rendelés részletek";
+            this.Col_Btn_Reszletek.Name = "Col_Btn_Reszletek";
+            this.Col_Btn_Reszletek.Text = "Részletek";
+            this.Col_Btn_Reszletek.UseColumnTextForButtonValue = true;
             // 
             // BuyerFormListOrders
             // 
@@ -86,6 +87,6 @@ namespace Szakdolgozat.Main_Code
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DGV_rendelesek;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Reszletek;
     }
 }

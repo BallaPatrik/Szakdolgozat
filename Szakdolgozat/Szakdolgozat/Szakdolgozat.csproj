@@ -111,6 +111,12 @@
     <Compile Include="Main Code\BuyerFormOrder.Designer.cs">
       <DependentUpon>BuyerFormOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\BuyerFormOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\BuyerFormOrderDetails.Designer.cs">
+      <DependentUpon>BuyerFormOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\BuyerHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\BuyerFormOrder.resx">
       <DependentUpon>BuyerFormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\BuyerFormOrderDetails.resx">
+      <DependentUpon>BuyerFormOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\BuyerHomeForm.resx">
       <DependentUpon>BuyerHomeForm.cs</DependentUpon>
