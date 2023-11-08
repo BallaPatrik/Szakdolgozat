@@ -36,6 +36,7 @@ namespace Szakdolgozat.Main_Code
             this.felhasználóTörléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@ namespace Szakdolgozat.Main_Code
             this.felhasználóFelviteleToolStripMenuItem,
             this.felhasználóTörléseToolStripMenuItem,
             this.alkToolStripMenuItem,
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem,
             this.jelszóváltoztatásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -95,6 +97,13 @@ namespace Szakdolgozat.Main_Code
             this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
             this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
             // 
+            // alkatrészDarabszámánakBeállításaToolStripMenuItem
+            // 
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Name = "alkatrészDarabszámánakBeállításaToolStripMenuItem";
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Size = new System.Drawing.Size(203, 20);
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Text = "Alkatrész darabszámának beállítása";
+            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Click += new System.EventHandler(this.alkatrészDarabszámánakBeállításaToolStripMenuItem_Click);
+            // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,5 +132,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alkatrészDarabszámánakBeállításaToolStripMenuItem;
     }
 }

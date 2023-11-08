@@ -135,6 +135,12 @@
     <Compile Include="Main Code\ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckBalance.Designer.cs">
+      <DependentUpon>OfficeClerkFormCheckBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\OperatorHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,7 @@
     <Compile Include="Main Code\SupplierHomeForm.Designer.cs">
       <DependentUpon>SupplierHomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Balance.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Main Code\LoginForm.cs">
       <SubType>Form</SubType>
@@ -179,11 +186,11 @@
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\Program.cs" />
-    <Compile Include="Main Code\OfficeClerkFormAddPartsQuantity.cs">
+    <Compile Include="Main Code\AdminFormAddPartsQuantity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main Code\OfficeClerkFormAddPartsQuantity.Designer.cs">
-      <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
+    <Compile Include="Main Code\AdminFormAddPartsQuantity.Designer.cs">
+      <DependentUpon>AdminFormAddPartsQuantity.cs</DependentUpon>
     </Compile>
     <Compile Include="Main Code\AdminFormAddParts.cs">
       <SubType>Form</SubType>
@@ -218,6 +225,9 @@
     <EmbeddedResource Include="Main Code\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OfficeClerkFormCheckBalance.resx">
+      <DependentUpon>OfficeClerkFormCheckBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OperatorHomeForm.resx">
       <DependentUpon>OperatorHomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,8 +243,8 @@
     <EmbeddedResource Include="Main Code\OperatorFormListDailyProducts.resx">
       <DependentUpon>OperatorFormListDailyProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main Code\OfficeClerkFormAddPartsQuantity.resx">
-      <DependentUpon>OfficeClerkFormAddPartsQuantity.cs</DependentUpon>
+    <EmbeddedResource Include="Main Code\AdminFormAddPartsQuantity.resx">
+      <DependentUpon>AdminFormAddPartsQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\AdminFormAddParts.resx">
       <DependentUpon>AdminFormAddParts.cs</DependentUpon>

@@ -41,6 +41,19 @@ namespace Szakdolgozat.Main_Code
 
         private void BT_felhasznalofelvitel_Click(object sender, EventArgs e)
         {
+            //ki vannak-e töltve a textboxok
+            if(TB_jelszo.Text=="" || TB_nev.Text == "")
+            {
+                MessageBox.Show("Kérem töltse ki a beviteli mezőket!");
+                return;
+            }
+            //ki lett a választva szerepkör
+            if (LB_szerepkorok.SelectedItem == null)
+            {
+                MessageBox.Show("Kérem válasszon ki szerepkört!");
+                return;
+            }
+
             string nev = TB_nev.Text;
             string jelszo = TB_jelszo.Text;
             string szerepkor = LB_szerepkorok.SelectedItem.ToString();
@@ -49,42 +62,70 @@ namespace Szakdolgozat.Main_Code
 
             MySqlConnection conn = db.getConnection();
 
+
+            //van-e ilyen nevű felhasználó a rendszerben
+
             conn.Open();
 
-            string sql = "select szerepkorid from szerepkorok where szerepkor='" + szerepkor + "'";
+            string sql = "select nev from felhasznalok where nev='" + nev + "'";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
-            int szerepkorid = 0;
+            string vanenev = "";
 
             while (dr.Read())
             {
-                szerepkorid = dr.GetInt32(0);
+                vanenev = dr.GetString(0);
             }
 
             conn.Close();
 
+            if (vanenev != "")
+            {
+                MessageBox.Show("Ilyen nevű felhasználó már van a rendszerben! Kérem válasszon másik nevet!");
+                return;
+            }
+
+            //ha minden passzol beszúrás elvégzése
+
+            //szerepkorid meghatározása
 
             conn.Open();
 
-            string sql2 = "insert into felhasznalok(nev, jelszo, szerepkorid) values('" + nev + "', '" + jelszo + "' , " + szerepkorid + ");";
+            string sql2 = "select szerepkorid from szerepkorok where szerepkor='" + szerepkor + "'";
             MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+
+            MySqlDataReader dr2 = cmd2.ExecuteReader();
+
+            int szerepkorid = 0;
+
+            while (dr2.Read())
+            {
+                szerepkorid = dr2.GetInt32(0);
+            }
+
+            conn.Close();
+
+            //beszúrás elvégzése
+
+            conn.Open();
+
+            string sql3 = "insert into felhasznalok(nev, jelszo, szerepkorid) values('" + nev + "', '" + jelszo + "' , " + szerepkorid + ");";
+            MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
 
             try
             {
 
-                cmd2.ExecuteNonQuery();
-                MessageBox.Show("Felhasznalo felvitele sikeres!");
+                cmd3.ExecuteNonQuery();
+                MessageBox.Show("Felhasználó felvitele sikeres!");
 
             }catch(Exception ex)
             {
-                MessageBox.Show("Beszuras nem sikerult! Indoka: " + ex.Message);
+                MessageBox.Show("Beszúrás nem sikerült! Indoka: " + ex.Message);
             }
 
             conn.Close();
-
-
         }
 
         private void AdminForm_Load(object sender, EventArgs e)

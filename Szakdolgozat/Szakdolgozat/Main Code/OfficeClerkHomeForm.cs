@@ -52,12 +52,17 @@ namespace Szakdolgozat
 
         private void alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new OfficeClerkFormAddPartsQuantity());
+            
         }
 
         private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new Szakdolgozat.Main_Code.ChangePasswordForm());
+        }
+
+        private void egyenlegLekérdezésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckBalance());
         }
     }
 }

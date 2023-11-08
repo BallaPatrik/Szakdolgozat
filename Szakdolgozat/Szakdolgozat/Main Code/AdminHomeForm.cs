@@ -71,5 +71,10 @@ namespace Szakdolgozat.Main_Code
         {
             openChildForm(new ChangePasswordForm());
         }
+
+        private void alkatrészDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AdminFormAddPartsQuantity());
+        }
     }
 }

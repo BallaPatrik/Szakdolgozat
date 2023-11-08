@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Szakdolgozat
 {
-    public partial class OfficeClerkFormAddPartsQuantity : Form
+    public partial class AdminFormAddPartsQuantity : Form
     {
-        public OfficeClerkFormAddPartsQuantity()
+        public AdminFormAddPartsQuantity()
         {
             InitializeComponent();
             DGV_parts.Columns.Add("Col2", "Nev");

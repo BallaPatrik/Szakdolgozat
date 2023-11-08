@@ -121,6 +121,10 @@ namespace Szakdolgozat.Main_Code
                 conn.Close();
 
                 MessageBox.Show("Jelszóváltozatás sikeres!");
+
+                TB_regi_jelszo.Text = "";
+                TB_uj_jelszo_1.Text = "";
+                TB_uj_jelszo_2.Text = "";
             }
             catch (Exception ex)
             {

@@ -31,9 +31,9 @@ namespace Szakdolgozat
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelContent = new System.Windows.Forms.Panel();
             this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.egyenlegLekérdezésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@ namespace Szakdolgozat
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kilépésToolStripMenuItem,
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem,
+            this.egyenlegLekérdezésToolStripMenuItem,
             this.jelszóváltoztatásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -56,12 +56,12 @@ namespace Szakdolgozat
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
             // 
-            // alkatrészekDarabszámánakBeállításaToolStripMenuItem
+            // jelszóváltoztatásToolStripMenuItem
             // 
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Name = "alkatrészekDarabszámánakBeállításaToolStripMenuItem";
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Size = new System.Drawing.Size(215, 20);
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Text = "Alkatrészek darabszámának beállítása";
-            this.alkatrészekDarabszámánakBeállításaToolStripMenuItem.Click += new System.EventHandler(this.alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click);
+            this.jelszóváltoztatásToolStripMenuItem.Name = "jelszóváltoztatásToolStripMenuItem";
+            this.jelszóváltoztatásToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
+            this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
             // 
             // panelContent
             // 
@@ -70,12 +70,12 @@ namespace Szakdolgozat
             this.panelContent.Size = new System.Drawing.Size(775, 397);
             this.panelContent.TabIndex = 19;
             // 
-            // jelszóváltoztatásToolStripMenuItem
+            // egyenlegLekérdezésToolStripMenuItem
             // 
-            this.jelszóváltoztatásToolStripMenuItem.Name = "jelszóváltoztatásToolStripMenuItem";
-            this.jelszóváltoztatásToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
-            this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
+            this.egyenlegLekérdezésToolStripMenuItem.Name = "egyenlegLekérdezésToolStripMenuItem";
+            this.egyenlegLekérdezésToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.egyenlegLekérdezésToolStripMenuItem.Text = "Egyenleg lekérdezés";
+            this.egyenlegLekérdezésToolStripMenuItem.Click += new System.EventHandler(this.egyenlegLekérdezésToolStripMenuItem_Click);
             // 
             // OfficeClerkHomeForm
             // 
@@ -98,7 +98,7 @@ namespace Szakdolgozat
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.ToolStripMenuItem alkatrészekDarabszámánakBeállításaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem egyenlegLekérdezésToolStripMenuItem;
     }
 }

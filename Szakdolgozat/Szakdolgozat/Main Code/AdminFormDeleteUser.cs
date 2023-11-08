@@ -31,7 +31,7 @@ namespace Szakdolgozat.Main_Code
 
             conn.Open();
 
-            string sql = "select nev, szerepkorid from felhasznalok where szerepkorid between 1 and 3";
+            string sql = "select nev, szerepkorid from felhasznalok where szerepkorid between 1 and 5";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             MySqlDataReader dr = cmd.ExecuteReader();
@@ -48,6 +48,8 @@ namespace Szakdolgozat.Main_Code
                     case 1: { jogosultsag = "Operátor"; } break;
                     case 2: { jogosultsag = "Irodista";  } break;
                     case 3: { jogosultsag = "Megrendelő"; } break;
+                    case 4: { jogosultsag = "Adminisztrátor"; } break;
+                    case 5: { jogosultsag = "Beszállító"; } break;
                     default: { jogosultsag = "Nem megállapítható"; } break;
                 }
 
