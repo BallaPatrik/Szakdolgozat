@@ -36,30 +36,9 @@ namespace Szakdolgozat.Main_Code
             childForm.Show();
         }
 
-        private void felhasználóFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Szakdolgozat.Main_Code.AdminFormAddUser());
-        }
-
-        private void felhasználóTörléseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new AdminFormDeleteUser());
-        }
-
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new LoginForm().Show();
-            this.Hide();
-        }
-
         private void AdminHomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
-        }
-
-        private void AdminHomeForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void alkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +54,31 @@ namespace Szakdolgozat.Main_Code
         private void alkatrészDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new AdminFormAddPartsQuantity());
+        }
+
+        private void BT_menu_felhasz_hozzaad_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.AdminFormAddUser());
+        }
+
+        private void BT_menu_felhasz_torol_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AdminFormDeleteUser());
+        }
+
+        private void BT_alkatresz_hozzarendel_termek_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AdminFormAddParts());
+        }
+
+        private void BT_alkatresz_hozzarendel_termek_darab_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AdminFormAddPartsQuantity());
+        }
+
+        private void BT_jelszovaltoztat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ChangePasswordForm());
         }
     }
 }

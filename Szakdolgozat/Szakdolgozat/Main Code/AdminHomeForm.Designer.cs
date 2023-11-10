@@ -30,108 +30,157 @@ namespace Szakdolgozat.Main_Code
         private void InitializeComponent()
         {
             this.panelContent = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.felhasználóFelviteleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.felhasználóTörléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.BT_menu_felhasz_hozzaad = new System.Windows.Forms.Button();
+            this.BT_menu_felhasz_torol = new System.Windows.Forms.Button();
+            this.BT_alkatresz_hozzarendel_termek = new System.Windows.Forms.Button();
+            this.BT_alkatresz_hozzarendel_termek_darab = new System.Windows.Forms.Button();
+            this.BT_jelszovaltoztat = new System.Windows.Forms.Button();
+            this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContent
             // 
-            this.panelContent.Location = new System.Drawing.Point(12, 48);
+            this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(776, 377);
+            this.panelContent.Size = new System.Drawing.Size(934, 561);
             this.panelContent.TabIndex = 0;
             // 
-            // menuStrip1
+            // panelSideMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kilépésToolStripMenuItem,
-            this.felhasználóFelviteleToolStripMenuItem,
-            this.felhasználóTörléseToolStripMenuItem,
-            this.alkToolStripMenuItem,
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem,
-            this.jelszóváltoztatásToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panelSideMenu.AutoScroll = true;
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.BT_jelszovaltoztat);
+            this.panelSideMenu.Controls.Add(this.BT_alkatresz_hozzarendel_termek_darab);
+            this.panelSideMenu.Controls.Add(this.BT_alkatresz_hozzarendel_termek);
+            this.panelSideMenu.Controls.Add(this.BT_menu_felhasz_torol);
+            this.panelSideMenu.Controls.Add(this.BT_menu_felhasz_hozzaad);
+            this.panelSideMenu.Controls.Add(this.panelLogo);
+            this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelSideMenu.Name = "panelSideMenu";
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.TabIndex = 2;
             // 
-            // kilépésToolStripMenuItem
+            // panelLogo
             // 
-            this.kilépésToolStripMenuItem.Name = "kilépésToolStripMenuItem";
-            this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilépésToolStripMenuItem.Text = "Kilépés";
-            this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 100);
+            this.panelLogo.TabIndex = 0;
             // 
-            // felhasználóFelviteleToolStripMenuItem
+            // BT_menu_felhasz_hozzaad
             // 
-            this.felhasználóFelviteleToolStripMenuItem.Name = "felhasználóFelviteleToolStripMenuItem";
-            this.felhasználóFelviteleToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.felhasználóFelviteleToolStripMenuItem.Text = "Felhasználó felvitele";
-            this.felhasználóFelviteleToolStripMenuItem.Click += new System.EventHandler(this.felhasználóFelviteleToolStripMenuItem_Click);
+            this.BT_menu_felhasz_hozzaad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_felhasz_hozzaad.FlatAppearance.BorderSize = 0;
+            this.BT_menu_felhasz_hozzaad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_felhasz_hozzaad.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_felhasz_hozzaad.Location = new System.Drawing.Point(0, 100);
+            this.BT_menu_felhasz_hozzaad.Name = "BT_menu_felhasz_hozzaad";
+            this.BT_menu_felhasz_hozzaad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_felhasz_hozzaad.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_felhasz_hozzaad.TabIndex = 0;
+            this.BT_menu_felhasz_hozzaad.Text = "Felhasználó hozzáadása";
+            this.BT_menu_felhasz_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_felhasz_hozzaad.UseVisualStyleBackColor = true;
+            this.BT_menu_felhasz_hozzaad.Click += new System.EventHandler(this.BT_menu_felhasz_hozzaad_Click);
             // 
-            // felhasználóTörléseToolStripMenuItem
+            // BT_menu_felhasz_torol
             // 
-            this.felhasználóTörléseToolStripMenuItem.Name = "felhasználóTörléseToolStripMenuItem";
-            this.felhasználóTörléseToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.felhasználóTörléseToolStripMenuItem.Text = "Felhasználó törlése";
-            this.felhasználóTörléseToolStripMenuItem.Click += new System.EventHandler(this.felhasználóTörléseToolStripMenuItem_Click);
+            this.BT_menu_felhasz_torol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_felhasz_torol.FlatAppearance.BorderSize = 0;
+            this.BT_menu_felhasz_torol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_felhasz_torol.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_felhasz_torol.Location = new System.Drawing.Point(0, 145);
+            this.BT_menu_felhasz_torol.Name = "BT_menu_felhasz_torol";
+            this.BT_menu_felhasz_torol.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_felhasz_torol.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_felhasz_torol.TabIndex = 1;
+            this.BT_menu_felhasz_torol.Text = "Felhasználó törlése";
+            this.BT_menu_felhasz_torol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_felhasz_torol.UseVisualStyleBackColor = true;
+            this.BT_menu_felhasz_torol.Click += new System.EventHandler(this.BT_menu_felhasz_torol_Click);
             // 
-            // alkToolStripMenuItem
+            // BT_alkatresz_hozzarendel_termek
             // 
-            this.alkToolStripMenuItem.Name = "alkToolStripMenuItem";
-            this.alkToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
-            this.alkToolStripMenuItem.Text = "Alkatrész termékhez rendelése";
-            this.alkToolStripMenuItem.Click += new System.EventHandler(this.alkToolStripMenuItem_Click);
+            this.BT_alkatresz_hozzarendel_termek.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_alkatresz_hozzarendel_termek.FlatAppearance.BorderSize = 0;
+            this.BT_alkatresz_hozzarendel_termek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_alkatresz_hozzarendel_termek.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_alkatresz_hozzarendel_termek.Location = new System.Drawing.Point(0, 190);
+            this.BT_alkatresz_hozzarendel_termek.Name = "BT_alkatresz_hozzarendel_termek";
+            this.BT_alkatresz_hozzarendel_termek.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_alkatresz_hozzarendel_termek.Size = new System.Drawing.Size(250, 45);
+            this.BT_alkatresz_hozzarendel_termek.TabIndex = 2;
+            this.BT_alkatresz_hozzarendel_termek.Text = "Alkatrész hozzárendelése a termékhez";
+            this.BT_alkatresz_hozzarendel_termek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_alkatresz_hozzarendel_termek.UseVisualStyleBackColor = true;
+            this.BT_alkatresz_hozzarendel_termek.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_Click);
             // 
-            // jelszóváltoztatásToolStripMenuItem
+            // BT_alkatresz_hozzarendel_termek_darab
             // 
-            this.jelszóváltoztatásToolStripMenuItem.Name = "jelszóváltoztatásToolStripMenuItem";
-            this.jelszóváltoztatásToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.jelszóváltoztatásToolStripMenuItem.Text = "Jelszóváltoztatás";
-            this.jelszóváltoztatásToolStripMenuItem.Click += new System.EventHandler(this.jelszóváltoztatásToolStripMenuItem_Click);
+            this.BT_alkatresz_hozzarendel_termek_darab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_alkatresz_hozzarendel_termek_darab.FlatAppearance.BorderSize = 0;
+            this.BT_alkatresz_hozzarendel_termek_darab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_alkatresz_hozzarendel_termek_darab.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_alkatresz_hozzarendel_termek_darab.Location = new System.Drawing.Point(0, 235);
+            this.BT_alkatresz_hozzarendel_termek_darab.Name = "BT_alkatresz_hozzarendel_termek_darab";
+            this.BT_alkatresz_hozzarendel_termek_darab.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_alkatresz_hozzarendel_termek_darab.Size = new System.Drawing.Size(250, 45);
+            this.BT_alkatresz_hozzarendel_termek_darab.TabIndex = 3;
+            this.BT_alkatresz_hozzarendel_termek_darab.Text = "Alkatrész darabszámának hozzárendelése a termékhez";
+            this.BT_alkatresz_hozzarendel_termek_darab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_alkatresz_hozzarendel_termek_darab.UseVisualStyleBackColor = true;
+            this.BT_alkatresz_hozzarendel_termek_darab.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_darab_Click);
             // 
-            // alkatrészDarabszámánakBeállításaToolStripMenuItem
+            // BT_jelszovaltoztat
             // 
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Name = "alkatrészDarabszámánakBeállításaToolStripMenuItem";
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Size = new System.Drawing.Size(203, 20);
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Text = "Alkatrész darabszámának beállítása";
-            this.alkatrészDarabszámánakBeállításaToolStripMenuItem.Click += new System.EventHandler(this.alkatrészDarabszámánakBeállításaToolStripMenuItem_Click);
+            this.BT_jelszovaltoztat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_jelszovaltoztat.FlatAppearance.BorderSize = 0;
+            this.BT_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(0, 280);
+            this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
+            this.BT_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
+            this.BT_jelszovaltoztat.TabIndex = 4;
+            this.BT_jelszovaltoztat.Text = "Jelszóváltoztatás";
+            this.BT_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_jelszovaltoztat.UseVisualStyleBackColor = true;
+            this.BT_jelszovaltoztat.Click += new System.EventHandler(this.BT_jelszovaltoztat_Click);
             // 
             // AdminHomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "AdminHomeForm";
             this.Text = "Adminisztratori felulet";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminHomeForm_FormClosed);
-            this.Load += new System.EventHandler(this.AdminHomeForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panelSideMenu.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem felhasználóFelviteleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem felhasználóTörléseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kilépésToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alkatrészDarabszámánakBeállításaToolStripMenuItem;
+        private System.Windows.Forms.Panel panelSideMenu;
+        private System.Windows.Forms.Button BT_alkatresz_hozzarendel_termek;
+        private System.Windows.Forms.Button BT_menu_felhasz_torol;
+        private System.Windows.Forms.Button BT_menu_felhasz_hozzaad;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Button BT_alkatresz_hozzarendel_termek_darab;
+        private System.Windows.Forms.Button BT_jelszovaltoztat;
     }
 }
