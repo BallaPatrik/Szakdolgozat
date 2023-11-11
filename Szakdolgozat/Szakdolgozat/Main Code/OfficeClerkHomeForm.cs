@@ -64,5 +64,11 @@ namespace Szakdolgozat
         {
             openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckBalance());
         }
+
+        private void megrendelésekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckOrders());
+
+        }
     }
 }

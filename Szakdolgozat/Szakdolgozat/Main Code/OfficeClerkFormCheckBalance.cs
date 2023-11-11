@@ -14,23 +14,34 @@ namespace Szakdolgozat.Main_Code
 {
     public partial class OfficeClerkFormCheckBalance : Form
     {
+        private string ut = @"C:\Users\balla\source\repos\BallaPatrik\Szakdolgozat\Szakdolgozat\Szakdolgozat\Main Code\balance.txt";
+        private bool intended = false;
         public OfficeClerkFormCheckBalance()
         {
             InitializeComponent();
+            showBalance();
         }
 
         private void createFile(string ut)
         {
-            File.Create(ut);
+            File.Create(ut).Close();
         }
 
         private void checkBalance(string ut)
         {
-            FileStream fs = File.Open(ut, FileMode.Open);
+          
 
-            string szoveg = File.ReadAllText(ut);
+            //FileStream fs = File.Open(ut, FileMode.Open);
 
-            int fileegyenleg = Convert.ToInt32(szoveg);
+            var szoveg = File.ReadLines(ut);
+
+            int fileegyenleg = 0;
+            foreach (var line in szoveg)
+            {
+                fileegyenleg = Int32.Parse(line);
+            }
+
+            TB_egyenleg.Text = fileegyenleg.ToString();
 
             int egyenleg = Convert.ToInt32(TB_egyenleg.Text);
 
@@ -38,17 +49,16 @@ namespace Szakdolgozat.Main_Code
             {
                 File.WriteAllText(ut, egyenleg.ToString());
             }
-            else
+            else if(intended)
             {
                 MessageBox.Show("Az egyenleg nem 0, ezért nem lehet átírni!");
             }
 
-            fs.Close();
+            //fs.Close();
         }
 
         private void showBalance()
         {
-            string ut = @"C:\Users\balla\source\repos\BallaPatrik\Szakdolgozat\Szakdolgozat\Szakdolgozat\Main Code\balance.txt";
 
             //megnézzük, hogy van-e már fájl
             //ha nincs létrehozzuk
@@ -69,6 +79,7 @@ namespace Szakdolgozat.Main_Code
 
         private void BT_egyenleg_lekerdezese_Click(object sender, EventArgs e)
         {
+            intended = true;
             showBalance();
         }
     }

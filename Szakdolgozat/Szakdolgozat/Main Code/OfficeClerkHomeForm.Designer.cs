@@ -31,9 +31,10 @@ namespace Szakdolgozat
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilépésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.egyenlegLekérdezésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jelszóváltoztatásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.egyenlegLekérdezésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.megrendelésekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@ namespace Szakdolgozat
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kilépésToolStripMenuItem,
             this.egyenlegLekérdezésToolStripMenuItem,
+            this.megrendelésekToolStripMenuItem,
             this.jelszóváltoztatásToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -55,6 +57,13 @@ namespace Szakdolgozat
             this.kilépésToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.kilépésToolStripMenuItem.Text = "Kilépés";
             this.kilépésToolStripMenuItem.Click += new System.EventHandler(this.kilépésToolStripMenuItem_Click);
+            // 
+            // egyenlegLekérdezésToolStripMenuItem
+            // 
+            this.egyenlegLekérdezésToolStripMenuItem.Name = "egyenlegLekérdezésToolStripMenuItem";
+            this.egyenlegLekérdezésToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.egyenlegLekérdezésToolStripMenuItem.Text = "Egyenleg lekérdezés";
+            this.egyenlegLekérdezésToolStripMenuItem.Click += new System.EventHandler(this.egyenlegLekérdezésToolStripMenuItem_Click);
             // 
             // jelszóváltoztatásToolStripMenuItem
             // 
@@ -70,12 +79,12 @@ namespace Szakdolgozat
             this.panelContent.Size = new System.Drawing.Size(775, 397);
             this.panelContent.TabIndex = 19;
             // 
-            // egyenlegLekérdezésToolStripMenuItem
+            // megrendelésekToolStripMenuItem
             // 
-            this.egyenlegLekérdezésToolStripMenuItem.Name = "egyenlegLekérdezésToolStripMenuItem";
-            this.egyenlegLekérdezésToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.egyenlegLekérdezésToolStripMenuItem.Text = "Egyenleg lekérdezés";
-            this.egyenlegLekérdezésToolStripMenuItem.Click += new System.EventHandler(this.egyenlegLekérdezésToolStripMenuItem_Click);
+            this.megrendelésekToolStripMenuItem.Name = "megrendelésekToolStripMenuItem";
+            this.megrendelésekToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.megrendelésekToolStripMenuItem.Text = "Megrendelések";
+            this.megrendelésekToolStripMenuItem.Click += new System.EventHandler(this.megrendelésekToolStripMenuItem_Click);
             // 
             // OfficeClerkHomeForm
             // 
@@ -100,5 +109,6 @@ namespace Szakdolgozat
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.ToolStripMenuItem jelszóváltoztatásToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem egyenlegLekérdezésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem megrendelésekToolStripMenuItem;
     }
 }

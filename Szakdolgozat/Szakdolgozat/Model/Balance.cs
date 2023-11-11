@@ -27,7 +27,7 @@ namespace Szakdolgozat.Model
 
         public int getCurrentBalance(string ut)
         {
-            FileStream fs = File.Open(ut, FileMode.Open);
+            //FileStream fs = File.Open(ut, FileMode.Open);
 
             string szoveg = File.ReadAllText(ut);
 
@@ -38,7 +38,7 @@ namespace Szakdolgozat.Model
 
         public void subtractBalance(string ut, int levonando)
         {
-            FileStream fs = File.Open(ut, FileMode.Open);
+            //FileStream fs = File.Open(ut, FileMode.Open);
 
             string szoveg = File.ReadAllText(ut);
 
@@ -51,7 +51,7 @@ namespace Szakdolgozat.Model
 
         public void addBalance(string ut, int hozzaadando)
         {
-            FileStream fs = File.Open(ut, FileMode.Open);
+          //  FileStream fs = File.Open(ut, FileMode.Open);
 
             string szoveg = File.ReadAllText(ut);
 

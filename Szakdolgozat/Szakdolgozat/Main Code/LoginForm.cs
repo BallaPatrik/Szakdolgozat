@@ -43,15 +43,16 @@ namespace Szakdolgozat
             string szerepkor = "";
             user.Name = nev;
             user.Jelszo = jelszo;
-            
+
             Database db = new Database();
+
+            try
+            {
+                 
             cmd = new MySqlCommand("select szerepkorid, felhasznaloid from felhasznalok " +
                 "where nev='" + nev + "' and jelszo='" + jelszo +"' ", db.getConnection());
             sda = new MySqlDataAdapter(cmd);
             sda.Fill(dt);
-
-            try
-            {
                 int szerepkorid = Convert.ToInt32(dt.Rows[0][0].ToString());
 
                 if (szerepkorid == 5)
