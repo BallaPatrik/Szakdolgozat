@@ -32,8 +32,6 @@ namespace Szakdolgozat.Main_Code
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TB_egyenleg = new System.Windows.Forms.TextBox();
-            this.L_jelenlegi_egyenleg = new System.Windows.Forms.Label();
-            this.BT_egyenleg_lekerdezese = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,35 +57,15 @@ namespace Szakdolgozat.Main_Code
             // 
             this.TB_egyenleg.Location = new System.Drawing.Point(289, 159);
             this.TB_egyenleg.Name = "TB_egyenleg";
+            this.TB_egyenleg.ReadOnly = true;
             this.TB_egyenleg.Size = new System.Drawing.Size(144, 20);
             this.TB_egyenleg.TabIndex = 13;
-            // 
-            // L_jelenlegi_egyenleg
-            // 
-            this.L_jelenlegi_egyenleg.AutoSize = true;
-            this.L_jelenlegi_egyenleg.Location = new System.Drawing.Point(301, 239);
-            this.L_jelenlegi_egyenleg.Name = "L_jelenlegi_egyenleg";
-            this.L_jelenlegi_egyenleg.Size = new System.Drawing.Size(118, 13);
-            this.L_jelenlegi_egyenleg.TabIndex = 14;
-            this.L_jelenlegi_egyenleg.Text = "Jelenlegi egyenleg: 0 Ft";
-            // 
-            // BT_egyenleg_lekerdezese
-            // 
-            this.BT_egyenleg_lekerdezese.Location = new System.Drawing.Point(289, 202);
-            this.BT_egyenleg_lekerdezese.Name = "BT_egyenleg_lekerdezese";
-            this.BT_egyenleg_lekerdezese.Size = new System.Drawing.Size(144, 23);
-            this.BT_egyenleg_lekerdezese.TabIndex = 15;
-            this.BT_egyenleg_lekerdezese.Text = "Egyenleg lekérdezése";
-            this.BT_egyenleg_lekerdezese.UseVisualStyleBackColor = true;
-            this.BT_egyenleg_lekerdezese.Click += new System.EventHandler(this.BT_egyenleg_lekerdezese_Click);
             // 
             // OfficeClerkFormCheckBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BT_egyenleg_lekerdezese);
-            this.Controls.Add(this.L_jelenlegi_egyenleg);
             this.Controls.Add(this.TB_egyenleg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -103,7 +81,5 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TB_egyenleg;
-        private System.Windows.Forms.Label L_jelenlegi_egyenleg;
-        private System.Windows.Forms.Button BT_egyenleg_lekerdezese;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace Szakdolgozat.Model
 {
@@ -25,41 +26,107 @@ namespace Szakdolgozat.Model
             return instance;
         }
 
-        public int getCurrentBalance(string ut)
+        public int getCurrentBalance()
         {
-            //FileStream fs = File.Open(ut, FileMode.Open);
+            Database db = new Database();
+            MySqlConnection conn = db.getConnection();
 
-            string szoveg = File.ReadAllText(ut);
+            conn.Open();
 
-            int fileegyenleg = Convert.ToInt32(szoveg);
+            int egyenleg = 0;
+            string sql = "select datum, egyenleg from tranzakciok WHERE datum IN (SELECT MAX(datum) FROM tranzakciok) GROUP BY datum";
 
-            return fileegyenleg;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                if (!dr.IsDBNull(0))
+                {
+                    egyenleg = dr.GetInt32(1);
+                }
+            }
+
+            conn.Close();
+
+            return egyenleg;
         }
 
-        public void subtractBalance(string ut, int levonando)
+        public void subtractBalance(int levonando)
         {
-            //FileStream fs = File.Open(ut, FileMode.Open);
 
-            string szoveg = File.ReadAllText(ut);
+            Database db = new Database();
+            MySqlConnection conn = db.getConnection();
 
-            int fileegyenleg = Convert.ToInt32(szoveg);
+            conn.Open();
 
-            fileegyenleg = -levonando;
+            int egyenleg = 0;
+            string sql = "select datum, egyenleg from tranzakciok WHERE datum IN (SELECT MAX(datum) FROM tranzakciok) GROUP BY datum";
 
-            File.WriteAllText(ut, fileegyenleg.ToString());
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                if (!dr.IsDBNull(0))
+                {
+                    egyenleg = dr.GetInt32(1);
+                }
+            } 
+
+            if(egyenleg != 0)
+            {
+                egyenleg = egyenleg - levonando;
+            }
+            
+
+            conn.Close();
+            conn.Open();
+            string tipus = "Kimenő";
+            DateTime datum = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            string sql2 = "insert into tranzakciok (datum, tipus, ertek, egyenleg) values ('" + datum.ToString(format) + "', '" + tipus + "', " + levonando + ", " + egyenleg + ")";
+            MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+            cmd2.ExecuteNonQuery();
+            conn.Close();
         }
 
-        public void addBalance(string ut, int hozzaadando)
+        public void addBalance(int hozzaadando)
         {
-          //  FileStream fs = File.Open(ut, FileMode.Open);
+            Database db = new Database();
+            MySqlConnection conn = db.getConnection();
 
-            string szoveg = File.ReadAllText(ut);
+            conn.Open();
 
-            int fileegyenleg = Convert.ToInt32(szoveg);
+            int egyenleg = 0;
+            string sql = "select datum, egyenleg from tranzakciok WHERE datum IN (SELECT MAX(datum) FROM tranzakciok) GROUP BY datum";
 
-            fileegyenleg = +hozzaadando;
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            File.WriteAllText(ut, fileegyenleg.ToString());
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if(dr.Read())
+            {
+                if(!dr.IsDBNull(0)) 
+                { 
+                egyenleg = dr.GetInt32(1);
+                }
+            }
+
+            egyenleg = egyenleg + hozzaadando;
+
+            conn.Close();
+            conn.Open();
+            string tipus = "Bejövő";
+            DateTime datum = DateTime.Now;
+            string format = "yyyy-MM-dd HH:mm:ss";
+            string sql2 = "insert into tranzakciok (datum, tipus, ertek, egyenleg) values ('" + datum.ToString(format) + "', '" + tipus + "', " + hozzaadando + ", " + egyenleg + ")";
+            MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
+            cmd2.ExecuteNonQuery();
+            conn.Close();
+
         }
     }
 }

@@ -30,9 +30,9 @@ namespace Szakdolgozat.Main_Code
         private void InitializeComponent()
         {
             this.DGV_rendelesek = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.Col_Btn_Reszletek = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Col_Btn_Ajanlat = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_rendelesek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,22 +44,12 @@ namespace Szakdolgozat.Main_Code
             this.DGV_rendelesek.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Btn_Reszletek,
             this.Col_Btn_Ajanlat});
-            this.DGV_rendelesek.Location = new System.Drawing.Point(62, 119);
+            this.DGV_rendelesek.Location = new System.Drawing.Point(26, 119);
             this.DGV_rendelesek.Name = "DGV_rendelesek";
-            this.DGV_rendelesek.Size = new System.Drawing.Size(677, 276);
+            this.DGV_rendelesek.Size = new System.Drawing.Size(742, 276);
             this.DGV_rendelesek.TabIndex = 30;
             this.DGV_rendelesek.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellClick);
             this.DGV_rendelesek.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellContentClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(292, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 25);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Megrendelések";
             // 
             // Col_Btn_Reszletek
             // 
@@ -76,6 +66,16 @@ namespace Szakdolgozat.Main_Code
             this.Col_Btn_Ajanlat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Col_Btn_Ajanlat.Text = "Ellenajánlat";
             this.Col_Btn_Ajanlat.UseColumnTextForButtonValue = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(292, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 25);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Megrendelések";
             // 
             // OfficeClerkFormCheckOrders
             // 
