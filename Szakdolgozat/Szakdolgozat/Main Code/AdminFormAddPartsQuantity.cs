@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class AdminFormAddPartsQuantity : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public AdminFormAddPartsQuantity()
         {
             InitializeComponent();
@@ -21,6 +24,8 @@ namespace Szakdolgozat
             DGV_parts.Columns[0].ReadOnly = true;
             loadCombobox();
             updateParts(1);
+
+            stilus.styleChildForm(this);
         }
 
         //Combobox feltöltés

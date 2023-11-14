@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class AdminFormAddParts : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public AdminFormAddParts()
         {
             InitializeComponent();
@@ -20,6 +23,8 @@ namespace Szakdolgozat
             DGV_parts.Columns[0].ReadOnly = true;
             loadCombobox();
             updateParts(1);
+
+            stilus.styleChildForm(this);
         }
 
         private void loadCombobox()
@@ -129,6 +134,11 @@ namespace Szakdolgozat
         private void BT_confirm_Click(object sender, EventArgs e)
         {
             insertPartIntoDataBase();
+        }
+
+        private void AdminFormAddParts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,15 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class AdminFormDeleteUser : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public AdminFormDeleteUser()
         {
             InitializeComponent();
             updateUsers();
+
+            stilus.styleChildForm(this);
         }
 
         Database db = new Database();

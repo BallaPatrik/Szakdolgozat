@@ -9,14 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class OperatorFormUploadDailyDoneProducts : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OperatorFormUploadDailyDoneProducts()
         {
             InitializeComponent();
+
+            stilus.styleChildForm(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)

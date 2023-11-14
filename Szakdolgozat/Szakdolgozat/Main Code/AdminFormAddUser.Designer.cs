@@ -47,7 +47,7 @@ namespace Szakdolgozat.Main_Code
             this.LB_szerepkorok.FormattingEnabled = true;
             this.LB_szerepkorok.Location = new System.Drawing.Point(275, 234);
             this.LB_szerepkorok.Name = "LB_szerepkorok";
-            this.LB_szerepkorok.Size = new System.Drawing.Size(314, 238);
+            this.LB_szerepkorok.Size = new System.Drawing.Size(327, 264);
             this.LB_szerepkorok.TabIndex = 1;
             // 
             // label1
@@ -112,7 +112,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.BT_felhasznalofelvitel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BT_felhasznalofelvitel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BT_felhasznalofelvitel.Location = new System.Drawing.Point(684, 505);
+            this.BT_felhasznalofelvitel.Location = new System.Drawing.Point(697, 541);
             this.BT_felhasznalofelvitel.Name = "BT_felhasznalofelvitel";
             this.BT_felhasznalofelvitel.Size = new System.Drawing.Size(119, 23);
             this.BT_felhasznalofelvitel.TabIndex = 14;
@@ -125,7 +125,7 @@ namespace Szakdolgozat.Main_Code
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(947, 597);
             this.Controls.Add(this.BT_felhasznalofelvitel);
             this.Controls.Add(this.TB_jelszo);
             this.Controls.Add(this.label4);

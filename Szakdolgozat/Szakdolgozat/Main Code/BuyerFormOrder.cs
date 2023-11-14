@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using QRCoder;
-
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class BuyerFormOrder : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public BuyerFormOrder()
         {
             InitializeComponent(); 
@@ -22,6 +24,8 @@ namespace Szakdolgozat
             DGV_termekek.Columns.Add("Col2", "A gyarto altal kiirt ar (Ft/db)");
             DGV_termekek.Columns.Add("Col3", "Arajanlat (Ft/db)");
             DGV_termekek.Columns.Add("Col4", "Darab");
+
+            stilus.styleChildForm(this);
         }
 
         

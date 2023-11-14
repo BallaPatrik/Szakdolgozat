@@ -40,16 +40,19 @@ namespace Szakdolgozat
             // 
             // DGV_parts
             // 
+            this.DGV_parts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_parts.Location = new System.Drawing.Point(301, 145);
+            this.DGV_parts.Location = new System.Drawing.Point(361, 258);
             this.DGV_parts.Name = "DGV_parts";
-            this.DGV_parts.Size = new System.Drawing.Size(409, 150);
+            this.DGV_parts.Size = new System.Drawing.Size(429, 239);
             this.DGV_parts.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(80, 188);
+            this.comboBox1.Location = new System.Drawing.Point(392, 156);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
@@ -58,7 +61,7 @@ namespace Szakdolgozat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 191);
+            this.label1.Location = new System.Drawing.Point(340, 159);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 2;
@@ -66,8 +69,11 @@ namespace Szakdolgozat
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 129);
+            this.label2.Location = new System.Drawing.Point(358, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +81,8 @@ namespace Szakdolgozat
             // 
             // BT_confirm
             // 
-            this.BT_confirm.Location = new System.Drawing.Point(480, 301);
+            this.BT_confirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_confirm.Location = new System.Drawing.Point(715, 503);
             this.BT_confirm.Name = "BT_confirm";
             this.BT_confirm.Size = new System.Drawing.Size(75, 23);
             this.BT_confirm.TabIndex = 4;
@@ -87,7 +94,7 @@ namespace Szakdolgozat
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(167, 72);
+            this.label3.Location = new System.Drawing.Point(339, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(470, 24);
             this.label3.TabIndex = 5;
@@ -97,7 +104,7 @@ namespace Szakdolgozat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(947, 597);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.BT_confirm);
             this.Controls.Add(this.label2);

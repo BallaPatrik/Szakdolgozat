@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class OfficeClerkFormSendCounterOffer : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OfficeClerkFormSendCounterOffer()
         {
-
             InitializeComponent();
             DGV_termekek.Columns.Add("Col1", "Nev");
             DGV_termekek.Columns.Add("Col2", "Darabszam");
@@ -43,6 +45,8 @@ namespace Szakdolgozat.Main_Code
             }
 
             getOrderDetails();
+
+            stilus.styleChildForm(this);
         }
 
 

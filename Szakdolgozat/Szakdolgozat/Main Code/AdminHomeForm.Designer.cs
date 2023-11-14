@@ -47,7 +47,7 @@ namespace Szakdolgozat.Main_Code
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Margin = new System.Windows.Forms.Padding(4);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(934, 561);
+            this.panelContent.Size = new System.Drawing.Size(947, 597);
             this.panelContent.TabIndex = 0;
             // 
             // panelSideMenu
@@ -63,7 +63,7 @@ namespace Szakdolgozat.Main_Code
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 597);
             this.panelSideMenu.TabIndex = 2;
             // 
             // BT_jelszovaltoztat
@@ -158,7 +158,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(947, 597);
             this.Controls.Add(this.panelSideMenu);
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);

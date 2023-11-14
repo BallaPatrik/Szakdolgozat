@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class SupplierFormSellParts : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public SupplierFormSellParts()
         {
             InitializeComponent();
@@ -21,6 +24,8 @@ namespace Szakdolgozat.Main_Code
             DGV_parts.Columns.Add("Col3", "Erteke");
             DGV_parts.Columns[0].ReadOnly = true;
             updateParts();
+
+            stilus.styleChildForm(this);
         }
 
         private void updateParts()

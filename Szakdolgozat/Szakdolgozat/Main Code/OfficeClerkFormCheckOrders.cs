@@ -14,6 +14,8 @@ namespace Szakdolgozat.Main_Code
 {
     public partial class OfficeClerkFormCheckOrders : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OfficeClerkFormCheckOrders()
         {
             InitializeComponent();
@@ -29,34 +31,7 @@ namespace Szakdolgozat.Main_Code
             DGV_rendelesek.Columns[3].ReadOnly = true;
             DGV_rendelesek.Columns[4].ReadOnly = true;
 
-
-
-
-
-
-            //ez alapján tudom beállítani kódban a stílust
-
-
-
-
-            this.BackColor= Color.FromArgb(255, 232, 232);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            stilus.styleChildForm(this);
 
         }
 

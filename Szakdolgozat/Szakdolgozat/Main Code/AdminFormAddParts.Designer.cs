@@ -46,9 +46,10 @@ namespace Szakdolgozat
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(226, 83);
+            this.label3.Location = new System.Drawing.Point(406, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(333, 24);
             this.label3.TabIndex = 11;
@@ -56,7 +57,8 @@ namespace Szakdolgozat
             // 
             // BT_confirm
             // 
-            this.BT_confirm.Location = new System.Drawing.Point(484, 317);
+            this.BT_confirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_confirm.Location = new System.Drawing.Point(865, 494);
             this.BT_confirm.Name = "BT_confirm";
             this.BT_confirm.Size = new System.Drawing.Size(75, 23);
             this.BT_confirm.TabIndex = 10;
@@ -67,7 +69,7 @@ namespace Szakdolgozat
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(302, 145);
+            this.label2.Location = new System.Drawing.Point(474, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 9;
@@ -75,8 +77,9 @@ namespace Szakdolgozat
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 222);
+            this.label1.Location = new System.Drawing.Point(266, 292);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 8;
@@ -84,30 +87,36 @@ namespace Szakdolgozat
             // 
             // DGV_parts
             // 
+            this.DGV_parts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_parts.Location = new System.Drawing.Point(305, 161);
+            this.DGV_parts.Location = new System.Drawing.Point(477, 185);
             this.DGV_parts.Name = "DGV_parts";
-            this.DGV_parts.Size = new System.Drawing.Size(409, 150);
+            this.DGV_parts.Size = new System.Drawing.Size(426, 293);
             this.DGV_parts.TabIndex = 6;
             // 
             // TB_name
             // 
-            this.TB_name.Location = new System.Drawing.Point(118, 219);
+            this.TB_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TB_name.Location = new System.Drawing.Point(252, 308);
             this.TB_name.Name = "TB_name";
             this.TB_name.Size = new System.Drawing.Size(129, 20);
             this.TB_name.TabIndex = 12;
             // 
             // TB_startingQuantity
             // 
-            this.TB_startingQuantity.Location = new System.Drawing.Point(118, 266);
+            this.TB_startingQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TB_startingQuantity.Location = new System.Drawing.Point(252, 373);
             this.TB_startingQuantity.Name = "TB_startingQuantity";
             this.TB_startingQuantity.Size = new System.Drawing.Size(129, 20);
             this.TB_startingQuantity.TabIndex = 14;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 269);
+            this.label4.Location = new System.Drawing.Point(266, 343);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 13;
@@ -115,8 +124,9 @@ namespace Szakdolgozat
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 180);
+            this.label5.Location = new System.Drawing.Point(283, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 16;
@@ -124,8 +134,9 @@ namespace Szakdolgozat
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 177);
+            this.comboBox1.Location = new System.Drawing.Point(252, 266);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 21);
             this.comboBox1.TabIndex = 15;
@@ -133,15 +144,17 @@ namespace Szakdolgozat
             // 
             // TB_quantity
             // 
-            this.TB_quantity.Location = new System.Drawing.Point(118, 336);
+            this.TB_quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TB_quantity.Location = new System.Drawing.Point(252, 442);
             this.TB_quantity.Name = "TB_quantity";
             this.TB_quantity.Size = new System.Drawing.Size(129, 20);
             this.TB_quantity.TabIndex = 18;
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 307);
+            this.label6.Location = new System.Drawing.Point(211, 409);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 13);
             this.label6.TabIndex = 17;
@@ -151,7 +164,7 @@ namespace Szakdolgozat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(947, 597);
             this.Controls.Add(this.TB_quantity);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -166,6 +179,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.DGV_parts);
             this.Name = "AdminFormAddParts";
             this.Text = "AdminFormAddParts";
+            this.Load += new System.EventHandler(this.AdminFormAddParts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_parts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

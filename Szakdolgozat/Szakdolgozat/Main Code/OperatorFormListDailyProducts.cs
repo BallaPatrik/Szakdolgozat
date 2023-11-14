@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class OperatorFormListDailyProducts : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OperatorFormListDailyProducts()
         {
             InitializeComponent();
 			DGV_products.Columns.Add("Col2", "Termek");
             DGV_products.Columns.Add("Col3", "Datum");
             DGV_products.Columns.Add("Col4", "Darabszam");
+
+            stilus.styleChildForm(this);
         }
       
         private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)

@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class BuyerFormListOrders : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public BuyerFormListOrders()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace Szakdolgozat.Main_Code
             DGV_rendelesek.Columns[5].ReadOnly = true;
             DGV_rendelesek.Columns[6].ReadOnly = true;
 
-
+            stilus.styleChildForm(this);
 
 
         }

@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Szakdolgozat.Main_Code;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class LoginForm : Form
     {
+        StyleForms stilus = new StyleForms();
 
         static User user = new User();
 
@@ -24,6 +26,8 @@ namespace Szakdolgozat
         public LoginForm()
         {
             InitializeComponent();
+
+            stilus.styleChildForm(this);
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

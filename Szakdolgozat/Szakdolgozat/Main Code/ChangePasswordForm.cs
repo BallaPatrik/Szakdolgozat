@@ -8,14 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class ChangePasswordForm : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public ChangePasswordForm()
         {
             InitializeComponent();
+
+            stilus.styleChildForm(this);
         }
 
         private void ChangePasswordForm_FormClosed(object sender, FormClosedEventArgs e)

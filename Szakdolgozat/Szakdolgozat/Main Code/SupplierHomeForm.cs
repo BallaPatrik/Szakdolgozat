@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class SupplierHomeForm : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public SupplierHomeForm()
         {
             InitializeComponent();
+
+            stilus.styleChildForm(this);
         }
 
         private static Form activeForm = null;

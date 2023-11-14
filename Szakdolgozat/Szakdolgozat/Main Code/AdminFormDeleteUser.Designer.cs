@@ -38,7 +38,8 @@ namespace Szakdolgozat.Main_Code
             // 
             // BT_felhasznalotorles
             // 
-            this.BT_felhasznalotorles.Location = new System.Drawing.Point(349, 309);
+            this.BT_felhasznalotorles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_felhasznalotorles.Location = new System.Drawing.Point(640, 434);
             this.BT_felhasznalotorles.Name = "BT_felhasznalotorles";
             this.BT_felhasznalotorles.Size = new System.Drawing.Size(119, 23);
             this.BT_felhasznalotorles.TabIndex = 22;
@@ -48,9 +49,10 @@ namespace Szakdolgozat.Main_Code
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(322, 33);
+            this.label4.Location = new System.Drawing.Point(428, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 25);
             this.label4.TabIndex = 20;
@@ -58,6 +60,9 @@ namespace Szakdolgozat.Main_Code
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -68,7 +73,7 @@ namespace Szakdolgozat.Main_Code
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(183, 61);
+            this.dataGridView1.Location = new System.Drawing.Point(296, 167);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -80,7 +85,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(947, 597);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BT_felhasznalotorles);
             this.Controls.Add(this.label4);

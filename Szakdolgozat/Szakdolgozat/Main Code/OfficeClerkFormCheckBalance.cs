@@ -14,11 +14,15 @@ namespace Szakdolgozat.Main_Code
 {
     public partial class OfficeClerkFormCheckBalance : Form
     {
+        StyleForms stilus = new StyleForms();
+
         private bool intended = false;
         public OfficeClerkFormCheckBalance()
         {
             InitializeComponent();
             showBalance();
+
+            stilus.styleChildForm(this);
         }
 
         private void showBalance()
