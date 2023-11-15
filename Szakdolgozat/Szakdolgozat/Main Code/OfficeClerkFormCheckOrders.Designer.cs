@@ -40,13 +40,16 @@ namespace Szakdolgozat.Main_Code
             // 
             this.DGV_rendelesek.AllowUserToAddRows = false;
             this.DGV_rendelesek.AllowUserToDeleteRows = false;
+            this.DGV_rendelesek.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_rendelesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_rendelesek.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Btn_Reszletek,
             this.Col_Btn_Ajanlat});
-            this.DGV_rendelesek.Location = new System.Drawing.Point(26, 119);
+            this.DGV_rendelesek.Location = new System.Drawing.Point(207, 122);
             this.DGV_rendelesek.Name = "DGV_rendelesek";
-            this.DGV_rendelesek.Size = new System.Drawing.Size(742, 276);
+            this.DGV_rendelesek.Size = new System.Drawing.Size(536, 276);
             this.DGV_rendelesek.TabIndex = 30;
             this.DGV_rendelesek.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellClick);
             this.DGV_rendelesek.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_rendelesek_CellContentClick);
@@ -69,9 +72,10 @@ namespace Szakdolgozat.Main_Code
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(292, 55);
+            this.label2.Location = new System.Drawing.Point(267, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 25);
             this.label2.TabIndex = 29;

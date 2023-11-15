@@ -14,13 +14,15 @@ namespace Szakdolgozat.Model
         public void styleChildForm(Form form)
         {
             form.BackColor = Color.FromArgb(153, 180, 209);
-            Size formsize = new Size(963, 636);
+            Size formsize = new Size(947, 597);
             form.Size = formsize;
         }
 
         public void styleParentForm(Form form)
         {
-
+            Size formsize = new Size(963, 636);
+            form.Size = formsize;
+            form.MinimumSize = formsize;
         }
     }
 }

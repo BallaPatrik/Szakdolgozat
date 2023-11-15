@@ -37,6 +37,7 @@ namespace Szakdolgozat.Main_Code
             this.BT_menu_felhasz_torol = new System.Windows.Forms.Button();
             this.BT_menu_felhasz_hozzaad = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.BT_kijelentkezés = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.BT_kijelentkezés);
             this.panelSideMenu.Controls.Add(this.BT_jelszovaltoztat);
             this.panelSideMenu.Controls.Add(this.BT_alkatresz_hozzarendel_termek_darab);
             this.panelSideMenu.Controls.Add(this.BT_alkatresz_hozzarendel_termek);
@@ -154,6 +156,22 @@ namespace Szakdolgozat.Main_Code
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 0;
             // 
+            // BT_kijelentkezés
+            // 
+            this.BT_kijelentkezés.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_kijelentkezés.FlatAppearance.BorderSize = 0;
+            this.BT_kijelentkezés.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_kijelentkezés.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_kijelentkezés.Location = new System.Drawing.Point(0, 325);
+            this.BT_kijelentkezés.Name = "BT_kijelentkezés";
+            this.BT_kijelentkezés.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_kijelentkezés.Size = new System.Drawing.Size(250, 45);
+            this.BT_kijelentkezés.TabIndex = 5;
+            this.BT_kijelentkezés.Text = "Kijelentkezés";
+            this.BT_kijelentkezés.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_kijelentkezés.UseVisualStyleBackColor = true;
+            this.BT_kijelentkezés.Click += new System.EventHandler(this.BT_kijelentkezés_Click);
+            // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -182,5 +200,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button BT_alkatresz_hozzarendel_termek_darab;
         private System.Windows.Forms.Button BT_jelszovaltoztat;
+        private System.Windows.Forms.Button BT_kijelentkezés;
     }
 }

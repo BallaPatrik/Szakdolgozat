@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class OperatorHomeForm : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OperatorHomeForm()
         {
             InitializeComponent();
+
+            stilus.styleParentForm(this);
         }
 
         private static Form activeForm = null;
@@ -36,22 +41,6 @@ namespace Szakdolgozat.Main_Code
             childForm.Show();
         }
 
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new LoginForm().Show();
-            this.Hide();
-        }
-
-        private void legyártottTermékekFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new OperatorFormUploadDailyDoneProducts());
-        }
-
-        private void maFelvittTermékekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new OperatorFormListDailyProducts());
-        }
-
         private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
@@ -60,6 +49,27 @@ namespace Szakdolgozat.Main_Code
         private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new ChangePasswordForm());
+        }
+
+        private void BT_menu_legyartott_termekek_felvitele_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OperatorFormUploadDailyDoneProducts());
+        }
+
+        private void BT_menu_legyartott_termekek_listazasa_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OperatorFormListDailyProducts());
+        }
+
+        private void BT_menu_jelszovaltoztat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ChangePasswordForm());
+        }
+
+        private void BT_menu_kijelentkezes_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Szakdolgozat.Main_Code
         {
             InitializeComponent();
 
-            stilus.styleChildForm(this);
+            stilus.styleParentForm(this);
         }
 
         private static Form activeForm = null;
@@ -41,25 +41,25 @@ namespace Szakdolgozat.Main_Code
             childForm.Show();
         }
 
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new LoginForm().Show();
-            this.Hide();
-        }
-
         private void SupplierHomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
         }
 
-        private void alkatrészekEladásaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BT_menu_alkatresz_eladas_Click(object sender, EventArgs e)
         {
             openChildForm(new SupplierFormSellParts());
         }
 
-        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BT_menu_jelszovaltoztat_Click(object sender, EventArgs e)
         {
             openChildForm(new ChangePasswordForm());
+        }
+
+        private void BT_menu_kijelentkezes_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
         }
     }
 }

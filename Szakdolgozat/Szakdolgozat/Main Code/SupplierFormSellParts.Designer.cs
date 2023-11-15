@@ -36,17 +36,21 @@ namespace Szakdolgozat.Main_Code
             // 
             // DGV_parts
             // 
+            this.DGV_parts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_parts.Location = new System.Drawing.Point(142, 115);
+            this.DGV_parts.Location = new System.Drawing.Point(253, 114);
             this.DGV_parts.Name = "DGV_parts";
             this.DGV_parts.Size = new System.Drawing.Size(469, 259);
             this.DGV_parts.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(296, 75);
+            this.label1.Location = new System.Drawing.Point(407, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 24);
             this.label1.TabIndex = 2;

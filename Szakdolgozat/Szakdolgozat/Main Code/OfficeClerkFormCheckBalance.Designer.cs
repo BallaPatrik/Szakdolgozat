@@ -36,8 +36,9 @@ namespace Szakdolgozat.Main_Code
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 126);
+            this.label1.Location = new System.Drawing.Point(355, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 13);
             this.label1.TabIndex = 0;
@@ -45,9 +46,10 @@ namespace Szakdolgozat.Main_Code
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(264, 51);
+            this.label3.Location = new System.Drawing.Point(354, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 24);
             this.label3.TabIndex = 12;
@@ -55,7 +57,8 @@ namespace Szakdolgozat.Main_Code
             // 
             // TB_egyenleg
             // 
-            this.TB_egyenleg.Location = new System.Drawing.Point(289, 159);
+            this.TB_egyenleg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TB_egyenleg.Location = new System.Drawing.Point(379, 226);
             this.TB_egyenleg.Name = "TB_egyenleg";
             this.TB_egyenleg.ReadOnly = true;
             this.TB_egyenleg.Size = new System.Drawing.Size(144, 20);
@@ -69,6 +72,7 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.TB_egyenleg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "OfficeClerkFormCheckBalance";
             this.Text = "OfficeClerkFormCheckBalance";
             this.ResumeLayout(false);

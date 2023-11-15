@@ -226,20 +226,5 @@ namespace Szakdolgozat
                 L_vegosszeg.Text = "Végösszeg: " + vegosszeg;
             }
         }
-
-        private void megrendelésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void kilépésToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void eddigiRendelésekMegtekintéseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

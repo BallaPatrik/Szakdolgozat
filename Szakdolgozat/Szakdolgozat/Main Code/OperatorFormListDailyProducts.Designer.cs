@@ -44,12 +44,14 @@ namespace Szakdolgozat
             // 
             // DGV_products
             // 
+            this.DGV_products.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_products.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Torles});
-            this.DGV_products.Location = new System.Drawing.Point(110, 38);
+            this.DGV_products.Location = new System.Drawing.Point(237, 98);
             this.DGV_products.Name = "DGV_products";
             this.DGV_products.Size = new System.Drawing.Size(469, 261);
             this.DGV_products.TabIndex = 18;
@@ -65,7 +67,7 @@ namespace Szakdolgozat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 7);
+            this.label1.Location = new System.Drawing.Point(234, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
             this.label1.TabIndex = 19;
@@ -73,8 +75,9 @@ namespace Szakdolgozat
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(481, 349);
+            this.label5.Location = new System.Drawing.Point(530, 470);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 33;
@@ -82,16 +85,18 @@ namespace Szakdolgozat
             // 
             // TB_darabszam
             // 
-            this.TB_darabszam.Location = new System.Drawing.Point(550, 346);
+            this.TB_darabszam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_darabszam.Location = new System.Drawing.Point(599, 467);
             this.TB_darabszam.Name = "TB_darabszam";
-            this.TB_darabszam.Size = new System.Drawing.Size(100, 20);
+            this.TB_darabszam.Size = new System.Drawing.Size(107, 20);
             this.TB_darabszam.TabIndex = 32;
             this.TB_darabszam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_darabszam_KeyDown);
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(315, 349);
+            this.label4.Location = new System.Drawing.Point(341, 503);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 31;
@@ -99,8 +104,9 @@ namespace Szakdolgozat
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 349);
+            this.label3.Location = new System.Drawing.Point(311, 474);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 30;
@@ -108,22 +114,25 @@ namespace Szakdolgozat
             // 
             // TB_datum
             // 
-            this.TB_datum.Location = new System.Drawing.Point(362, 346);
+            this.TB_datum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_datum.Location = new System.Drawing.Point(388, 500);
             this.TB_datum.Name = "TB_datum";
             this.TB_datum.Size = new System.Drawing.Size(100, 20);
             this.TB_datum.TabIndex = 29;
             // 
             // TB_termeknev
             // 
-            this.TB_termeknev.Location = new System.Drawing.Point(184, 346);
+            this.TB_termeknev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_termeknev.Location = new System.Drawing.Point(388, 471);
             this.TB_termeknev.Name = "TB_termeknev";
             this.TB_termeknev.Size = new System.Drawing.Size(100, 20);
             this.TB_termeknev.TabIndex = 28;
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 315);
+            this.label2.Location = new System.Drawing.Point(418, 444);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(198, 13);
             this.label2.TabIndex = 27;

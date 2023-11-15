@@ -39,7 +39,8 @@ namespace Szakdolgozat
             // 
             // TB_jelszo
             // 
-            this.TB_jelszo.Location = new System.Drawing.Point(423, 291);
+            this.TB_jelszo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_jelszo.Location = new System.Drawing.Point(426, 295);
             this.TB_jelszo.Name = "TB_jelszo";
             this.TB_jelszo.PasswordChar = '*';
             this.TB_jelszo.Size = new System.Drawing.Size(100, 20);
@@ -47,15 +48,17 @@ namespace Szakdolgozat
             // 
             // TB_felhnev
             // 
-            this.TB_felhnev.Location = new System.Drawing.Point(423, 262);
+            this.TB_felhnev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_felhnev.Location = new System.Drawing.Point(426, 266);
             this.TB_felhnev.Name = "TB_felhnev";
             this.TB_felhnev.Size = new System.Drawing.Size(100, 20);
             this.TB_felhnev.TabIndex = 9;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(378, 298);
+            this.label3.Location = new System.Drawing.Point(381, 302);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(39, 13);
@@ -64,8 +67,9 @@ namespace Szakdolgozat
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(328, 269);
+            this.label2.Location = new System.Drawing.Point(331, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 7;
@@ -73,9 +77,10 @@ namespace Szakdolgozat
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(367, 176);
+            this.label1.Location = new System.Drawing.Point(358, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 25);
             this.label1.TabIndex = 11;
@@ -83,7 +88,8 @@ namespace Szakdolgozat
             // 
             // BT_bejelentkezes
             // 
-            this.BT_bejelentkezes.Location = new System.Drawing.Point(423, 328);
+            this.BT_bejelentkezes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_bejelentkezes.Location = new System.Drawing.Point(426, 332);
             this.BT_bejelentkezes.Name = "BT_bejelentkezes";
             this.BT_bejelentkezes.Size = new System.Drawing.Size(87, 23);
             this.BT_bejelentkezes.TabIndex = 12;
@@ -102,6 +108,8 @@ namespace Szakdolgozat
             this.Controls.Add(this.TB_felhnev);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimumSize = new System.Drawing.Size(972, 600);
             this.Name = "LoginForm";
             this.Text = "Bejelentkezes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);

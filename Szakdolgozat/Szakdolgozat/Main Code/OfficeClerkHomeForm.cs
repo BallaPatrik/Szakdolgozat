@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat
 {
     public partial class OfficeClerkHomeForm : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public OfficeClerkHomeForm()
         {
             InitializeComponent();
+
+            stilus.styleParentForm(this);
         }
 
         private static Form activeForm = null;
@@ -36,39 +41,32 @@ namespace Szakdolgozat
             childForm.Show();
         }
 
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm form = new LoginForm();
-            form.Show();
-            this.Hide();
-        }
-
         private void OfficeClerkForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
         }
 
-        
-
-        private void alkatrészekDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Szakdolgozat.Main_Code.ChangePasswordForm());
-        }
-
-        private void egyenlegLekérdezésToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BT_egyenleg_Click(object sender, EventArgs e)
         {
             openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckBalance());
         }
 
-        private void megrendelésekToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BT_jelszovaltoztat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.ChangePasswordForm());
+
+        }
+
+        private void BT_menu_rendeles_megtekint_Click(object sender, EventArgs e)
         {
             openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckOrders());
+        }
 
+        private void BT_kijelentkezés_Click(object sender, EventArgs e)
+        {
+            LoginForm form = new LoginForm();
+            form.Show();
+            this.Hide();
         }
     }
 }

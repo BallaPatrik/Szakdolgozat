@@ -41,21 +41,7 @@ namespace Szakdolgozat.Main_Code
             System.Environment.Exit(0);
         }
 
-        private void alkToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new AdminFormAddParts());
-        }
-
-        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ChangePasswordForm());
-        }
-
-        private void alkatrészDarabszámánakBeállításaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new AdminFormAddPartsQuantity());
-        }
-
+        
         private void BT_menu_felhasz_hozzaad_Click(object sender, EventArgs e)
         {
             openChildForm(new Szakdolgozat.Main_Code.AdminFormAddUser());
@@ -79,6 +65,13 @@ namespace Szakdolgozat.Main_Code
         private void BT_jelszovaltoztat_Click(object sender, EventArgs e)
         {
             openChildForm(new ChangePasswordForm());
+        }
+
+        private void BT_kijelentkezés_Click(object sender, EventArgs e)
+        {
+            LoginForm form = new LoginForm();
+            form.Show();
+            this.Hide();
         }
     }
 }

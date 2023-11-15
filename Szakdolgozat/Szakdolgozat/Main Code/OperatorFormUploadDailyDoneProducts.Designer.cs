@@ -38,8 +38,10 @@ namespace Szakdolgozat
             // 
             // LB_termekek
             // 
+            this.LB_termekek.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LB_termekek.FormattingEnabled = true;
-            this.LB_termekek.Location = new System.Drawing.Point(217, 84);
+            this.LB_termekek.Location = new System.Drawing.Point(307, 90);
             this.LB_termekek.Name = "LB_termekek";
             this.LB_termekek.Size = new System.Drawing.Size(314, 186);
             this.LB_termekek.TabIndex = 0;
@@ -47,15 +49,17 @@ namespace Szakdolgozat
             // 
             // TB_darabszam
             // 
-            this.TB_darabszam.Location = new System.Drawing.Point(301, 302);
+            this.TB_darabszam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TB_darabszam.Location = new System.Drawing.Point(483, 305);
             this.TB_darabszam.Name = "TB_darabszam";
             this.TB_darabszam.Size = new System.Drawing.Size(138, 20);
             this.TB_darabszam.TabIndex = 1;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 305);
+            this.label1.Location = new System.Drawing.Point(405, 308);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 2;
@@ -64,7 +68,7 @@ namespace Szakdolgozat
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 68);
+            this.label2.Location = new System.Drawing.Point(304, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 3;
@@ -72,7 +76,8 @@ namespace Szakdolgozat
             // 
             // BT_termekfelvitele
             // 
-            this.BT_termekfelvitele.Location = new System.Drawing.Point(301, 349);
+            this.BT_termekfelvitele.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_termekfelvitele.Location = new System.Drawing.Point(502, 355);
             this.BT_termekfelvitele.Name = "BT_termekfelvitele";
             this.BT_termekfelvitele.Size = new System.Drawing.Size(119, 23);
             this.BT_termekfelvitele.TabIndex = 17;

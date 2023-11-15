@@ -37,9 +37,10 @@ namespace Szakdolgozat.Main_Code
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(318, 53);
+            this.label2.Location = new System.Drawing.Point(274, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 25);
             this.label2.TabIndex = 30;
@@ -47,15 +48,19 @@ namespace Szakdolgozat.Main_Code
             // 
             // DGV_termekek
             // 
+            this.DGV_termekek.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_termekek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_termekek.Location = new System.Drawing.Point(128, 99);
+            this.DGV_termekek.Location = new System.Drawing.Point(30, 100);
             this.DGV_termekek.Name = "DGV_termekek";
-            this.DGV_termekek.Size = new System.Drawing.Size(545, 298);
+            this.DGV_termekek.Size = new System.Drawing.Size(651, 298);
             this.DGV_termekek.TabIndex = 29;
             // 
             // BT_ellenajanlat_kuldese
             // 
-            this.BT_ellenajanlat_kuldese.Location = new System.Drawing.Point(679, 185);
+            this.BT_ellenajanlat_kuldese.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BT_ellenajanlat_kuldese.Location = new System.Drawing.Point(687, 193);
             this.BT_ellenajanlat_kuldese.Name = "BT_ellenajanlat_kuldese";
             this.BT_ellenajanlat_kuldese.Size = new System.Drawing.Size(101, 52);
             this.BT_ellenajanlat_kuldese.TabIndex = 31;

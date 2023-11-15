@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class BuyerHomeForm : Form
     {
+        StyleForms stilus = new StyleForms();
+
         public BuyerHomeForm()
         {
             InitializeComponent();
+
+            stilus.styleParentForm(this);
         }
 
         private static Form activeForm = null;
@@ -36,30 +41,32 @@ namespace Szakdolgozat.Main_Code
             childForm.Show();
         }
 
-        private void eddigiRendelésekMegtekintéseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new BuyerFormListOrders());
-        }
-
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new LoginForm().Show();
-            this.Hide();
-        }
-
-        private void megrendelésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new BuyerFormOrder());
-        }
-
         private void BuyerHomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
         }
 
-        private void jelszóváltoztatásToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BT_menu_rendeles_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyerFormOrder());
+        }
+
+        private void BT_menu_rendeles_megtekint_Click(object sender, EventArgs e)
+        {
+            openChildForm(new BuyerFormListOrders());
+        }
+
+        private void BT_jelszovaltoztat_Click(object sender, EventArgs e)
         {
             openChildForm(new ChangePasswordForm());
         }
+
+        private void BT_kijelentkezes_Click(object sender, EventArgs e)
+        {
+            new LoginForm().Show();
+            this.Hide();
+        }
+
+        
     }
 }

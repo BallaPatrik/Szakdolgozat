@@ -39,6 +39,9 @@ namespace Szakdolgozat.Main_Code
             // 
             // DGV_termekek
             // 
+            this.DGV_termekek.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_termekek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_termekek.Location = new System.Drawing.Point(48, 76);
             this.DGV_termekek.Name = "DGV_termekek";
@@ -47,6 +50,7 @@ namespace Szakdolgozat.Main_Code
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox1.Location = new System.Drawing.Point(599, 110);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(189, 196);
@@ -55,6 +59,7 @@ namespace Szakdolgozat.Main_Code
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(647, 76);
             this.label1.Name = "label1";
@@ -64,6 +69,7 @@ namespace Szakdolgozat.Main_Code
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(238, 30);
@@ -81,6 +87,7 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.DGV_termekek);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "BuyerFormOrderDetails";
             this.Text = "Rendelés reszletek";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BuyerFormOrderDetails_FormClosed);
