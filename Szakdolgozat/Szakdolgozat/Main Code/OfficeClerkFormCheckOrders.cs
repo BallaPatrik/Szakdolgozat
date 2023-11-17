@@ -242,7 +242,7 @@ namespace Szakdolgozat.Main_Code
                 else if (e.ColumnIndex == 7)
                 {
                     int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-                    //Transporter.getInstance().setOrderId(rendelesid);
+                    
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
                     if(allapot == "Elfogadva" || allapot == "Elutasítva" || getLatestState(rendelesid) == "Nem tudom" || getLatestState(rendelesid) == "Elutasítva" || getLatestState(rendelesid) == "Elfogadva")
                     {

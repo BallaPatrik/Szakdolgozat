@@ -29,15 +29,16 @@ namespace Szakdolgozat.Main_Code
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomeForm));
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.BT_kijelentkezés = new System.Windows.Forms.Button();
             this.BT_jelszovaltoztat = new System.Windows.Forms.Button();
             this.BT_alkatresz_hozzarendel_termek_darab = new System.Windows.Forms.Button();
             this.BT_alkatresz_hozzarendel_termek = new System.Windows.Forms.Button();
             this.BT_menu_felhasz_torol = new System.Windows.Forms.Button();
             this.BT_menu_felhasz_hozzaad = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.BT_kijelentkezés = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,86 +69,6 @@ namespace Szakdolgozat.Main_Code
             this.panelSideMenu.Size = new System.Drawing.Size(250, 597);
             this.panelSideMenu.TabIndex = 2;
             // 
-            // BT_jelszovaltoztat
-            // 
-            this.BT_jelszovaltoztat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_jelszovaltoztat.FlatAppearance.BorderSize = 0;
-            this.BT_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(0, 280);
-            this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
-            this.BT_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
-            this.BT_jelszovaltoztat.TabIndex = 4;
-            this.BT_jelszovaltoztat.Text = "Jelszóváltoztatás";
-            this.BT_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_jelszovaltoztat.UseVisualStyleBackColor = true;
-            this.BT_jelszovaltoztat.Click += new System.EventHandler(this.BT_jelszovaltoztat_Click);
-            // 
-            // BT_alkatresz_hozzarendel_termek_darab
-            // 
-            this.BT_alkatresz_hozzarendel_termek_darab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_alkatresz_hozzarendel_termek_darab.FlatAppearance.BorderSize = 0;
-            this.BT_alkatresz_hozzarendel_termek_darab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_alkatresz_hozzarendel_termek_darab.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_alkatresz_hozzarendel_termek_darab.Location = new System.Drawing.Point(0, 235);
-            this.BT_alkatresz_hozzarendel_termek_darab.Name = "BT_alkatresz_hozzarendel_termek_darab";
-            this.BT_alkatresz_hozzarendel_termek_darab.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_alkatresz_hozzarendel_termek_darab.Size = new System.Drawing.Size(250, 45);
-            this.BT_alkatresz_hozzarendel_termek_darab.TabIndex = 3;
-            this.BT_alkatresz_hozzarendel_termek_darab.Text = "Alkatrész darabszámának hozzárendelése a termékhez";
-            this.BT_alkatresz_hozzarendel_termek_darab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_alkatresz_hozzarendel_termek_darab.UseVisualStyleBackColor = true;
-            this.BT_alkatresz_hozzarendel_termek_darab.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_darab_Click);
-            // 
-            // BT_alkatresz_hozzarendel_termek
-            // 
-            this.BT_alkatresz_hozzarendel_termek.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_alkatresz_hozzarendel_termek.FlatAppearance.BorderSize = 0;
-            this.BT_alkatresz_hozzarendel_termek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_alkatresz_hozzarendel_termek.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_alkatresz_hozzarendel_termek.Location = new System.Drawing.Point(0, 190);
-            this.BT_alkatresz_hozzarendel_termek.Name = "BT_alkatresz_hozzarendel_termek";
-            this.BT_alkatresz_hozzarendel_termek.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_alkatresz_hozzarendel_termek.Size = new System.Drawing.Size(250, 45);
-            this.BT_alkatresz_hozzarendel_termek.TabIndex = 2;
-            this.BT_alkatresz_hozzarendel_termek.Text = "Alkatrész hozzárendelése a termékhez";
-            this.BT_alkatresz_hozzarendel_termek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_alkatresz_hozzarendel_termek.UseVisualStyleBackColor = true;
-            this.BT_alkatresz_hozzarendel_termek.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_Click);
-            // 
-            // BT_menu_felhasz_torol
-            // 
-            this.BT_menu_felhasz_torol.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_menu_felhasz_torol.FlatAppearance.BorderSize = 0;
-            this.BT_menu_felhasz_torol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_menu_felhasz_torol.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_menu_felhasz_torol.Location = new System.Drawing.Point(0, 145);
-            this.BT_menu_felhasz_torol.Name = "BT_menu_felhasz_torol";
-            this.BT_menu_felhasz_torol.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_menu_felhasz_torol.Size = new System.Drawing.Size(250, 45);
-            this.BT_menu_felhasz_torol.TabIndex = 1;
-            this.BT_menu_felhasz_torol.Text = "Felhasználó törlése";
-            this.BT_menu_felhasz_torol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_menu_felhasz_torol.UseVisualStyleBackColor = true;
-            this.BT_menu_felhasz_torol.Click += new System.EventHandler(this.BT_menu_felhasz_torol_Click);
-            // 
-            // BT_menu_felhasz_hozzaad
-            // 
-            this.BT_menu_felhasz_hozzaad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_menu_felhasz_hozzaad.FlatAppearance.BorderSize = 0;
-            this.BT_menu_felhasz_hozzaad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_menu_felhasz_hozzaad.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_menu_felhasz_hozzaad.Location = new System.Drawing.Point(0, 100);
-            this.BT_menu_felhasz_hozzaad.Name = "BT_menu_felhasz_hozzaad";
-            this.BT_menu_felhasz_hozzaad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_menu_felhasz_hozzaad.Size = new System.Drawing.Size(250, 45);
-            this.BT_menu_felhasz_hozzaad.TabIndex = 0;
-            this.BT_menu_felhasz_hozzaad.Text = "Felhasználó hozzáadása";
-            this.BT_menu_felhasz_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_menu_felhasz_hozzaad.UseVisualStyleBackColor = true;
-            this.BT_menu_felhasz_hozzaad.Click += new System.EventHandler(this.BT_menu_felhasz_hozzaad_Click);
-            // 
             // panelLogo
             // 
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -162,15 +83,107 @@ namespace Szakdolgozat.Main_Code
             this.BT_kijelentkezés.FlatAppearance.BorderSize = 0;
             this.BT_kijelentkezés.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_kijelentkezés.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_kijelentkezés.Image = global::Szakdolgozat.Properties.Resources._1486505366_exit_export_out_send_sending_archive_outside_81436;
+            this.BT_kijelentkezés.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_kijelentkezés.Location = new System.Drawing.Point(0, 325);
             this.BT_kijelentkezés.Name = "BT_kijelentkezés";
             this.BT_kijelentkezés.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BT_kijelentkezés.Size = new System.Drawing.Size(250, 45);
             this.BT_kijelentkezés.TabIndex = 5;
             this.BT_kijelentkezés.Text = "Kijelentkezés";
-            this.BT_kijelentkezés.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_kijelentkezés.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BT_kijelentkezés.UseVisualStyleBackColor = true;
             this.BT_kijelentkezés.Click += new System.EventHandler(this.BT_kijelentkezés_Click);
+            // 
+            // BT_jelszovaltoztat
+            // 
+            this.BT_jelszovaltoztat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_jelszovaltoztat.FlatAppearance.BorderSize = 0;
+            this.BT_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_jelszovaltoztat.Image = global::Szakdolgozat.Properties.Resources._40_104848;
+            this.BT_jelszovaltoztat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(0, 280);
+            this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
+            this.BT_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
+            this.BT_jelszovaltoztat.TabIndex = 4;
+            this.BT_jelszovaltoztat.Text = "Jelszóváltoztatás";
+            this.BT_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_jelszovaltoztat.UseVisualStyleBackColor = true;
+            this.BT_jelszovaltoztat.Click += new System.EventHandler(this.BT_jelszovaltoztat_Click);
+            // 
+            // BT_alkatresz_hozzarendel_termek_darab
+            // 
+            this.BT_alkatresz_hozzarendel_termek_darab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_alkatresz_hozzarendel_termek_darab.FlatAppearance.BorderSize = 0;
+            this.BT_alkatresz_hozzarendel_termek_darab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_alkatresz_hozzarendel_termek_darab.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_alkatresz_hozzarendel_termek_darab.Image = ((System.Drawing.Image)(resources.GetObject("BT_alkatresz_hozzarendel_termek_darab.Image")));
+            this.BT_alkatresz_hozzarendel_termek_darab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_alkatresz_hozzarendel_termek_darab.Location = new System.Drawing.Point(0, 235);
+            this.BT_alkatresz_hozzarendel_termek_darab.Name = "BT_alkatresz_hozzarendel_termek_darab";
+            this.BT_alkatresz_hozzarendel_termek_darab.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_alkatresz_hozzarendel_termek_darab.Size = new System.Drawing.Size(250, 45);
+            this.BT_alkatresz_hozzarendel_termek_darab.TabIndex = 3;
+            this.BT_alkatresz_hozzarendel_termek_darab.Text = "Alkatrész darabszámának hozzárendelése a termékhez";
+            this.BT_alkatresz_hozzarendel_termek_darab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_alkatresz_hozzarendel_termek_darab.UseVisualStyleBackColor = true;
+            this.BT_alkatresz_hozzarendel_termek_darab.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_darab_Click);
+            // 
+            // BT_alkatresz_hozzarendel_termek
+            // 
+            this.BT_alkatresz_hozzarendel_termek.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_alkatresz_hozzarendel_termek.FlatAppearance.BorderSize = 0;
+            this.BT_alkatresz_hozzarendel_termek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_alkatresz_hozzarendel_termek.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_alkatresz_hozzarendel_termek.Image = ((System.Drawing.Image)(resources.GetObject("BT_alkatresz_hozzarendel_termek.Image")));
+            this.BT_alkatresz_hozzarendel_termek.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_alkatresz_hozzarendel_termek.Location = new System.Drawing.Point(0, 190);
+            this.BT_alkatresz_hozzarendel_termek.Name = "BT_alkatresz_hozzarendel_termek";
+            this.BT_alkatresz_hozzarendel_termek.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_alkatresz_hozzarendel_termek.Size = new System.Drawing.Size(250, 45);
+            this.BT_alkatresz_hozzarendel_termek.TabIndex = 2;
+            this.BT_alkatresz_hozzarendel_termek.Text = "Alkatrész hozzárendelése a termékhez";
+            this.BT_alkatresz_hozzarendel_termek.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_alkatresz_hozzarendel_termek.UseVisualStyleBackColor = true;
+            this.BT_alkatresz_hozzarendel_termek.Click += new System.EventHandler(this.BT_alkatresz_hozzarendel_termek_Click);
+            // 
+            // BT_menu_felhasz_torol
+            // 
+            this.BT_menu_felhasz_torol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_felhasz_torol.FlatAppearance.BorderSize = 0;
+            this.BT_menu_felhasz_torol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_felhasz_torol.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_felhasz_torol.Image = ((System.Drawing.Image)(resources.GetObject("BT_menu_felhasz_torol.Image")));
+            this.BT_menu_felhasz_torol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_felhasz_torol.Location = new System.Drawing.Point(0, 145);
+            this.BT_menu_felhasz_torol.Name = "BT_menu_felhasz_torol";
+            this.BT_menu_felhasz_torol.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_felhasz_torol.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_felhasz_torol.TabIndex = 1;
+            this.BT_menu_felhasz_torol.Text = "Felhasználó törlése";
+            this.BT_menu_felhasz_torol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_menu_felhasz_torol.UseVisualStyleBackColor = true;
+            this.BT_menu_felhasz_torol.Click += new System.EventHandler(this.BT_menu_felhasz_torol_Click);
+            // 
+            // BT_menu_felhasz_hozzaad
+            // 
+            this.BT_menu_felhasz_hozzaad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_felhasz_hozzaad.FlatAppearance.BorderSize = 0;
+            this.BT_menu_felhasz_hozzaad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_felhasz_hozzaad.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_felhasz_hozzaad.Image = ((System.Drawing.Image)(resources.GetObject("BT_menu_felhasz_hozzaad.Image")));
+            this.BT_menu_felhasz_hozzaad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_felhasz_hozzaad.Location = new System.Drawing.Point(0, 100);
+            this.BT_menu_felhasz_hozzaad.Name = "BT_menu_felhasz_hozzaad";
+            this.BT_menu_felhasz_hozzaad.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_felhasz_hozzaad.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_felhasz_hozzaad.TabIndex = 0;
+            this.BT_menu_felhasz_hozzaad.Text = "Felhasználó hozzáadása";
+            this.BT_menu_felhasz_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_menu_felhasz_hozzaad.UseVisualStyleBackColor = true;
+            this.BT_menu_felhasz_hozzaad.Click += new System.EventHandler(this.BT_menu_felhasz_hozzaad_Click);
             // 
             // AdminHomeForm
             // 

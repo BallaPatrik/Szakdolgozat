@@ -29,6 +29,7 @@ namespace Szakdolgozat.Main_Code
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuyerHomeForm));
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.BT_kijelentkezes = new System.Windows.Forms.Button();
@@ -69,13 +70,15 @@ namespace Szakdolgozat.Main_Code
             this.BT_kijelentkezes.FlatAppearance.BorderSize = 0;
             this.BT_kijelentkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_kijelentkezes.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_kijelentkezes.Image = global::Szakdolgozat.Properties.Resources._1486505366_exit_export_out_send_sending_archive_outside_81436;
+            this.BT_kijelentkezes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_kijelentkezes.Location = new System.Drawing.Point(0, 235);
             this.BT_kijelentkezes.Name = "BT_kijelentkezes";
             this.BT_kijelentkezes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BT_kijelentkezes.Size = new System.Drawing.Size(250, 45);
             this.BT_kijelentkezes.TabIndex = 6;
             this.BT_kijelentkezes.Text = "Kijelentkezés";
-            this.BT_kijelentkezes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_kijelentkezes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BT_kijelentkezes.UseVisualStyleBackColor = true;
             this.BT_kijelentkezes.Click += new System.EventHandler(this.BT_kijelentkezes_Click);
             // 
@@ -85,13 +88,15 @@ namespace Szakdolgozat.Main_Code
             this.BT_jelszovaltoztat.FlatAppearance.BorderSize = 0;
             this.BT_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_jelszovaltoztat.Image = global::Szakdolgozat.Properties.Resources._40_104848;
+            this.BT_jelszovaltoztat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_jelszovaltoztat.Location = new System.Drawing.Point(0, 190);
             this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
             this.BT_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BT_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
             this.BT_jelszovaltoztat.TabIndex = 5;
             this.BT_jelszovaltoztat.Text = "Jelszóváltoztatás";
-            this.BT_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BT_jelszovaltoztat.UseVisualStyleBackColor = true;
             this.BT_jelszovaltoztat.Click += new System.EventHandler(this.BT_jelszovaltoztat_Click);
             // 
@@ -101,13 +106,15 @@ namespace Szakdolgozat.Main_Code
             this.BT_menu_rendeles_megtekint.FlatAppearance.BorderSize = 0;
             this.BT_menu_rendeles_megtekint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_menu_rendeles_megtekint.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_rendeles_megtekint.Image = ((System.Drawing.Image)(resources.GetObject("BT_menu_rendeles_megtekint.Image")));
+            this.BT_menu_rendeles_megtekint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_menu_rendeles_megtekint.Location = new System.Drawing.Point(0, 145);
             this.BT_menu_rendeles_megtekint.Name = "BT_menu_rendeles_megtekint";
             this.BT_menu_rendeles_megtekint.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BT_menu_rendeles_megtekint.Size = new System.Drawing.Size(250, 45);
             this.BT_menu_rendeles_megtekint.TabIndex = 4;
             this.BT_menu_rendeles_megtekint.Text = "Megrendelések megtekintése";
-            this.BT_menu_rendeles_megtekint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_rendeles_megtekint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BT_menu_rendeles_megtekint.UseVisualStyleBackColor = true;
             this.BT_menu_rendeles_megtekint.Click += new System.EventHandler(this.BT_menu_rendeles_megtekint_Click);
             // 
@@ -117,13 +124,15 @@ namespace Szakdolgozat.Main_Code
             this.BT_menu_rendeles.FlatAppearance.BorderSize = 0;
             this.BT_menu_rendeles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BT_menu_rendeles.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_rendeles.Image = ((System.Drawing.Image)(resources.GetObject("BT_menu_rendeles.Image")));
+            this.BT_menu_rendeles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BT_menu_rendeles.Location = new System.Drawing.Point(0, 100);
             this.BT_menu_rendeles.Name = "BT_menu_rendeles";
             this.BT_menu_rendeles.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BT_menu_rendeles.Size = new System.Drawing.Size(250, 45);
             this.BT_menu_rendeles.TabIndex = 3;
             this.BT_menu_rendeles.Text = "Rendelés";
-            this.BT_menu_rendeles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_rendeles.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BT_menu_rendeles.UseVisualStyleBackColor = true;
             this.BT_menu_rendeles.Click += new System.EventHandler(this.BT_menu_rendeles_Click);
             // 
