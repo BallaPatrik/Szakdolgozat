@@ -16,6 +16,14 @@ namespace Szakdolgozat.Main_Code
         public AdminFormAddUser()
         {
             InitializeComponent();
+
+
+            //ezekkel a tulajdonságokkal lehet játszani
+            BT_felhasznalofelvitel.FlatStyle = FlatStyle.Flat;
+            BT_felhasznalofelvitel.FlatAppearance.BorderSize = 0;
+            BT_felhasznalofelvitel.Size = new Size(120, 40);
+            BT_felhasznalofelvitel.BackColor = Color.Blue;
+            BT_felhasznalofelvitel.ForeColor = Color.White;
         }
 
         private void loadRoles()
