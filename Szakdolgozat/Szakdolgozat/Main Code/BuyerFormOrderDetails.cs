@@ -75,11 +75,11 @@ namespace Szakdolgozat.Main_Code
 
             DGV_termekek.Refresh();
 
-            string qrkodszoveg = "Köszönjük a vásárlást!\n A rendelés adatai:\n";
+            string qrkodszoveg = "Köszönjük a vásárlást!\nA rendelés adatai:\n";
 
             int vegosszeg = 0;
 
-            foreach(DataGridViewRow elem in DGV_termekek.Rows)
+            foreach (DataGridViewRow elem in DGV_termekek.Rows)
             {
                 if (elem != null)
                 {
@@ -90,8 +90,6 @@ namespace Szakdolgozat.Main_Code
             }
 
             qrkodszoveg += "\nVégösszeg: " + vegosszeg;
-
-            
 
             //QRKÓD működése
 

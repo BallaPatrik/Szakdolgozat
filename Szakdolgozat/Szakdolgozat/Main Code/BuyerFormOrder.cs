@@ -28,15 +28,6 @@ namespace Szakdolgozat
             stilus.styleChildForm(this);
         }
 
-        
-
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm form = new LoginForm();
-            form.Show();
-            this.Hide();
-        }
-
         private void BuyerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
@@ -56,7 +47,6 @@ namespace Szakdolgozat
 
             try
             {
-
                 conn.Open();
 
                 string sql = "select nev, ar from termekek";
@@ -123,8 +113,6 @@ namespace Szakdolgozat
 
             string sql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
 
-            string rendelesidsql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
-
             cmd = new MySqlCommand(sql, conn);
 
             try
@@ -146,7 +134,6 @@ namespace Szakdolgozat
             cmd2 = new MySqlCommand(sql2, conn);
 
             MySqlDataReader dr = cmd2.ExecuteReader();
-
 
             while (dr.Read())
             {

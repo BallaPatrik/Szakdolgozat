@@ -102,6 +102,12 @@ namespace Szakdolgozat
 
         private void insertPartIntoDataBase()
         {
+            if(TB_name.Text=="" || TB_startingQuantity.Text=="" || TB_quantity.Text == "")
+            {
+                MessageBox.Show("Kérem töltse ki az összes beviteli mezőt!");
+                return;
+            }
+
             string alkatresznev = TB_name.Text;
             int kezdodarabszam = Convert.ToInt32(TB_startingQuantity.Text);
             int darabszam = Convert.ToInt32(TB_quantity.Text);
@@ -110,25 +116,65 @@ namespace Szakdolgozat
 
             MySqlConnection conn = db.getConnection();
 
-            MySqlCommand cmd;
+            MySqlCommand cmd, cmd2, cmd3, cmd4;
 
             conn.Open();
 
-            cmd = new MySqlCommand("INSERT INTO alkatreszek (nev,osszesdarab) VALUES ('" + alkatresznev + "', " + kezdodarabszam + ")", conn);
+            int termekid = 0;
+
+            string sql = "SELECT termekid FROM termekek WHERE nev='" + comboBox1.SelectedItem.ToString().Split(':')[1].Trim() + "'";
+            
+            cmd=new MySqlCommand(sql, conn);
+
+            MySqlDataReader dr=cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                termekid=dr.GetInt32(0);
+            }
+
+            conn.Close();
+
+            conn.Open();
+
+            cmd3 = new MySqlCommand("INSERT INTO alkatreszek (nev,osszesdarab) VALUES ('" + alkatresznev + "', " + kezdodarabszam + ")", conn);
 
             try
             {
-                cmd.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+
+                int alkatreszid = 0;
+
+                string sql2 = "SELECT alkatreszid FROM alkatreszek WHERE nev='" + alkatresznev + "'";
+
+                cmd2 = new MySqlCommand(sql2, conn);
+
+                MySqlDataReader dr2 = cmd2.ExecuteReader();
+
+                while (dr2.Read())
+                {
+                    alkatreszid = dr2.GetInt32(0);
+                }
+
+                conn.Close();
+
+                conn.Open();
+
+                string sql4 = "INSERT INTO termek_alkatreszek (termekid, alkatreszid, darabszam) VALUES(" + termekid + ", " + alkatreszid + ", " + darabszam + ")";
+                cmd4=new MySqlCommand(sql4, conn);
+
+                cmd4.ExecuteNonQuery();
+
                 MessageBox.Show("Sikeres alkatrészbeszúrás!");
+
+                updateParts(Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
+
             } catch(Exception ex)
             {
                 MessageBox.Show("Hiba történt a beszúrás közben!");
             }
-        }
 
-        private void showNewPartInDGV()
-        {
-
+            conn.Close();
         }
 
         private void BT_confirm_Click(object sender, EventArgs e)

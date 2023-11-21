@@ -33,8 +33,6 @@ namespace Szakdolgozat.Main_Code
             DGV_rendelesek.Columns[6].ReadOnly = true;
 
             stilus.styleChildForm(this);
-
-
         }
 
         private void BuyerFormListOrders_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,7 +51,6 @@ namespace Szakdolgozat.Main_Code
 
             try
             {
-
                 conn.Open();
 
                 string sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where userid=" + felhasznaloid;
@@ -62,13 +59,9 @@ namespace Szakdolgozat.Main_Code
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
-               
-
                 while (dr.Read())
                 {
                     DGV_rendelesek.Rows.Add(0, 0, dr.GetInt32(4), dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
-
-
                 }
 
                 DGV_rendelesek.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
@@ -109,7 +102,6 @@ namespace Szakdolgozat.Main_Code
 
             if (e.ColumnIndex == 0)
             {
-
                 int felhasznaloid = Transporter.getInstance().CurrentUser.Felhasznaloid;
 
                 int rendelesid = 0;
@@ -131,17 +123,12 @@ namespace Szakdolgozat.Main_Code
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
-
                 while (dr.Read())
                 {
                     rendelesid = dr.GetInt32(0);
                 }
 
-
-
                 conn.Close();
-
-                
             }
         }
 

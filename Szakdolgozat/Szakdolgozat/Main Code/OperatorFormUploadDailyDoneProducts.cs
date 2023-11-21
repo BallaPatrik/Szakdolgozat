@@ -51,21 +51,9 @@ namespace Szakdolgozat
             conn.Close();
         }
 
-        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm form = new LoginForm();
-            form.Show();
-            this.Hide();
-        }
-
         private void OperatorForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(0);
-        }
-
-        private void legyártottTermékekFelviteleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void LB_termekek_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,7 +65,6 @@ namespace Szakdolgozat
         {
             string termek = LB_termekek.SelectedItem.ToString();
             int darabszam = Convert.ToInt32(TB_darabszam.Text);
-
 
             Database db = new Database();
 
@@ -99,6 +86,61 @@ namespace Szakdolgozat
 
             conn.Close();
 
+            conn.Open();
+
+            //kiválogatni az alkatrészeket a darabszámokkal együtt
+
+            Dictionary<int, int> alkarteszidkdarabszamokkal = new Dictionary<int, int>();
+
+            cmd.CommandText = "SELECT alkatreszid, darabszam FROM termek_alkatreszek WHERE termekid=" + termekid;
+
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                alkarteszidkdarabszamokkal.Add(dr.GetInt32(0), dr.GetInt32(1));
+            }
+
+            conn.Close();
+
+            //ezeket az értékeket felszorozni a termékek darabszámával
+
+            Dictionary<int, int> alkarteszidkjodarabszamokkal = new Dictionary<int, int>();
+
+            foreach (var elem in alkarteszidkdarabszamokkal)
+            {
+                alkarteszidkjodarabszamokkal[elem.Key] = elem.Value * darabszam;
+            }
+
+            //az összes alkatrészek értékeit kinyerni
+
+            Dictionary<int, int> alkatreszidkdarabszammaladatbazisbol = new Dictionary<int, int>();
+
+            foreach (var elem in alkarteszidkjodarabszamokkal)
+            {
+                conn.Open();
+
+                cmd.CommandText = "SELECT alkatreszid, osszesdarab FROM alkatreszek WHERE alkatreszid=" + elem.Key;
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    alkatreszidkdarabszammaladatbazisbol.Add(dr.GetInt32(0), dr.GetInt32(1));
+                }
+
+                conn.Close();
+            }
+
+            //összes alkatrészből kivonni az elvileg legyártott termékek számát
+
+            //ez jön
+
+            //végigmenni az értékekeken, ha bármelyik negatív, akkor nem lehet az adott mennyiségű terméket legyártani
+
+            //ellenkező esetben le lehet gyártani
+
+
 
             conn.Open();
 
@@ -111,25 +153,15 @@ namespace Szakdolgozat
 
             try
             {
-
                 cmd2.ExecuteNonQuery();
-                MessageBox.Show("Termek felvitele sikeres!");
-
+                MessageBox.Show("Termék felvitele sikeres!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Beszuras nem sikerult! Indoka: " + ex.Message);
+                MessageBox.Show("Beszúras nem sikerült! Indoka: " + ex.Message);
             }
 
             conn.Close();
-
-        }
-
-        private void maFelvittTermékekListázásaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OperatorFormListDailyProducts form = new OperatorFormListDailyProducts();
-            form.Show();
-            this.Hide();
         }
     }
 }
