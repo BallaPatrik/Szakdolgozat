@@ -45,6 +45,11 @@ namespace Szakdolgozat.Main_Code
                 DGV_termekek.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; //a többi cella középre igazítása
             }
 
+            foreach (DataGridViewColumn elem in DGV_termekek.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
             getOrderDetails();
 
             stilus.styleChildForm(this);

@@ -47,6 +47,11 @@ namespace Szakdolgozat.Main_Code
             getOrderDetails();
 
             stilus.styleChildForm(this);
+
+            foreach (DataGridViewColumn elem in DGV_termekek.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
 

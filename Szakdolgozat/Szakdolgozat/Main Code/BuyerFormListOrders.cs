@@ -33,6 +33,11 @@ namespace Szakdolgozat.Main_Code
             DGV_rendelesek.Columns[6].ReadOnly = true;
 
             stilus.styleChildForm(this);
+
+            foreach (DataGridViewColumn elem in DGV_rendelesek.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void BuyerFormListOrders_FormClosed(object sender, FormClosedEventArgs e)
@@ -127,6 +132,8 @@ namespace Szakdolgozat.Main_Code
                 {
                     rendelesid = dr.GetInt32(0);
                 }
+
+                Transporter.getInstance().setOrderId(rendelesid);
 
                 conn.Close();
             }

@@ -26,6 +26,11 @@ namespace Szakdolgozat
             DGV_termekek.Columns.Add("Col4", "Darab");
 
             stilus.styleChildForm(this);
+
+            foreach(DataGridViewColumn elem in DGV_termekek.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void BuyerForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -92,6 +97,7 @@ namespace Szakdolgozat
 
         private void Megrendelés_Click(object sender, EventArgs e)
         {
+            
 
             Database db = new Database();
 
@@ -109,7 +115,23 @@ namespace Szakdolgozat
 
             string allapot = "Elbírálás alatt";
 
-            int bevetel = Convert.ToInt32(L_vegosszeg.Text.Split(':')[1]);
+            if (L_vegosszeg.Text == "Végösszeg: 0 Ft")
+            {
+                MessageBox.Show("Nem jelölt ki termékeket!");
+                return;
+            }
+            /*
+            MessageBox.Show("Eredeti string: " + L_vegosszeg.Text);
+
+            MessageBox.Show("Első módosítás: " + L_vegosszeg.Text.Split(':')[1]);
+
+            MessageBox.Show("Másoodik módosítás: " + L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
+
+            Segítség a bevétel kezelésére
+            
+            */
+
+            int bevetel = Convert.ToInt32(L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
 
             string sql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
 
@@ -194,13 +216,11 @@ namespace Szakdolgozat
             }
         }
 
-        private void DGV_termekek_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
+        
 
         private void DGV_termekek_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
             {
                 int vegosszeg = 0;
@@ -210,8 +230,13 @@ namespace Szakdolgozat
                     vegosszeg += Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
                 }
 
-                L_vegosszeg.Text = "Végösszeg: " + vegosszeg;
+                L_vegosszeg.Text = "Végösszeg: " + vegosszeg + " Ft";
             }
+        }
+
+        private void DGV_termekek_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

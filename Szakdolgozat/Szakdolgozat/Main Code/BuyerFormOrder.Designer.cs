@@ -59,7 +59,7 @@ namespace Szakdolgozat
             this.DGV_termekek.Name = "DGV_termekek";
             this.DGV_termekek.Size = new System.Drawing.Size(408, 232);
             this.DGV_termekek.TabIndex = 27;
-            this.DGV_termekek.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_termekek_CellContentClick);
+            this.DGV_termekek.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_termekek_CellClick);
             this.DGV_termekek.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_termekek_CellValueChanged);
             // 
             // label2
@@ -79,9 +79,9 @@ namespace Szakdolgozat
             this.L_vegosszeg.AutoSize = true;
             this.L_vegosszeg.Location = new System.Drawing.Point(641, 112);
             this.L_vegosszeg.Name = "L_vegosszeg";
-            this.L_vegosszeg.Size = new System.Drawing.Size(71, 13);
+            this.L_vegosszeg.Size = new System.Drawing.Size(83, 13);
             this.L_vegosszeg.TabIndex = 29;
-            this.L_vegosszeg.Text = "Végösszeg: 0";
+            this.L_vegosszeg.Text = "Végösszeg: 0 Ft";
             // 
             // BuyerFormOrder
             // 

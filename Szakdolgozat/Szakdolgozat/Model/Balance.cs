@@ -126,7 +126,6 @@ namespace Szakdolgozat.Model
             MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
             cmd2.ExecuteNonQuery();
             conn.Close();
-
         }
     }
 }

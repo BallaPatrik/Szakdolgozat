@@ -22,6 +22,11 @@ namespace Szakdolgozat.Main_Code
             updateUsers();
 
             stilus.styleChildForm(this);
+
+            foreach (DataGridViewColumn elem in dataGridView1.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         Database db = new Database();

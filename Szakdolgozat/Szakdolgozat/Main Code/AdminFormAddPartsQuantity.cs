@@ -26,6 +26,11 @@ namespace Szakdolgozat
             updateParts(1);
 
             stilus.styleChildForm(this);
+
+            foreach (DataGridViewColumn elem in DGV_parts.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         //Combobox feltöltés

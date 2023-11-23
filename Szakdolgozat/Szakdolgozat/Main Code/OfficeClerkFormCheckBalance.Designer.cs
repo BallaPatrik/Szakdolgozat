@@ -63,6 +63,7 @@ namespace Szakdolgozat.Main_Code
             this.TB_egyenleg.ReadOnly = true;
             this.TB_egyenleg.Size = new System.Drawing.Size(144, 20);
             this.TB_egyenleg.TabIndex = 13;
+            this.TB_egyenleg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // OfficeClerkFormCheckBalance
             // 

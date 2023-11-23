@@ -39,6 +39,7 @@ namespace Szakdolgozat
             this.TB_datum = new System.Windows.Forms.TextBox();
             this.TB_termeknev = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.BT_modosit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_products)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,6 @@ namespace Szakdolgozat
             this.TB_darabszam.Name = "TB_darabszam";
             this.TB_darabszam.Size = new System.Drawing.Size(107, 20);
             this.TB_darabszam.TabIndex = 32;
-            this.TB_darabszam.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_darabszam_KeyDown);
             // 
             // label4
             // 
@@ -138,11 +138,23 @@ namespace Szakdolgozat
             this.label2.TabIndex = 27;
             this.label2.Text = "Módosítás (csak darabszámra működik):";
             // 
+            // BT_modosit
+            // 
+            this.BT_modosit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_modosit.Location = new System.Drawing.Point(599, 497);
+            this.BT_modosit.Name = "BT_modosit";
+            this.BT_modosit.Size = new System.Drawing.Size(107, 23);
+            this.BT_modosit.TabIndex = 34;
+            this.BT_modosit.Text = "Módosítás";
+            this.BT_modosit.UseVisualStyleBackColor = true;
+            this.BT_modosit.Click += new System.EventHandler(this.BT_modosit_Click);
+            // 
             // OperatorFormListDailyProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 532);
+            this.Controls.Add(this.BT_modosit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TB_darabszam);
             this.Controls.Add(this.label4);
@@ -173,5 +185,6 @@ namespace Szakdolgozat
         private System.Windows.Forms.TextBox TB_datum;
         private System.Windows.Forms.TextBox TB_termeknev;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BT_modosit;
     }
 }

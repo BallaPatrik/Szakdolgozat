@@ -63,6 +63,18 @@ namespace Szakdolgozat
 
         private void BT_termekfelvitele_Click(object sender, EventArgs e)
         {
+            if (TB_darabszam.Text == "")
+            {
+                MessageBox.Show("Kérem adja meg a termék darabszámát!");
+                return;
+            }
+
+            if (LB_termekek.SelectedItem == null)
+            {
+                MessageBox.Show("Kérem válassza ki, hogy milyen terméket gyártott le!");
+                return;
+            }
+
             string termek = LB_termekek.SelectedItem.ToString();
             int darabszam = Convert.ToInt32(TB_darabszam.Text);
 
@@ -105,18 +117,18 @@ namespace Szakdolgozat
 
             //ezeket az értékeket felszorozni a termékek darabszámával
 
-            Dictionary<int, int> alkarteszidkjodarabszamokkal = new Dictionary<int, int>();
+            Dictionary<int, int> alkatreszidkjodarabszamokkal = new Dictionary<int, int>();
 
             foreach (var elem in alkarteszidkdarabszamokkal)
             {
-                alkarteszidkjodarabszamokkal[elem.Key] = elem.Value * darabszam;
+                alkatreszidkjodarabszamokkal[elem.Key] = elem.Value * darabszam;
             }
 
             //az összes alkatrészek értékeit kinyerni
 
             Dictionary<int, int> alkatreszidkdarabszammaladatbazisbol = new Dictionary<int, int>();
 
-            foreach (var elem in alkarteszidkjodarabszamokkal)
+            foreach (var elem in alkatreszidkjodarabszamokkal)
             {
                 conn.Open();
 
@@ -134,13 +146,58 @@ namespace Szakdolgozat
 
             //összes alkatrészből kivonni az elvileg legyártott termékek számát
 
-            //ez jön
+            Dictionary<int, int> tenylegesalkatreszidkdarabszammal = new Dictionary<int, int>();
+
+            foreach(var elem in alkatreszidkdarabszammaladatbazisbol)
+            {
+                foreach (var elem2 in alkatreszidkjodarabszamokkal)
+                {
+                    if (elem.Key == elem2.Key) 
+                    {
+                        tenylegesalkatreszidkdarabszammal.Add(elem.Key, elem.Value - elem2.Value);
+                    }
+                }
+            }
 
             //végigmenni az értékekeken, ha bármelyik negatív, akkor nem lehet az adott mennyiségű terméket legyártani
 
+            bool error = false;
+
+            foreach (var elem in tenylegesalkatreszidkdarabszammal)
+            {
+                if (elem.Value < 0)
+                {
+                    error = true;
+                }
+            }
+
+            if (error)
+            {
+                MessageBox.Show("Hiba a terméket/termékeket nem lehet legyártani, mert nincs hozzá elég alkatrész!");
+                return;
+            }
+
             //ellenkező esetben le lehet gyártani
 
+            //viszont az alkatrészeket le kell vonni (alkatreszidkjodarabszamokkal ebben a mapben megtalálhatóak az értékek)
 
+            foreach (var elem in alkatreszidkjodarabszamokkal)
+            {
+                conn.Open();
+                cmd.CommandText = "UPDATE alkatreszek SET osszesdarab=osszesdarab-" + elem.Value + " WHERE alkatreszid=" + elem.Key;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+            //termék darabszámát hozzáadni a termékek táblához (osszesdarabot növelni)
+            conn.Open();
+
+            cmd.CommandText = "UPDATE termekek SET osszesdarab=osszesdarab+" + darabszam + " WHERE termekid=" + termekid;
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            //terméket felvinni a gyartas táblába
 
             conn.Open();
 
@@ -160,7 +217,6 @@ namespace Szakdolgozat
             {
                 MessageBox.Show("Beszúras nem sikerült! Indoka: " + ex.Message);
             }
-
             conn.Close();
         }
     }

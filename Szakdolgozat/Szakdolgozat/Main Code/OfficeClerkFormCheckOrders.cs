@@ -33,6 +33,10 @@ namespace Szakdolgozat.Main_Code
 
             stilus.styleChildForm(this);
 
+            foreach (DataGridViewColumn elem in DGV_rendelesek.Columns)
+            {
+                elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         private void OfficeClerkFormCheckOrders_FormClosed(object sender, FormClosedEventArgs e)
@@ -51,7 +55,6 @@ namespace Szakdolgozat.Main_Code
 
             try
             {
-
                 conn.Open();
 
                 string sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where allapot IN ('Elbírálás alatt', 'Kezdeti elbírálás')";
@@ -59,8 +62,6 @@ namespace Szakdolgozat.Main_Code
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
-
-
 
                 while (dr.Read())
                 {
@@ -116,14 +117,11 @@ namespace Szakdolgozat.Main_Code
             }
         }
 
-
         private void DGV_rendelesek_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
-
-           
 
             if (e.ColumnIndex == 0 && e.RowIndex > -1)
             {
@@ -149,7 +147,6 @@ namespace Szakdolgozat.Main_Code
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
-
                 while (dr.Read())
                 {
                     rendelesid = dr.GetInt32(0);
@@ -157,7 +154,6 @@ namespace Szakdolgozat.Main_Code
 
                 conn.Close();
             }
-           
         }
 
         private string getLatestState(int megrendelesid)
@@ -178,7 +174,6 @@ namespace Szakdolgozat.Main_Code
             {
                 allapot = dr.GetString(1);
             }
-
 
             conn.Close();
 
@@ -217,11 +212,8 @@ namespace Szakdolgozat.Main_Code
 
             MySqlConnection conn = db.getConnection();
 
-
             var senderGrid = (DataGridView)sender;
-            
-           
-
+                       
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0 && (e.ColumnIndex == 0 || e.ColumnIndex == 1 || e.ColumnIndex == 7 || e.ColumnIndex == 8) )
             {
@@ -303,7 +295,6 @@ namespace Szakdolgozat.Main_Code
                         while (dr3.Read())
                         {
                             termekidkdarabbal.Add(dr3.GetInt32(0), dr3.GetInt32(1));
-                            
                         }
 
                         conn.Close();
@@ -337,8 +328,9 @@ namespace Szakdolgozat.Main_Code
                 else if (e.ColumnIndex == 8)
                 {
                     int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-                    //Transporter.getInstance().setOrderId(rendelesid);
+                    
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+
                     if (allapot == "Elfogadva" || allapot == "Elutasítva" || getLatestState(rendelesid) == "Nem tudom" || getLatestState(rendelesid) == "Elutasítva" || getLatestState(rendelesid) == "Elfogadva")
                     {
                         MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
@@ -360,6 +352,7 @@ namespace Szakdolgozat.Main_Code
                             userid = dr.GetInt32(0);
                         }
                         conn.Close();
+
                         conn.Open();
                         string sql2 = "insert into rendelesek (rendelesid, userid, datum, allapot, bevetel) VALUES (" + rendelesid + ", " + userid + ", '" + datum.ToString(format) + "', '" + allapot + "', " + senderGrid.Rows[e.RowIndex].Cells[6].Value.ToString() + ")";
                         MySqlCommand cmd2 = new MySqlCommand(sql2, conn);

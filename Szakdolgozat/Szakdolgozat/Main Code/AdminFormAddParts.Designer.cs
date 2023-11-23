@@ -156,9 +156,9 @@ namespace Szakdolgozat
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(211, 409);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(213, 13);
+            this.label6.Size = new System.Drawing.Size(225, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "1 termék megcsinálásához hány darab kell?";
+            this.label6.Text = "Egy termék megcsinálásához hány darab kell?";
             // 
             // AdminFormAddParts
             // 

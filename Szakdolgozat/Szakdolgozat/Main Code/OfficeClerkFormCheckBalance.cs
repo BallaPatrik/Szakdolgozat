@@ -16,7 +16,6 @@ namespace Szakdolgozat.Main_Code
     {
         StyleForms stilus = new StyleForms();
 
-        private bool intended = false;
         public OfficeClerkFormCheckBalance()
         {
             InitializeComponent();
@@ -27,10 +26,8 @@ namespace Szakdolgozat.Main_Code
 
         private void showBalance()
         {
-
             int jelenlegiegyenleg = Balance.getInstance().getCurrentBalance();
 
-            //Jelenlegi egyenleg: 0 Ft
             TB_egyenleg.Text =  jelenlegiegyenleg + " Ft";
         }
 

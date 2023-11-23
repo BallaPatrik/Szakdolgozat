@@ -40,10 +40,12 @@ namespace Szakdolgozat
             // 
             // DGV_parts
             // 
+            this.DGV_parts.AllowUserToOrderColumns = true;
             this.DGV_parts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_parts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_parts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.DGV_parts.Location = new System.Drawing.Point(361, 258);
             this.DGV_parts.Name = "DGV_parts";
             this.DGV_parts.Size = new System.Drawing.Size(429, 239);
