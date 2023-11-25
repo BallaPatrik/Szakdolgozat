@@ -152,6 +152,8 @@ namespace Szakdolgozat.Main_Code
                     rendelesid = dr.GetInt32(0);
                 }
 
+                Transporter.getInstance().setOrderId(rendelesid);
+
                 conn.Close();
             }
         }

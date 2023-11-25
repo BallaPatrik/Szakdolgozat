@@ -24,5 +24,15 @@ namespace Szakdolgozat.Model
             form.Size = formsize;
             form.MinimumSize = formsize;
         }
+
+        public void styleButton(Button button)
+        {
+            //ezekkel a tulajdonságokkal lehet játszani
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+            button.Size = new Size(120, 30);
+            button.BackColor = Color.Orange;
+            button.ForeColor = Color.Black;
+        }
     }
 }

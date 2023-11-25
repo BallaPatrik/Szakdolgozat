@@ -8,22 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Szakdolgozat.Model;
 
 namespace Szakdolgozat.Main_Code
 {
     public partial class AdminFormAddUser : Form
     {
+        StyleForms stilus = new StyleForms();
         public AdminFormAddUser()
         {
             InitializeComponent();
 
-
-            //ezekkel a tulajdonságokkal lehet játszani
-            BT_felhasznalofelvitel.FlatStyle = FlatStyle.Flat;
-            BT_felhasznalofelvitel.FlatAppearance.BorderSize = 0;
-            BT_felhasznalofelvitel.Size = new Size(120, 40);
-            BT_felhasznalofelvitel.BackColor = Color.Blue;
-            BT_felhasznalofelvitel.ForeColor = Color.White;
+            foreach(Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         private void loadRoles()

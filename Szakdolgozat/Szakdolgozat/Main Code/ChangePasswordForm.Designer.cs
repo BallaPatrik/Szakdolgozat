@@ -45,7 +45,7 @@ namespace Szakdolgozat.Main_Code
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label1.Location = new System.Drawing.Point(290, 70);
+            this.label1.Location = new System.Drawing.Point(394, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 24);
             this.label1.TabIndex = 3;
@@ -55,7 +55,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 149);
+            this.label2.Location = new System.Drawing.Point(370, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 4;
@@ -64,7 +64,7 @@ namespace Szakdolgozat.Main_Code
             // TB_regi_jelszo
             // 
             this.TB_regi_jelszo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TB_regi_jelszo.Location = new System.Drawing.Point(344, 146);
+            this.TB_regi_jelszo.Location = new System.Drawing.Point(448, 152);
             this.TB_regi_jelszo.Name = "TB_regi_jelszo";
             this.TB_regi_jelszo.PasswordChar = '*';
             this.TB_regi_jelszo.Size = new System.Drawing.Size(132, 20);
@@ -73,7 +73,7 @@ namespace Szakdolgozat.Main_Code
             // TB_uj_jelszo_1
             // 
             this.TB_uj_jelszo_1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TB_uj_jelszo_1.Location = new System.Drawing.Point(344, 185);
+            this.TB_uj_jelszo_1.Location = new System.Drawing.Point(448, 191);
             this.TB_uj_jelszo_1.Name = "TB_uj_jelszo_1";
             this.TB_uj_jelszo_1.PasswordChar = '*';
             this.TB_uj_jelszo_1.Size = new System.Drawing.Size(132, 20);
@@ -83,7 +83,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 188);
+            this.label3.Location = new System.Drawing.Point(393, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
@@ -92,7 +92,7 @@ namespace Szakdolgozat.Main_Code
             // TB_uj_jelszo_2
             // 
             this.TB_uj_jelszo_2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TB_uj_jelszo_2.Location = new System.Drawing.Point(344, 221);
+            this.TB_uj_jelszo_2.Location = new System.Drawing.Point(448, 227);
             this.TB_uj_jelszo_2.Name = "TB_uj_jelszo_2";
             this.TB_uj_jelszo_2.PasswordChar = '*';
             this.TB_uj_jelszo_2.Size = new System.Drawing.Size(132, 20);
@@ -102,7 +102,7 @@ namespace Szakdolgozat.Main_Code
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 224);
+            this.label4.Location = new System.Drawing.Point(331, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 8;
@@ -110,8 +110,8 @@ namespace Szakdolgozat.Main_Code
             // 
             // BT_jelszavak_elrejtese_mutatasa
             // 
-            this.BT_jelszavak_elrejtese_mutatasa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BT_jelszavak_elrejtese_mutatasa.Location = new System.Drawing.Point(534, 181);
+            this.BT_jelszavak_elrejtese_mutatasa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_jelszavak_elrejtese_mutatasa.Location = new System.Drawing.Point(448, 272);
             this.BT_jelszavak_elrejtese_mutatasa.Name = "BT_jelszavak_elrejtese_mutatasa";
             this.BT_jelszavak_elrejtese_mutatasa.Size = new System.Drawing.Size(185, 23);
             this.BT_jelszavak_elrejtese_mutatasa.TabIndex = 10;
@@ -121,8 +121,8 @@ namespace Szakdolgozat.Main_Code
             // 
             // BT_jelszovaltoztat
             // 
-            this.BT_jelszovaltoztat.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(324, 276);
+            this.BT_jelszovaltoztat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(459, 318);
             this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
             this.BT_jelszovaltoztat.Size = new System.Drawing.Size(152, 23);
             this.BT_jelszovaltoztat.TabIndex = 11;
@@ -147,6 +147,7 @@ namespace Szakdolgozat.Main_Code
             this.Name = "ChangePasswordForm";
             this.Text = "Jelszovaltoztatas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChangePasswordForm_FormClosed);
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

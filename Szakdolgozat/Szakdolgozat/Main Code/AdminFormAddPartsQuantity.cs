@@ -31,6 +31,11 @@ namespace Szakdolgozat
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         //Combobox feltöltés

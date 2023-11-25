@@ -192,6 +192,16 @@ namespace Szakdolgozat
                 conn.Close();
             }
 
+            List<int> arajanlatok = new List<int>();
+            foreach (DataGridViewRow elem in DGV_termekek.Rows)
+            {
+                if (!elem.Cells[3].Value.ToString().Equals("0"))
+                {
+                    arajanlatok.Add(Convert.ToInt32(elem.Cells[2].Value) * Convert.ToInt32(elem.Cells[3].Value));
+                }
+            }
+
+       
             Dictionary<int, int> termekidkdarabszammal = new Dictionary<int, int>();
 
             for (int i = 0; i < termekidk.Count; i++)
@@ -199,20 +209,33 @@ namespace Szakdolgozat
                 termekidkdarabszammal.Add(termekidk[i], darabszamok[i]);
             }
 
+            Dictionary<int, int> termekidkarajanlattal = new Dictionary<int, int>();
+            for (int i = 0; i < termekidk.Count; i++)
+            {
+                termekidkarajanlattal.Add(termekidk[i], arajanlatok[i]);
+            }
+
+
             foreach (var elem in termekidkdarabszammal) 
             {
-                conn.Open();
-                string sql4 = "INSERT INTO rendeles_termekek(rendelesid, termekid, db) VALUES(" + rendelesid + ", " + elem.Key + ", " + elem.Value + ")";
-                MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
-                try
+               foreach(var elem2 in termekidkarajanlattal)
                 {
-                    cmd4.ExecuteNonQuery();
+                    if(elem.Key == elem2.Key)
+                    {
+                        conn.Open();
+                        string sql4 = "INSERT INTO rendeles_termekek(rendelesid, termekid, db, datum, reszosszeg) VALUES(" + rendelesid + ", " + elem.Key + ", " + elem.Value + ", '" + datum.ToString(format) + "', " + elem2.Value + ")";
+                        MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
+                        try
+                        {
+                            cmd4.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("A megrendelés nem sikerült! Indoka: " + ex.Message);
+                        }
+                        conn.Close();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("A megrendelés nem sikerült! Indoka: " + ex.Message);
-                }
-                conn.Close();
             }
         }
 

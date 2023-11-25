@@ -57,6 +57,7 @@ namespace Szakdolgozat.Main_Code
 
         private void getOrderDetails()
         {
+            DGV_termekek.Rows.Clear();
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
@@ -212,6 +213,7 @@ namespace Szakdolgozat.Main_Code
                     finally
                     {
                         conn.Close();
+                        getOrderDetails();
                     }
                 }
                 

@@ -136,5 +136,10 @@ namespace Szakdolgozat.Main_Code
                 MessageBox.Show("Adatbázis hiba! Oka: " + ex.Message);
             }
         }
+
+        private void ChangePasswordForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

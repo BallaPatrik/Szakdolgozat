@@ -22,6 +22,8 @@ namespace Szakdolgozat
             InitializeComponent();
 
             stilus.styleChildForm(this);
+
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -108,9 +110,18 @@ namespace Szakdolgozat
 
             dr = cmd.ExecuteReader();
 
+            int sordarab = 0;
+                
             while (dr.Read())
             {
                 alkarteszidkdarabszamokkal.Add(dr.GetInt32(0), dr.GetInt32(1));
+                sordarab++;
+            }
+
+            if (sordarab == 0)
+            {
+                MessageBox.Show("Nincs hozzárendelve alkatrész a termékhez! Nem lehet legyártani!");
+                return;
             }
 
             conn.Close();
