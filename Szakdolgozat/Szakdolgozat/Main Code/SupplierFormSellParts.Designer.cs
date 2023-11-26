@@ -31,11 +31,13 @@ namespace Szakdolgozat.Main_Code
         {
             this.DGV_parts = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.BT_alkatreszeladas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_parts)).BeginInit();
             this.SuspendLayout();
             // 
             // DGV_parts
             // 
+            this.DGV_parts.AllowUserToAddRows = false;
             this.DGV_parts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -56,11 +58,23 @@ namespace Szakdolgozat.Main_Code
             this.label1.TabIndex = 2;
             this.label1.Text = "Alkatrászek listája";
             // 
+            // BT_alkatreszeladas
+            // 
+            this.BT_alkatreszeladas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BT_alkatreszeladas.Location = new System.Drawing.Point(581, 389);
+            this.BT_alkatreszeladas.Name = "BT_alkatreszeladas";
+            this.BT_alkatreszeladas.Size = new System.Drawing.Size(141, 28);
+            this.BT_alkatreszeladas.TabIndex = 3;
+            this.BT_alkatreszeladas.Text = "Alkatrész eladása";
+            this.BT_alkatreszeladas.UseVisualStyleBackColor = true;
+            this.BT_alkatreszeladas.Click += new System.EventHandler(this.BT_alkatreszeladas_Click);
+            // 
             // SupplierFormSellParts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BT_alkatreszeladas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_parts);
             this.Name = "SupplierFormSellParts";
@@ -74,5 +88,6 @@ namespace Szakdolgozat.Main_Code
         #endregion
         private System.Windows.Forms.DataGridView DGV_parts;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BT_alkatreszeladas;
     }
 }

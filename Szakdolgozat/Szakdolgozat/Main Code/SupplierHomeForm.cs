@@ -61,5 +61,10 @@ namespace Szakdolgozat.Main_Code
             new LoginForm().Show();
             this.Hide();
         }
+
+        private void BT_menu_ajanlatmegtekint_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SupplierCheckOffers());
+        }
     }
 }

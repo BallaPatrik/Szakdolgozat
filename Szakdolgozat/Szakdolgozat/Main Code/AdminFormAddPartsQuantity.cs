@@ -136,17 +136,14 @@ namespace Szakdolgozat
             {
                 if (Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) > 0)
                 {
-                    if (Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) > getPartSum(Convert.ToString(DGV_parts.Rows[i].Cells[0].Value))) {
-                        MessageBox.Show("Hiba: Nincs elég alkatrész! " + getPartSum(Convert.ToString(DGV_parts.Rows[i].Cells[0].Value)));
-                    }
-                    else
-                    {
+                    
+                    
                         MySqlCommand cmd = new MySqlCommand("UPDATE termek_alkatreszek SET darabszam = " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE alkatreszid = (SELECT alkatreszid FROM alkatreszek WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "')", conn);
                         cmd.ExecuteNonQuery();
-                        cmd.CommandText = "UPDATE alkatreszek SET osszesdarab = osszesdarab - " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "'";
-                        cmd.ExecuteNonQuery();
+                        //cmd.CommandText = "UPDATE alkatreszek SET osszesdarab = osszesdarab - " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "'";
+                        //cmd.ExecuteNonQuery();
                         worked = true;
-                    }
+                    
                 }
             }
 
@@ -158,31 +155,5 @@ namespace Szakdolgozat
 
             conn.Close();
         }
-
-        private int getPartSum(string name)
-        {
-            Database db = new Database();
-
-            MySqlConnection conn = db.getConnection();
-
-            conn.Open();
-
-            int sum = 0;
-
-            MySqlCommand cmd = new MySqlCommand("SELECT osszesdarab FROM alkatreszek WHERE nev='" + name + "'", conn);
-
-            MySqlDataReader dr = cmd.ExecuteReader();
-
-            while (dr.Read())
-            {
-                sum = dr.GetInt32(0);
-                break;
-            }
-
-            conn.Close();
-
-            return sum;
-        }
-
     }
 }

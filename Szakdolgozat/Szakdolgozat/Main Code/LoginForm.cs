@@ -26,7 +26,6 @@ namespace Szakdolgozat
         public LoginForm()
         {
             InitializeComponent();
-
             stilus.styleChildForm(this);
         }
 

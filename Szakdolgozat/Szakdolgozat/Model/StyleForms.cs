@@ -23,6 +23,7 @@ namespace Szakdolgozat.Model
             Size formsize = new Size(963, 636);
             form.Size = formsize;
             form.MinimumSize = formsize;
+            form.BackColor = Color.FromArgb(153, 180, 209);
         }
 
         public void styleButton(Button button)

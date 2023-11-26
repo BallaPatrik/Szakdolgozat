@@ -159,6 +159,12 @@
     <Compile Include="Main Code\OperatorHomeForm.Designer.cs">
       <DependentUpon>OperatorHomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\SupplierCheckOffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\SupplierCheckOffers.Designer.cs">
+      <DependentUpon>SupplierCheckOffers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\SupplierFormSellParts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     </Compile>
     <Compile Include="Main Code\SupplierHomeForm.Designer.cs">
       <DependentUpon>SupplierHomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\SupplierOfferDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\SupplierOfferDetails.Designer.cs">
+      <DependentUpon>SupplierOfferDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Balance.cs" />
     <Compile Include="Model\Database.cs" />
@@ -268,11 +280,17 @@
     <EmbeddedResource Include="Main Code\AdminFormAddParts.resx">
       <DependentUpon>AdminFormAddParts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\SupplierCheckOffers.resx">
+      <DependentUpon>SupplierCheckOffers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Code\SupplierFormSellParts.resx">
       <DependentUpon>SupplierFormSellParts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\SupplierHomeForm.resx">
       <DependentUpon>SupplierHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\SupplierOfferDetails.resx">
+      <DependentUpon>SupplierOfferDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
