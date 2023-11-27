@@ -98,7 +98,6 @@ namespace Szakdolgozat
         private void Megrendelés_Click(object sender, EventArgs e)
         {
             
-
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
@@ -120,16 +119,6 @@ namespace Szakdolgozat
                 MessageBox.Show("Nem jelölt ki termékeket!");
                 return;
             }
-            /*
-            MessageBox.Show("Eredeti string: " + L_vegosszeg.Text);
-
-            MessageBox.Show("Első módosítás: " + L_vegosszeg.Text.Split(':')[1]);
-
-            MessageBox.Show("Másoodik módosítás: " + L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
-
-            Segítség a bevétel kezelésére
-            
-            */
 
             int bevetel = Convert.ToInt32(L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
 
@@ -238,8 +227,6 @@ namespace Szakdolgozat
                 }
             }
         }
-
-        
 
         private void DGV_termekek_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {

@@ -258,7 +258,7 @@ namespace Szakdolgozat
 
             //MÓDOSÍTÁSNÁL AZ ALKATRÉSZEKET IS KEZELNI KELL
 
-            //Az eredeti darabszámból kivonni a módosítottat (ehhez kéne egy latestState fv, ami tárolja az előző DGV adatait, ehhez lehet egy osztály kéne)
+            //Az eredeti darabszámból kivonni a módosítottat
 
             int ujdarabszam = Convert.ToInt32(TB_darabszam.Text.ToString());
             int keresettdarab = darabszam;

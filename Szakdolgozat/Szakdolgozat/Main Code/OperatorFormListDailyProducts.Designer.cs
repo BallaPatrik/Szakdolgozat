@@ -117,6 +117,7 @@ namespace Szakdolgozat
             this.TB_datum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TB_datum.Location = new System.Drawing.Point(388, 500);
             this.TB_datum.Name = "TB_datum";
+            this.TB_datum.ReadOnly = true;
             this.TB_datum.Size = new System.Drawing.Size(100, 20);
             this.TB_datum.TabIndex = 29;
             // 
@@ -125,6 +126,7 @@ namespace Szakdolgozat
             this.TB_termeknev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TB_termeknev.Location = new System.Drawing.Point(388, 471);
             this.TB_termeknev.Name = "TB_termeknev";
+            this.TB_termeknev.ReadOnly = true;
             this.TB_termeknev.Size = new System.Drawing.Size(100, 20);
             this.TB_termeknev.TabIndex = 28;
             // 

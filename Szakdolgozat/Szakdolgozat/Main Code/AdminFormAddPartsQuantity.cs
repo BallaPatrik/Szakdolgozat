@@ -42,7 +42,6 @@ namespace Szakdolgozat
 
         private void loadCombobox()
         {
-
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
@@ -96,7 +95,6 @@ namespace Szakdolgozat
 
             while (dr.Read())
             {
-
                 DGV_parts.Rows.Add(dr.GetString(0), dr.GetInt32(1));
             }
 
@@ -126,8 +124,8 @@ namespace Szakdolgozat
         private void BT_confirm_Click(object sender, EventArgs e)
         {
             Database db = new Database();
-
             MySqlConnection conn = db.getConnection();
+
             bool worked = false;
 
             conn.Open();
@@ -136,22 +134,15 @@ namespace Szakdolgozat
             {
                 if (Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) > 0)
                 {
-                    
-                    
-                        MySqlCommand cmd = new MySqlCommand("UPDATE termek_alkatreszek SET darabszam = " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE alkatreszid = (SELECT alkatreszid FROM alkatreszek WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "')", conn);
-                        cmd.ExecuteNonQuery();
-                        //cmd.CommandText = "UPDATE alkatreszek SET osszesdarab = osszesdarab - " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "'";
-                        //cmd.ExecuteNonQuery();
-                        worked = true;
-                    
+                    MySqlCommand cmd = new MySqlCommand("UPDATE termek_alkatreszek SET darabszam = " + Convert.ToInt32(DGV_parts.Rows[i].Cells[1].Value) + " WHERE alkatreszid = (SELECT alkatreszid FROM alkatreszek WHERE nev = '" + Convert.ToString(DGV_parts.Rows[i].Cells[0].Value) + "')", conn);
+                    cmd.ExecuteNonQuery();
+                    worked = true;
                 }
             }
 
             if (worked) { MessageBox.Show("Sikeres módosítás!"); }
 
-
             updateParts(Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
-
 
             conn.Close();
         }
