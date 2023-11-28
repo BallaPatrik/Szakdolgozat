@@ -33,6 +33,7 @@ namespace Szakdolgozat.Main_Code
             this.Col_Btn_Reszletek = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Col_Btn_Ajanlat = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
+            this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_rendelesek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +82,13 @@ namespace Szakdolgozat.Main_Code
             this.label2.TabIndex = 29;
             this.label2.Text = "Megrendelések";
             // 
+            // mySqlDataAdapter1
+            // 
+            this.mySqlDataAdapter1.DeleteCommand = null;
+            this.mySqlDataAdapter1.InsertCommand = null;
+            this.mySqlDataAdapter1.SelectCommand = null;
+            this.mySqlDataAdapter1.UpdateCommand = null;
+            // 
             // OfficeClerkFormCheckOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,5 +112,6 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Reszletek;
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Ajanlat;
+        private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
     }
 }

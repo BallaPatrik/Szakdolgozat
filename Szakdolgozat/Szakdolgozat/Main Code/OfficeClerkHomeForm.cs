@@ -68,5 +68,15 @@ namespace Szakdolgozat
             form.Show();
             this.Hide();
         }
+
+        private void BT_keves_termek_listazas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckLowProducts());
+        }
+
+        private void BT_keves_alkatresz_listazas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckLowParts());
+        }
     }
 }

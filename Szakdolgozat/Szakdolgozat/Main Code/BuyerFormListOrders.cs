@@ -47,7 +47,6 @@ namespace Szakdolgozat.Main_Code
 
         private void getOrdersFromDatabase()
         {
-
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();

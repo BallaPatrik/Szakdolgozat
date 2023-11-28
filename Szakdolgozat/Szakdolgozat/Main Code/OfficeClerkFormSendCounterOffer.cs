@@ -61,7 +61,7 @@ namespace Szakdolgozat.Main_Code
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
-            //SELECT t.nev, db, aktualis, datum, reszosszeg FROM rendeles_termekek rt JOIN termekek t ON rt.termekid = t.termekid WHERE rt.rendelesid = + rendelesid
+            
             conn.Open();
             string sql = "SELECT t.nev, db, MAX(datum), reszosszeg FROM rendeles_termekek rt JOIN termekek t ON rt.termekid = t.termekid WHERE rt.rendelesid = " + Transporter.getInstance().getOrderID();
 
@@ -133,7 +133,6 @@ namespace Szakdolgozat.Main_Code
 
             //Új rendelés állapot beszúrása új bevétel értékkel
 
-
             int vegosszeg = 0;
 
             foreach (DataGridViewRow elem in DGV_termekek.Rows)
@@ -141,7 +140,6 @@ namespace Szakdolgozat.Main_Code
                 if (elem != null)
                 {
                     vegosszeg += Convert.ToInt32(elem.Cells[3].Value);
-
                 }
             }
 
@@ -159,7 +157,6 @@ namespace Szakdolgozat.Main_Code
 
             string sql2 = "INSERT INTO rendelesek(rendelesid, userid, datum, allapot, bevetel) VALUES (" + rendelesid + ", " + userid + ", '" + datum.ToString(format) + "', 'Elbírálás alatt', " + bevetel + ")";
 
-
             MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
 
             try
@@ -172,59 +169,55 @@ namespace Szakdolgozat.Main_Code
             }
 
             conn.Close();
-            
+
 
             //Rendelés tételeinek beszúrása egyenként
 
             foreach (DataGridViewRow elem in DGV_termekek.Rows)
             {
-               
+
                 if (elem != null)
                 {
                     conn.Open();
                     int termekid = 0;
 
-                    if (elem.Cells[0].Value != null) { 
-                    string sql3 = "SELECT termekid FROM termekek WHERE nev='" + elem.Cells[0].Value.ToString() + "'";
-
-                    MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
-
-                    MySqlDataReader dr3 = cmd3.ExecuteReader();
-
-                    while (dr3.Read())
+                    if (elem.Cells[0].Value != null)
                     {
-                        termekid = dr3.GetInt32(0);
-                    }
-                    conn.Close();
-                    conn.Open();
-                    string sql4 = "INSERT INTO rendeles_termekek(rendelesid, termekid, db, datum, reszosszeg) VALUES (" + rendelesid + ", " + termekid + ", " + elem.Cells[1].Value.ToString() + ",'" + datum.ToString(format) + "', " + elem.Cells[3].Value.ToString() + ")";
+                        string sql3 = "SELECT termekid FROM termekek WHERE nev='" + elem.Cells[0].Value.ToString() + "'";
 
-                    MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
+                        MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
 
-                    try
-                    {
-                        cmd4.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Beszúrás nem sikerült! Indoka: " + ex.Message);
-                        
-                    }
-                    finally
-                    {
+                        MySqlDataReader dr3 = cmd3.ExecuteReader();
+
+                        while (dr3.Read())
+                        {
+                            termekid = dr3.GetInt32(0);
+                        }
                         conn.Close();
-                        getOrderDetails();
-                    }
-                }
-                
-            }
+                        conn.Open();
+                        string sql4 = "INSERT INTO rendeles_termekek(rendelesid, termekid, db, datum, reszosszeg) VALUES (" + rendelesid + ", " + termekid + ", " + elem.Cells[1].Value.ToString() + ",'" + datum.ToString(format) + "', " + elem.Cells[3].Value.ToString() + ")";
 
-            
+                        MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
+
+                        try
+                        {
+                            cmd4.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Beszúrás nem sikerült! Indoka: " + ex.Message);
+
+                        }
+                        finally
+                        {
+                            conn.Close();
+                            getOrderDetails();
+                        }
+                    }
+
+                }
             }
             MessageBox.Show("Sikeres ellenajánlat elkészítve!");
-
-
-
         }
     }
 }

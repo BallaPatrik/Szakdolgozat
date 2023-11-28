@@ -141,6 +141,18 @@
     <Compile Include="Main Code\OfficeClerkFormCheckBalance.Designer.cs">
       <DependentUpon>OfficeClerkFormCheckBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckLowParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckLowParts.Designer.cs">
+      <DependentUpon>OfficeClerkFormCheckLowParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckLowProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\OfficeClerkFormCheckLowProducts.Designer.cs">
+      <DependentUpon>OfficeClerkFormCheckLowProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\OfficeClerkFormCheckOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +264,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OfficeClerkFormCheckBalance.resx">
       <DependentUpon>OfficeClerkFormCheckBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OfficeClerkFormCheckLowParts.resx">
+      <DependentUpon>OfficeClerkFormCheckLowParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\OfficeClerkFormCheckLowProducts.resx">
+      <DependentUpon>OfficeClerkFormCheckLowProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\OfficeClerkFormCheckOrders.resx">
       <DependentUpon>OfficeClerkFormCheckOrders.cs</DependentUpon>
