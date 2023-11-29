@@ -104,8 +104,6 @@ namespace Szakdolgozat
 
             MySqlCommand cmd, cmd2;
 
-            conn.Open();
-
             int userid = Transporter.getInstance().CurrentUser.Felhasznaloid;
 
             DateTime datum = DateTime.Now;
@@ -122,7 +120,31 @@ namespace Szakdolgozat
 
             int bevetel = Convert.ToInt32(L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
 
-            string sql = "insert into rendelesek(userid, datum, allapot, bevetel) values(" + userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
+            //lekérni a legutolsó rendelesidt-t
+
+            conn.Open();
+
+            int rendelesid = 0;
+
+            string sql2 = "select rendelesid FROM rendelesek GROUP BY rendelesid DESC LIMIT 1";
+            cmd2 = new MySqlCommand(sql2, conn);
+
+            MySqlDataReader dr = cmd2.ExecuteReader();
+
+            while (dr.Read())
+            {
+                rendelesid = dr.GetInt32(0);
+            }
+
+            //ezt megnöveljük 1-el, hogy megkapjuk az új rendelésid-t
+
+            rendelesid++;
+
+            conn.Close();
+
+            conn.Open();
+
+            string sql = "insert into rendelesek(rendelesid, userid, datum, allapot, bevetel) values(" + rendelesid +", "+ userid + ", '" + datum.ToString(format) + "' , '" + allapot + "' , " + bevetel + ");";
 
             cmd = new MySqlCommand(sql, conn);
 
@@ -137,19 +159,11 @@ namespace Szakdolgozat
                 MessageBox.Show("Megrendelés sikertelen! Indoka: " + ex.Message);
             }
 
-            int rendelesid = 0;
+            conn.Close();
 
             List<string> termekek = new List<string>();
 
-            string sql2 = "select rendelesid FROM rendelesek GROUP BY rendelesid DESC LIMIT 1";
-            cmd2 = new MySqlCommand(sql2, conn);
-
-            MySqlDataReader dr = cmd2.ExecuteReader();
-
-            while (dr.Read())
-            {
-                rendelesid = dr.GetInt32(0);
-            }
+            
 
             List<int> darabszamok = new List<int>();
 
@@ -162,7 +176,6 @@ namespace Szakdolgozat
                 }
             }
 
-            conn.Close();
 
             List<int> termekidk = new List<int>();
 

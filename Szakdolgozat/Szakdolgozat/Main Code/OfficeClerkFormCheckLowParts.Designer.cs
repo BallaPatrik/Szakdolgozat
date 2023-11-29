@@ -97,6 +97,7 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.DGV_alkatreszek);
             this.Name = "OfficeClerkFormCheckLowParts";
             this.Text = "OfficeClerkFormCheckLowParts";
+            this.Load += new System.EventHandler(this.OfficeClerkFormCheckLowParts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_alkatreszek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -64,7 +64,7 @@ namespace Szakdolgozat.Main_Code
 
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT nev, osszesdarab FROM termekek WHERE osszesdarab<" + darabszam, conn);
+            cmd = new MySqlCommand("SELECT nev, osszesdarab FROM termekek WHERE osszesdarab<=" + darabszam, conn);
 
             MySqlDataReader dr = cmd.ExecuteReader();
 

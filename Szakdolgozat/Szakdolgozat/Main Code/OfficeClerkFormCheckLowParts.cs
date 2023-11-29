@@ -60,7 +60,7 @@ namespace Szakdolgozat.Main_Code
 
             conn.Open();
 
-            cmd = new MySqlCommand("SELECT nev, osszesdarab FROM alkatreszek WHERE osszesdarab<" + darabszam, conn);
+            cmd = new MySqlCommand("SELECT nev, osszesdarab FROM alkatreszek WHERE osszesdarab<=" + darabszam, conn);
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -68,6 +68,11 @@ namespace Szakdolgozat.Main_Code
             {
                 DGV_alkatreszek.Rows.Add(dr.GetString(0), dr.GetInt32(1));
             }
+        }
+
+        private void OfficeClerkFormCheckLowParts_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
