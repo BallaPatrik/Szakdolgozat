@@ -47,6 +47,11 @@ namespace Szakdolgozat.Main_Code
                 DGV_parts.Rows.Add(dr.GetString(0),0,0);
             }
 
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
+
             DGV_parts.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Bold);
 
             //oszlop szélességek beállítása
@@ -79,23 +84,17 @@ namespace Szakdolgozat.Main_Code
 
             string allapot = "Elbírálás alatt";
 
-
-            /*
-            MessageBox.Show("Eredeti string: " + L_vegosszeg.Text);
-
-            MessageBox.Show("Első módosítás: " + L_vegosszeg.Text.Split(':')[1]);
-
-            MessageBox.Show("Másoodik módosítás: " + L_vegosszeg.Text.Split(':')[1].Trim().Split(' ')[0].Trim());
-
-            Segítség a bevétel kezelésére
-            
-            */
-
             int vegosszeg = 0;
 
             foreach (DataGridViewRow row in DGV_parts.Rows)
             {
                 vegosszeg += Convert.ToInt32(row.Cells[1].Value) * Convert.ToInt32(row.Cells[2].Value);
+            }
+
+            if(vegosszeg == 0)
+            {
+                MessageBox.Show("Nem választott ki egyetlen alkatrészt sem!");
+                return;
             }
 
             string sql = "INSERT INTO ajanlat(beszallitoid, allapot, datum, vegosszeg) values(" + userid + ", '" + allapot + "', '" + datum.ToString(format) + "', " + vegosszeg + ");";

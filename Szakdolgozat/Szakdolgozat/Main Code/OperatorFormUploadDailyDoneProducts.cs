@@ -22,6 +22,12 @@ namespace Szakdolgozat
             InitializeComponent();
 
             stilus.styleChildForm(this);
+
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

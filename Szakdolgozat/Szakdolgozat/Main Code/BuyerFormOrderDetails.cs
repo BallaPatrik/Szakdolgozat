@@ -64,7 +64,7 @@ namespace Szakdolgozat.Main_Code
             MySqlConnection conn = db.getConnection();
            
             conn.Open();
-            string sql = "SELECT t.nev, db, MAX(datum), reszosszeg FROM rendeles_termekek rt JOIN termekek t ON rt.termekid = t.termekid WHERE rt.rendelesid = " + Transporter.getInstance().getOrderID() + " AND datum is not null GROUP BY t.nev;";
+            string sql = "SELECT DISTINCT t.nev, db, datum, rt.reszosszeg FROM rendeles_termekek rt JOIN termekek t ON rt.termekid = t.termekid WHERE rt.rendelesid=" + Transporter.getInstance().getOrderID() + " AND datum IN (SELECT MAX(datum) FROM rendeles_termekek rt2 WHERE rt.rendelesid = rt2.rendelesid GROUP BY rt2.rendelesid ) AND datum is not null  GROUP BY t.nev ORDER BY datum DESC";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

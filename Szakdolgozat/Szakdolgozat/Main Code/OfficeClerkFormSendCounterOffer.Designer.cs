@@ -77,7 +77,7 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DGV_termekek);
             this.Name = "OfficeClerkFormSendCounterOffer";
-            this.Text = "OfficeClerkFormSendCounterOffer";
+            this.Text = "Ellenajanlat feladasa";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_termekek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

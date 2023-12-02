@@ -31,6 +31,8 @@ namespace Szakdolgozat.Main_Code
             DGV_ajanlatok.Columns[2].ReadOnly = true;
             DGV_ajanlatok.Columns[3].ReadOnly = true;
             DGV_ajanlatok.Columns[4].ReadOnly = true;
+            DGV_ajanlatok.Columns[5].ReadOnly = true;
+            DGV_ajanlatok.Columns[6].ReadOnly = true;
 
             stilus.styleChildForm(this);
 
@@ -38,6 +40,11 @@ namespace Szakdolgozat.Main_Code
             foreach (DataGridViewColumn elem in DGV_ajanlatok.Columns)
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
             }
 
             getOffersFromDatabase();
@@ -76,6 +83,8 @@ namespace Szakdolgozat.Main_Code
                 DGV_ajanlatok.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 DGV_ajanlatok.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 DGV_ajanlatok.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                DGV_ajanlatok.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                DGV_ajanlatok.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 for (int i = 0; i < DGV_ajanlatok.Columns.Count; i++)
                 {
@@ -166,111 +175,106 @@ namespace Szakdolgozat.Main_Code
                 }
                 else if (e.ColumnIndex == 7)
                 {
-                    int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+                    int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
 
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || getLatestState(rendelesid) == "Nem tudom" || getLatestState(rendelesid) == "Elutasítva" || getLatestState(rendelesid) == "Elfogadva")
+
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva"  || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva")
                     {
                         MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
                     }
+
                     else
                     {
-                        conn.Open();
-                        DateTime datum = DateTime.Now;
-                        string format = "yyyy-MM-dd HH:mm:ss";
-                        allapot = "Elfogadva";
-                        string sql = "select felhasznaloid from felhasznalok where nev='" + senderGrid.Rows[e.RowIndex].Cells[4].Value.ToString() + "'";
-                        int userid = 0;
-                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        //EZ AZ ELFOGADÁS
 
-                        MySqlDataReader dr = cmd.ExecuteReader();
+                        //levonni a balance-ból az összegüket
 
-                        while (dr.Read())
+                        int vegosszeg = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[6].Value);
+
+                        if (vegosszeg > Balance.getInstance().getCurrentBalance())
                         {
-                            userid = dr.GetInt32(0);
+                            MessageBox.Show("Hiba! Nincs elég pénz az alkatészek megvásárolásához!");
+                            return;
                         }
-                        conn.Close();
-
-                       
-
-                        Balance.getInstance().addBalance(Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[6].Value));
-
-                        conn.Open();
-
-                        string sql3 = "SELECT rendeles_termekek.termekid, rendeles_termekek.db FROM rendeles_termekek WHERE rendelesid= " + rendelesid + "";
-
-                        MySqlCommand cmd3 = new MySqlCommand(sql3, conn);
-
-                        MySqlDataReader dr3 = cmd3.ExecuteReader();
-
-                        Dictionary<int, int> termekidkdarabbal = new Dictionary<int, int>();
-
-                        while (dr3.Read())
+                        else
                         {
-                            termekidkdarabbal.Add(dr3.GetInt32(0), dr3.GetInt32(1));
+                            Balance.getInstance().subtractBalance(vegosszeg);
+
+                            //ajánlatot megváltoztatjuk elfogadottra
+
+                            allapot = "Elfogadva";
+
+                            string sql = "UPDATE ajanlat SET allapot='"+allapot+"' WHERE ajanlatid="+ajanlatid;
+
+                            conn.Open();
+
+                            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                            cmd.ExecuteNonQuery();
+
+                            conn.Close();
+
+                            //hozzáadni az alkatrésszámokat amiket megvásároltunk
+
+                            conn.Open();
+
+                            Dictionary<int, int> alkatreszidkdarabszammal = new Dictionary<int, int>();
+
+                            cmd.CommandText = "SELECT alkatreszid, darabszam FROM ajanlat_alkatreszek WHERE ajanlatid=" + ajanlatid;
+
+                            MySqlDataReader dr = cmd.ExecuteReader();
+
+                            while (dr.Read())
+                            {
+                                alkatreszidkdarabszammal.Add(dr.GetInt32(0), dr.GetInt32(1));
+                            }
+
+                            conn.Close();
+
+                            foreach (var elem in alkatreszidkdarabszammal)
+                            {
+                                conn.Open();
+
+                                cmd.CommandText = "UPDATE alkatreszek SET osszesdarab=osszesdarab+" + elem.Value + " WHERE alkatreszid=" + elem.Key;
+
+                                cmd.ExecuteNonQuery();
+
+                                conn.Close();
+
+                                MessageBox.Show("Ajánlat sikeresen elfogadva!");
+                            }
+
+                            getOffersFromDatabase();
                         }
-
-                        conn.Close();
-
-                        conn.Open();
-
-                        foreach (var elem in termekidkdarabbal)
-                        {
-                            string sql4 = "UPDATE termekek SET osszesdarab=osszesdarab-" + elem.Value + " WHERE termekid=" + elem.Key;
-
-                            MySqlCommand cmd4 = new MySqlCommand(sql4, conn);
-
-                            cmd4.ExecuteNonQuery();
-                        }
-
-                        conn.Close();
-
-                        //getProductQuantity meghívása ezekre
-
-                        //ha valamelyik nincs hibaüzenet
-
-
-                        conn.Open();
-                        string sql5 = "insert into rendelesek (rendelesid, userid, datum, allapot, bevetel) VALUES (" + rendelesid + ", " + userid + ", '" + datum.ToString(format) + "', '" + allapot + "', " + senderGrid.Rows[e.RowIndex].Cells[6].Value.ToString() + ")";
-                        MySqlCommand cmd5 = new MySqlCommand(sql5, conn);
-                        cmd5.ExecuteNonQuery();
-                        MessageBox.Show("Megrendelés elfogadva!");
-                        conn.Close();
                     }
                 }
                 else if (e.ColumnIndex == 8)
                 {
-                    int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+                    int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
 
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
 
-                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || getLatestState(rendelesid) == "Nem tudom" || getLatestState(rendelesid) == "Elutasítva" || getLatestState(rendelesid) == "Elfogadva")
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva"  || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva" )
                     {
                         MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
                     }
                     else
                     {
-                        conn.Open();
-                        DateTime datum = DateTime.Now;
-                        string format = "yyyy-MM-dd HH:mm:ss";
+                        //elutasításnál meg nem történik semmi csak az ajánlatot változtatjuk meg elutasítvára
+
                         allapot = "Elutasítva";
-                        string sql = "select felhasznaloid from felhasznalok where nev='" + senderGrid.Rows[e.RowIndex].Cells[4].Value.ToString() + "'";
-                        int userid = 0;
+
+                        string sql = "UPDATE ajanlat SET allapot='" + allapot + "' WHERE ajanlatid=" + ajanlatid;
+
+                        conn.Open();
+
                         MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                        MySqlDataReader dr = cmd.ExecuteReader();
+                        cmd.ExecuteNonQuery();
 
-                        while (dr.Read())
-                        {
-                            userid = dr.GetInt32(0);
-                        }
-                        conn.Close();
+                        MessageBox.Show("Ajánlat elutasítva!");
 
-                        conn.Open();
-                        string sql2 = "insert into rendelesek (rendelesid, userid, datum, allapot, bevetel) VALUES (" + rendelesid + ", " + userid + ", '" + datum.ToString(format) + "', '" + allapot + "', " + senderGrid.Rows[e.RowIndex].Cells[6].Value.ToString() + ")";
-                        MySqlCommand cmd2 = new MySqlCommand(sql2, conn);
-                        cmd2.ExecuteNonQuery();
-                        MessageBox.Show("Megrendelés elutasítva!");
                         conn.Close();
                     }
                 }

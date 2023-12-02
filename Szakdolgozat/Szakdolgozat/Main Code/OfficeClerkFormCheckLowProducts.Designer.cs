@@ -77,7 +77,7 @@ namespace Szakdolgozat.Main_Code
             // 
             // BT_listaz
             // 
-            this.BT_listaz.Location = new System.Drawing.Point(607, 98);
+            this.BT_listaz.Location = new System.Drawing.Point(588, 98);
             this.BT_listaz.Name = "BT_listaz";
             this.BT_listaz.Size = new System.Drawing.Size(91, 23);
             this.BT_listaz.TabIndex = 36;

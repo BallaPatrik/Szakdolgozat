@@ -21,7 +21,11 @@ namespace Szakdolgozat.Main_Code
 
             StyleForms stilus = new StyleForms();
 
-            
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
+
             DGV_ajanlatok.Columns.Add("Col1", "Név");
             DGV_ajanlatok.Columns.Add("Col2", "Darabszám");
             DGV_ajanlatok.Columns.Add("Col3", "Dátum");

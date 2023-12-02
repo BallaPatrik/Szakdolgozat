@@ -30,6 +30,11 @@ namespace Szakdolgozat
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         private void OperatorFormListDailyProducts_FormClosed(object sender, FormClosedEventArgs e)

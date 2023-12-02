@@ -122,7 +122,7 @@ namespace Szakdolgozat.Main_Code
             // BT_jelszovaltoztat
             // 
             this.BT_jelszovaltoztat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(459, 318);
+            this.BT_jelszovaltoztat.Location = new System.Drawing.Point(448, 319);
             this.BT_jelszovaltoztat.Name = "BT_jelszovaltoztat";
             this.BT_jelszovaltoztat.Size = new System.Drawing.Size(152, 23);
             this.BT_jelszovaltoztat.TabIndex = 11;

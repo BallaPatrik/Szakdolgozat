@@ -22,11 +22,15 @@ namespace Szakdolgozat
 
         private int offerid;
 
+        
+
         public void setOrderId(int value) { orderid = value; }
         public int getOrderID() { return orderid; }
 
         public void setOfferId(int value) { offerid = value; }
         public int getOfferID() { return offerid; }
+
+     
 
         internal User CurrentUser { get => currentUser; set => currentUser = value; }
 

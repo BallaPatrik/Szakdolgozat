@@ -92,7 +92,7 @@ namespace Szakdolgozat
             // BT_bejelentkezes
             // 
             this.BT_bejelentkezes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_bejelentkezes.Location = new System.Drawing.Point(264, 300);
+            this.BT_bejelentkezes.Location = new System.Drawing.Point(243, 300);
             this.BT_bejelentkezes.Name = "BT_bejelentkezes";
             this.BT_bejelentkezes.Size = new System.Drawing.Size(87, 23);
             this.BT_bejelentkezes.TabIndex = 12;

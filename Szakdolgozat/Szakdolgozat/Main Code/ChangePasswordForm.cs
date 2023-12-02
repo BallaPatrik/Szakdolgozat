@@ -21,6 +21,12 @@ namespace Szakdolgozat.Main_Code
             InitializeComponent();
 
             stilus.styleChildForm(this);
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+                button.Size = new Size(185, 23);
+            }
         }
 
         private void ChangePasswordForm_FormClosed(object sender, FormClosedEventArgs e)

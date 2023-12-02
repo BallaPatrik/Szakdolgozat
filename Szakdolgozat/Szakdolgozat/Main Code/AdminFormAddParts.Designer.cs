@@ -58,7 +58,7 @@ namespace Szakdolgozat
             // BT_confirm
             // 
             this.BT_confirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BT_confirm.Location = new System.Drawing.Point(865, 494);
+            this.BT_confirm.Location = new System.Drawing.Point(804, 495);
             this.BT_confirm.Name = "BT_confirm";
             this.BT_confirm.Size = new System.Drawing.Size(75, 23);
             this.BT_confirm.TabIndex = 10;

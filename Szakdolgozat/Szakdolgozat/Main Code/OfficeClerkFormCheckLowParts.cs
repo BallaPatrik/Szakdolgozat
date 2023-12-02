@@ -37,6 +37,11 @@ namespace Szakdolgozat.Main_Code
                 DGV_alkatreszek.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter; //fejlécek középre igazítása
                 DGV_alkatreszek.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; //a többi cella középre igazítása
             }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         private void BT_listaz_Click(object sender, EventArgs e)

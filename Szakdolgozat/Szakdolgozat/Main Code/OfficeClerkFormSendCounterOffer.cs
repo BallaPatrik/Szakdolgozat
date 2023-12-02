@@ -52,6 +52,11 @@ namespace Szakdolgozat.Main_Code
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
 
@@ -216,13 +221,14 @@ namespace Szakdolgozat.Main_Code
                         finally
                         {
                             conn.Close();
-                            getOrderDetails();
+                            
                         }
                     }
 
                 }
             }
             MessageBox.Show("Sikeres ellenajánlat elkészítve!");
+            getOrderDetails();
         }
     }
 }

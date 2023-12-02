@@ -27,6 +27,11 @@ namespace Szakdolgozat.Main_Code
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            foreach (Button button in this.Controls.OfType<Button>())
+            {
+                stilus.styleButton(button);
+            }
         }
 
         Database db = new Database();
