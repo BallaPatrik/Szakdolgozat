@@ -47,10 +47,12 @@ namespace Szakdolgozat.Main_Code
                 stilus.styleButton(button);
             }
 
-            getOffersFromDatabase();
+            comboBox1.SelectedIndex = 0;
+
+            getOffersFromDatabase("Minden");
         }
 
-        private void getOffersFromDatabase()
+        private void getOffersFromDatabase(string feltetel)
         {
             DGV_ajanlatok.Rows.Clear();
             Database db = new Database();
@@ -63,7 +65,16 @@ namespace Szakdolgozat.Main_Code
             {
                 conn.Open();
 
-                string sql = "select datum, cegnev, allapot, vegosszeg, ajanlatid from ajanlat join beszallitok on ajanlat.beszallitoid = beszallitok.beszallitoid where allapot IN ('Elbírálás alatt', 'Kezdeti elbírálás')";
+                string sql;
+
+                if (feltetel == "Minden")
+                {
+                    sql = "select datum, cegnev, allapot, vegosszeg, ajanlatid from ajanlat join beszallitok on ajanlat.beszallitoid = beszallitok.beszallitoid";
+                }
+                else
+                {
+                    sql = "select datum, cegnev, allapot, vegosszeg, ajanlatid from ajanlat join beszallitok on ajanlat.beszallitoid = beszallitok.beszallitoid where allapot='" + feltetel + "'";
+                }
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -98,7 +109,8 @@ namespace Szakdolgozat.Main_Code
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Nem sikerült csatlakozni az adatbázishoz!");
+                //MessageBox.Show("Nem sikerült csatlakozni az adatbázishoz!");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -130,7 +142,7 @@ namespace Szakdolgozat.Main_Code
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
-            string sql = "select datum, allapot from ajanlat WHERE datum IN (SELECT MAX(datum) FROM ajanlat) and ajanlatid = " + ajanlatid + " GROUP BY datum ";
+            string sql = "select MAX(datum), allapot from ajanlat WHERE ajanlatid = " + ajanlatid + " GROUP BY datum ";
 
             conn.Open();
 
@@ -242,10 +254,11 @@ namespace Szakdolgozat.Main_Code
 
                                 conn.Close();
 
-                                MessageBox.Show("Ajánlat sikeresen elfogadva!");
                             }
 
-                            getOffersFromDatabase();
+                            MessageBox.Show("Ajánlat sikeresen elfogadva!");
+
+                            getOffersFromDatabase("Minden");
                         }
                     }
                 }
@@ -278,7 +291,7 @@ namespace Szakdolgozat.Main_Code
                         conn.Close();
                     }
                 }
-                getOffersFromDatabase();
+                getOffersFromDatabase("Minden");
             }
         }
 
@@ -321,6 +334,11 @@ namespace Szakdolgozat.Main_Code
 
                 conn.Close();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getOffersFromDatabase(comboBox1.SelectedItem.ToString());
         }
     }
 }

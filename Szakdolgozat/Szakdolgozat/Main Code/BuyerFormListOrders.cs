@@ -34,6 +34,8 @@ namespace Szakdolgozat.Main_Code
 
             stilus.styleChildForm(this);
 
+            comboBox1.SelectedIndex = 0;
+
             foreach (DataGridViewColumn elem in DGV_rendelesek.Columns)
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -45,7 +47,7 @@ namespace Szakdolgozat.Main_Code
             System.Environment.Exit(0);
         }
 
-        private void getOrdersFromDatabase()
+        private void getOrdersFromDatabase(string feltetel)
         {
             DGV_rendelesek.Rows.Clear();
             Database db = new Database();
@@ -58,7 +60,16 @@ namespace Szakdolgozat.Main_Code
             {
                 conn.Open();
 
-                string sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where userid=" + felhasznaloid;
+                string sql;
+
+                if (feltetel == "Minden")
+                {
+                    sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where userid=" + felhasznaloid;
+                }
+                else
+                {
+                    sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where userid=" + felhasznaloid + " and allapot = '" + feltetel + "'";
+                }
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -96,7 +107,7 @@ namespace Szakdolgozat.Main_Code
 
         private void BuyerFormListOrders_Load(object sender, EventArgs e)
         {
-            getOrdersFromDatabase();
+            getOrdersFromDatabase("Minden");
 
             DataGridViewButtonColumn buttonelfogad = new DataGridViewButtonColumn();
             {
@@ -291,7 +302,8 @@ namespace Szakdolgozat.Main_Code
                             conn.Close();
                         }
 
-                        getOrdersFromDatabase();
+                        MessageBox.Show("Sikeresen elfogadva!");
+                        getOrdersFromDatabase("Minden");
                     }
                 }
                 else if (e.ColumnIndex == 8)
@@ -319,7 +331,7 @@ namespace Szakdolgozat.Main_Code
 
                         conn.Close();
 
-                        getOrdersFromDatabase();
+                        getOrdersFromDatabase("Minden");
                     }
                 }
             }
@@ -332,7 +344,7 @@ namespace Szakdolgozat.Main_Code
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
-            string sql = "select datum, allapot from rendelesek WHERE datum IN (SELECT MAX(datum) FROM rendelesek) and rendelesid = " + megrendelesid + " GROUP BY datum ";
+            string sql = "select MAX(datum), allapot from rendelesek WHERE rendelesid = " + megrendelesid + " GROUP BY datum ";
 
             conn.Open();
 
@@ -348,6 +360,11 @@ namespace Szakdolgozat.Main_Code
             conn.Close();
 
             return allapot;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getOrdersFromDatabase(comboBox1.SelectedItem.ToString());
         }
     }
 }

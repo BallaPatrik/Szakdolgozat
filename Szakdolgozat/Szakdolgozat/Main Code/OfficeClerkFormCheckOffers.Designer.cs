@@ -1,7 +1,7 @@
 ﻿
 namespace Szakdolgozat.Main_Code
 {
-    partial class SupplierCheckOffers
+    partial class OfficeClerkFormCheckOffers
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,41 @@ namespace Szakdolgozat.Main_Code
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGV_ajanlatok = new System.Windows.Forms.DataGridView();
-            this.Col_Btn_Reszletek = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Col_Btn_Ajanlat = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.DGV_ajanlatok = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Col_Btn_Reszletek = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Col_Btn_Ajanlat = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ajanlatok)).BeginInit();
             this.SuspendLayout();
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Minden",
+            "Elfogadva",
+            "Elutasítva",
+            "Kezdeti elbírálás",
+            "Elbírálás alatt",
+            "Elbírálva"});
+            this.comboBox1.Location = new System.Drawing.Point(309, 70);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(246, 21);
+            this.comboBox1.TabIndex = 36;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(261, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Szűrés:";
             // 
             // DGV_ajanlatok
             // 
@@ -49,12 +76,23 @@ namespace Szakdolgozat.Main_Code
             this.DGV_ajanlatok.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Btn_Reszletek,
             this.Col_Btn_Ajanlat});
-            this.DGV_ajanlatok.Location = new System.Drawing.Point(232, 138);
+            this.DGV_ajanlatok.Location = new System.Drawing.Point(230, 117);
             this.DGV_ajanlatok.Name = "DGV_ajanlatok";
             this.DGV_ajanlatok.Size = new System.Drawing.Size(536, 276);
-            this.DGV_ajanlatok.TabIndex = 32;
+            this.DGV_ajanlatok.TabIndex = 34;
             this.DGV_ajanlatok.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ajanlatok_CellClick);
             this.DGV_ajanlatok.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ajanlatok_CellContentClick);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(304, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(194, 25);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Alaktrész ajánlatok";
             // 
             // Col_Btn_Reszletek
             // 
@@ -72,45 +110,7 @@ namespace Szakdolgozat.Main_Code
             this.Col_Btn_Ajanlat.Text = "Ellenajánlat";
             this.Col_Btn_Ajanlat.UseColumnTextForButtonValue = true;
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(288, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 25);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Ajánlatok";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Minden",
-            "Elfogadva",
-            "Elutasítva",
-            "Kezdeti elbírálás",
-            "Elbírálás alatt",
-            "Elbírálva"});
-            this.comboBox1.Location = new System.Drawing.Point(293, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 21);
-            this.comboBox1.TabIndex = 34;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(245, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Szűrés:";
-            // 
-            // SupplierCheckOffers
+            // OfficeClerkFormCheckOffers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,9 +119,10 @@ namespace Szakdolgozat.Main_Code
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_ajanlatok);
             this.Controls.Add(this.label2);
-            this.Name = "SupplierCheckOffers";
-            this.Text = "Ajánlatok megtekintése";
-            this.Load += new System.EventHandler(this.SupplierCheckOffers_Load);
+            this.Name = "OfficeClerkFormCheckOffers";
+            this.Text = "OfficeClerkFormCheckOffers";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OfficeClerkFormCheckOffers_FormClosed);
+            this.Load += new System.EventHandler(this.OfficeClerkFormCheckOffers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ajanlatok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,11 +131,11 @@ namespace Szakdolgozat.Main_Code
 
         #endregion
 
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView DGV_ajanlatok;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Reszletek;
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Ajanlat;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
     }
 }

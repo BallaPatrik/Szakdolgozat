@@ -34,6 +34,8 @@ namespace Szakdolgozat.Main_Code
             this.Col_Btn_Ajanlat = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.mySqlDataAdapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_rendelesek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@ namespace Szakdolgozat.Main_Code
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(267, 58);
+            this.label2.Location = new System.Drawing.Point(281, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 25);
             this.label2.TabIndex = 29;
@@ -89,11 +91,40 @@ namespace Szakdolgozat.Main_Code
             this.mySqlDataAdapter1.SelectCommand = null;
             this.mySqlDataAdapter1.UpdateCommand = null;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Minden",
+            "Elfogadva",
+            "Elutasítva",
+            "Kezdeti elbírálás",
+            "Elbírálás alatt",
+            "Elbírálva"});
+            this.comboBox1.Location = new System.Drawing.Point(286, 75);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(246, 21);
+            this.comboBox1.TabIndex = 32;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(238, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Szűrés:";
+            // 
             // OfficeClerkFormCheckOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_rendelesek);
             this.Controls.Add(this.label2);
             this.Name = "OfficeClerkFormCheckOrders";
@@ -113,5 +144,7 @@ namespace Szakdolgozat.Main_Code
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Reszletek;
         private System.Windows.Forms.DataGridViewButtonColumn Col_Btn_Ajanlat;
         private MySql.Data.MySqlClient.MySqlDataAdapter mySqlDataAdapter1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

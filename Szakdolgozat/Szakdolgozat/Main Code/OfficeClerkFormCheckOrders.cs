@@ -37,6 +37,8 @@ namespace Szakdolgozat.Main_Code
             {
                 elem.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+            comboBox1.SelectedIndex = 0;
         }
 
         private void OfficeClerkFormCheckOrders_FormClosed(object sender, FormClosedEventArgs e)
@@ -44,7 +46,7 @@ namespace Szakdolgozat.Main_Code
             System.Environment.Exit(0);
         }
 
-        private void getOrdersFromDatabase()
+        private void getOrdersFromDatabase(string feltetel)
         {
             DGV_rendelesek.Rows.Clear();
             Database db = new Database();
@@ -57,7 +59,16 @@ namespace Szakdolgozat.Main_Code
             {
                 conn.Open();
 
-                string sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where allapot IN ('Elbírálás alatt', 'Kezdeti elbírálás')";
+                string sql;
+
+                if (feltetel == "Minden")
+                {
+                    sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid";
+                }
+                else
+                {
+                    sql = "select datum, nev, allapot, bevetel, rendelesid from rendelesek join felhasznalok on felhasznalok.felhasznaloid = rendelesek.userid where allapot='" + feltetel + "'";
+                }
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -96,7 +107,7 @@ namespace Szakdolgozat.Main_Code
 
         private void OfficeClerkFormCheckOrders_Load(object sender, EventArgs e)
         {
-            getOrdersFromDatabase();
+            getOrdersFromDatabase("Minden");
 
             DataGridViewButtonColumn buttonelfogad = new DataGridViewButtonColumn();
             {
@@ -164,7 +175,7 @@ namespace Szakdolgozat.Main_Code
             Database db = new Database();
 
             MySqlConnection conn = db.getConnection();
-            string sql = "select datum, allapot from rendelesek WHERE datum IN (SELECT MAX(datum) FROM rendelesek) and rendelesid = " + megrendelesid + " GROUP BY datum ";
+            string sql = "select MAX(datum), allapot from rendelesek WHERE rendelesid = " + megrendelesid + " GROUP BY datum ";
 
             conn.Open();
 
@@ -363,9 +374,13 @@ namespace Szakdolgozat.Main_Code
                         conn.Close();
                     }
                 }
-                getOrdersFromDatabase();
+                getOrdersFromDatabase("Minden");
             }
-           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getOrdersFromDatabase(comboBox1.SelectedItem.ToString());
         }
     }
 }

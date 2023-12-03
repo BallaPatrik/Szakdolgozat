@@ -71,7 +71,7 @@ namespace Szakdolgozat
 
         private void BT_keves_termek_listazas_Click(object sender, EventArgs e)
         {
-            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckLowProducts());
+            openChildForm(new Szakdolgozat.Main_Code.OfficeClerkFormCheckOffers());
         }
 
         private void BT_keves_alkatresz_listazas_Click(object sender, EventArgs e)

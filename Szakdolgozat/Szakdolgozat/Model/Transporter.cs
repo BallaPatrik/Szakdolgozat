@@ -22,8 +22,6 @@ namespace Szakdolgozat
 
         private int offerid;
 
-        
-
         public void setOrderId(int value) { orderid = value; }
         public int getOrderID() { return orderid; }
 
