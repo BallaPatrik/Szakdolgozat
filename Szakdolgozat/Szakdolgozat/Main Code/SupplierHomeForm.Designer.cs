@@ -32,11 +32,11 @@ namespace Szakdolgozat.Main_Code
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierHomeForm));
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.BT_menu_kijelentkezes = new System.Windows.Forms.Button();
+            this.BT_menu_jelszovaltoztat = new System.Windows.Forms.Button();
             this.BT_menu_ajanlatmegtekint = new System.Windows.Forms.Button();
             this.BT_menu_alkatresz_eladas = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.BT_menu_jelszovaltoztat = new System.Windows.Forms.Button();
-            this.BT_menu_kijelentkezes = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,42 @@ namespace Szakdolgozat.Main_Code
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 554);
             this.panelSideMenu.TabIndex = 36;
+            // 
+            // BT_menu_kijelentkezes
+            // 
+            this.BT_menu_kijelentkezes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_kijelentkezes.FlatAppearance.BorderSize = 0;
+            this.BT_menu_kijelentkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_kijelentkezes.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_kijelentkezes.Image = global::Szakdolgozat.Properties.Resources._1486505366_exit_export_out_send_sending_archive_outside_81436;
+            this.BT_menu_kijelentkezes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_kijelentkezes.Location = new System.Drawing.Point(0, 235);
+            this.BT_menu_kijelentkezes.Name = "BT_menu_kijelentkezes";
+            this.BT_menu_kijelentkezes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_kijelentkezes.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_kijelentkezes.TabIndex = 10;
+            this.BT_menu_kijelentkezes.Text = "Kijelentkezés";
+            this.BT_menu_kijelentkezes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_menu_kijelentkezes.UseVisualStyleBackColor = true;
+            this.BT_menu_kijelentkezes.Click += new System.EventHandler(this.BT_menu_kijelentkezes_Click);
+            // 
+            // BT_menu_jelszovaltoztat
+            // 
+            this.BT_menu_jelszovaltoztat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BT_menu_jelszovaltoztat.FlatAppearance.BorderSize = 0;
+            this.BT_menu_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BT_menu_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
+            this.BT_menu_jelszovaltoztat.Image = global::Szakdolgozat.Properties.Resources._40_104848;
+            this.BT_menu_jelszovaltoztat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BT_menu_jelszovaltoztat.Location = new System.Drawing.Point(0, 190);
+            this.BT_menu_jelszovaltoztat.Name = "BT_menu_jelszovaltoztat";
+            this.BT_menu_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.BT_menu_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
+            this.BT_menu_jelszovaltoztat.TabIndex = 9;
+            this.BT_menu_jelszovaltoztat.Text = "Jelszóváltoztatás";
+            this.BT_menu_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BT_menu_jelszovaltoztat.UseVisualStyleBackColor = true;
+            this.BT_menu_jelszovaltoztat.Click += new System.EventHandler(this.BT_menu_jelszovaltoztat_Click);
             // 
             // BT_menu_ajanlatmegtekint
             // 
@@ -107,41 +143,6 @@ namespace Szakdolgozat.Main_Code
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 1;
-            // 
-            // BT_menu_jelszovaltoztat
-            // 
-            this.BT_menu_jelszovaltoztat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_menu_jelszovaltoztat.FlatAppearance.BorderSize = 0;
-            this.BT_menu_jelszovaltoztat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_menu_jelszovaltoztat.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_menu_jelszovaltoztat.Image = global::Szakdolgozat.Properties.Resources._40_104848;
-            this.BT_menu_jelszovaltoztat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_menu_jelszovaltoztat.Location = new System.Drawing.Point(0, 190);
-            this.BT_menu_jelszovaltoztat.Name = "BT_menu_jelszovaltoztat";
-            this.BT_menu_jelszovaltoztat.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_menu_jelszovaltoztat.Size = new System.Drawing.Size(250, 45);
-            this.BT_menu_jelszovaltoztat.TabIndex = 9;
-            this.BT_menu_jelszovaltoztat.Text = "Jelszóváltoztatás";
-            this.BT_menu_jelszovaltoztat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BT_menu_jelszovaltoztat.UseVisualStyleBackColor = true;
-            this.BT_menu_jelszovaltoztat.Click += new System.EventHandler(this.BT_menu_jelszovaltoztat_Click);
-            // 
-            // BT_menu_kijelentkezes
-            // 
-            this.BT_menu_kijelentkezes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BT_menu_kijelentkezes.FlatAppearance.BorderSize = 0;
-            this.BT_menu_kijelentkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BT_menu_kijelentkezes.ForeColor = System.Drawing.SystemColors.Control;
-            this.BT_menu_kijelentkezes.Image = global::Szakdolgozat.Properties.Resources._1486505366_exit_export_out_send_sending_archive_outside_81436;
-            this.BT_menu_kijelentkezes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BT_menu_kijelentkezes.Location = new System.Drawing.Point(0, 235);
-            this.BT_menu_kijelentkezes.Name = "BT_menu_kijelentkezes";
-            this.BT_menu_kijelentkezes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BT_menu_kijelentkezes.Size = new System.Drawing.Size(250, 45);
-            this.BT_menu_kijelentkezes.TabIndex = 10;
-            this.BT_menu_kijelentkezes.Text = "Kijelentkezés";
-            this.BT_menu_kijelentkezes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BT_menu_kijelentkezes.UseVisualStyleBackColor = true;
             // 
             // SupplierHomeForm
             // 

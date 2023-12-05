@@ -89,7 +89,6 @@ namespace Szakdolgozat.Main_Code
 
             DGV_termekek.Refresh();
 
-
             int vegosszeg = 0;
 
             foreach (DataGridViewRow elem in DGV_termekek.Rows)
@@ -100,7 +99,6 @@ namespace Szakdolgozat.Main_Code
                     
                 }
             }
-
         }
 
         private void BT_ellenajanlat_kuldese_Click_1(object sender, EventArgs e)

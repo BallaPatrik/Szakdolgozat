@@ -189,6 +189,12 @@
     <Compile Include="Main Code\SupplierFormSellParts.Designer.cs">
       <DependentUpon>SupplierFormSellParts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main Code\SupplierFormSendCounterOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Code\SupplierFormSendCounterOffer.Designer.cs">
+      <DependentUpon>SupplierFormSendCounterOffer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main Code\SupplierHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\SupplierFormSellParts.resx">
       <DependentUpon>SupplierFormSellParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Code\SupplierFormSendCounterOffer.resx">
+      <DependentUpon>SupplierFormSendCounterOffer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Code\SupplierHomeForm.resx">
       <DependentUpon>SupplierHomeForm.cs</DependentUpon>

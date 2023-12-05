@@ -74,7 +74,7 @@ namespace Szakdolgozat.Main_Code
             
             conn.Open();
 
-            string sql = "SELECT a.nev, aa.darabszam, MAX(aa.datum), aa.ar FROM ajanlat_alkatreszek aa JOIN alkatreszek a ON a.alkatreszid = aa.alkatreszid WHERE aa.ajanlatid = " + Transporter.getInstance().getOfferID() + " AND datum is not null GROUP BY a.nev;";
+            string sql = "SELECT DISTINCT alkatreszek.nev, ajanlat_alkatreszek.darabszam, ajanlat_alkatreszek.datum, ajanlat_alkatreszek.ar FROM ajanlat_alkatreszek JOIN alkatreszek ON ajanlat_alkatreszek.alkatreszid = alkatreszek.alkatreszid WHERE ajanlat_alkatreszek.ajanlatid=" + Transporter.getInstance().getOfferID() + " AND datum IN (SELECT MAX(datum) FROM ajanlat_alkatreszek ar2 WHERE ar2.ajanlatid=ajanlat_alkatreszek.ajanlatid) AND datum is not null GROUP BY alkatreszek.nev ORDER BY datum DESC;";
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

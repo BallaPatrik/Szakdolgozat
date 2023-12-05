@@ -250,23 +250,24 @@ namespace Szakdolgozat.Main_Code
                 if (e.ColumnIndex == 0)
                 {
                     int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-                    Transporter.getInstance().setOrderId(ajanlatid);
-
-
-
-                    //új formot létre kell hozni
-
-
-
-
-                    BuyerFormOrderDetails form = new BuyerFormOrderDetails();
+                    Transporter.getInstance().setOrderId(ajanlatid);;
+                    SupplierOfferDetails form = new SupplierOfferDetails();
                     form.ShowDialog();
+                    
                 }
                 else if (e.ColumnIndex == 1)
                 {
                     int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+                    string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || allapot == "Elbírálva" || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva"|| getLatestState(ajanlatid) == "Elbírálva")
+                    {
+                        MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
+                        return;
+                    }
+
                     Transporter.getInstance().setOrderId(ajanlatid);
-                    OfficeClerkFormSendCounterOffer form = new OfficeClerkFormSendCounterOffer();
+                    SupplierFormSendCounterOffer form = new SupplierFormSendCounterOffer();
                     form.ShowDialog();
                 }
                 else if (e.ColumnIndex == 7)
@@ -320,7 +321,7 @@ namespace Szakdolgozat.Main_Code
                         }
                         conn.Close();
 
-                        foreach(var elem in alkatreszidkdarabszammal)
+                        foreach (var elem in alkatreszidkdarabszammal)
                         {
                             conn.Open();
 
@@ -340,7 +341,7 @@ namespace Szakdolgozat.Main_Code
                         conn.Close();
 
                         MessageBox.Show("Ajánlat elfogadva!");
-                        
+
                     }
                 }
                 else if (e.ColumnIndex == 8)

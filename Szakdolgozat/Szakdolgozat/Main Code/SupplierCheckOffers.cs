@@ -173,16 +173,24 @@ namespace Szakdolgozat.Main_Code
             {
                 if (e.ColumnIndex == 0)
                 {
-                    int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-                    Transporter.getInstance().setOrderId(rendelesid);
+                    int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+                    Transporter.getInstance().setOfferId(ajanlatid);
                     SupplierOfferDetails form = new SupplierOfferDetails();
                     form.ShowDialog();
                 }
                 else if (e.ColumnIndex == 1)
                 {
-                    int rendelesid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-                    Transporter.getInstance().setOrderId(rendelesid);
-                    OfficeClerkFormSendCounterOffer form = new OfficeClerkFormSendCounterOffer();
+                    int ajanlatid = Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+                    string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || allapot == "Elbírálva" || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva" || getLatestState(ajanlatid) == "Elbírálva")
+                    {
+                        MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
+                        return;
+                    }
+                    
+                    Transporter.getInstance().setOfferId(ajanlatid);
+                    SupplierFormSendCounterOffer form = new SupplierFormSendCounterOffer();
                     form.ShowDialog();
                 }
                 else if (e.ColumnIndex == 7)
@@ -191,7 +199,7 @@ namespace Szakdolgozat.Main_Code
 
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
 
-                    if (allapot == "Elfogadva" || allapot == "Elutasítva"  || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva")
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || allapot == "Elbírálva" || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva" || getLatestState(ajanlatid) == "Elbírálva")
                     {
                         MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
                     }
@@ -268,7 +276,7 @@ namespace Szakdolgozat.Main_Code
 
                     string allapot = senderGrid.Rows[e.RowIndex].Cells[5].Value.ToString();
 
-                    if (allapot == "Elfogadva" || allapot == "Elutasítva"  || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva" )
+                    if (allapot == "Elfogadva" || allapot == "Elutasítva" || allapot == "Elbírálva" || getLatestState(ajanlatid) == "Nem tudom" || getLatestState(ajanlatid) == "Elutasítva" || getLatestState(ajanlatid) == "Elfogadva" || getLatestState(ajanlatid) == "Elbírálva")
                     {
                         MessageBox.Show("A megrendelést ebben az állapotban (már) nem lehet módosítani, vagy létezik belőle aktuálisabb változat!");
                     }
